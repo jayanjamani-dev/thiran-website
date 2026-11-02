@@ -13,7 +13,7 @@ def asset(p):
         name=f'{stem}-{h}.webp'; im=Image.open(rp)
         im=im.convert('RGBA' if im.mode in ('RGBA','LA','P') else 'RGB')
         if im.width>2400 and not stem.startswith(('hero-lap3','hero-lap4','hero-full')): im=im.resize((2400,round(im.height*2400/im.width)),Image.LANCZOS)
-        q=92 if stem.startswith(('hero-full','hero-lap')) else 84
+        q=88 if stem.startswith('hero-full') else 80 if stem.startswith('hero-lap') else 84
         im.save(os.path.join(A,name),quality=q,method=6)
     else:
         name=f'{stem}-{h}{ext}'; shutil.copy(rp,os.path.join(A,name))

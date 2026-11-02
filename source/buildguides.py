@@ -264,7 +264,7 @@ for g in guides:
     t, pos = g['thumb']; ts, tss, tw, th = img(t)
     cards.append(f'''<a class="card" data-cat="{g['cat']}" href="/guides/{g['slug']}"><div class="th"><img src="{_img[t][1].split(' ')[0]}" width="{tw}" height="{th}" style="object-position:{pos}" alt="" loading="lazy" decoding="async"></div><div class="cb"><div class="ey">{g['num']} · {g['cat']}</div><h3>{html.escape(g['h1'])}</h3><p>{html.escape(g['desc'].replace(' Step-by-step guide.', '').replace(' Step by step.', ''))}</p><div class="go">Read guide →</div></div></a>''')
 cats = ['Markup', 'Measure', 'Revisions', 'Takeoff']
-idx_desc = 'Step-by-step guides for PDF drawings: mark up, redline, set the scale, measure, compare revisions and count symbols on construction drawings in Thiran.'
+idx_desc = 'Step-by-step guides for PDF drawings: mark up, redline, set the scale, measure, compare revisions and count symbols on construction drawings.'
 main = f'''<main>
 <div class="ihero in">
  <div class="ey">Guides</div>
@@ -288,7 +288,7 @@ ld = [{'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Thi
       {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
        {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE + '/'},
        {'@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': SITE + '/guides'}]}]
-open(os.path.join(G, 'index.html'), 'w').write(page('Guides to PDF markup and takeoff for construction drawings | Thiran', idx_desc, '/guides', og_image('guides'), ld, main, css, fonts, mk))
+open(os.path.join(G, 'index.html'), 'w').write(page('Guides to PDF markup and takeoff | Thiran', idx_desc, '/guides', og_image('guides'), ld, main, css, fonts, mk))
 
 # list for sitemap, llms.txt and the OG image maker
 json.dump([{'num': g['num'], 'slug': g['slug'], 'h1': g['h1'], 'desc': g['desc'], 'cat': g['cat'], 'thumb': g['thumb'][0]} for g in guides],
