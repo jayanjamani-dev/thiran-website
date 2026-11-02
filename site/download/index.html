@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Thiran for Windows and Mac</title>
+<meta name="description" content="Download the Thiran desktop app for Windows or Mac. PDF markup and takeoff for construction. Try every feature free for 7 days, no card needed.">
+<link rel="icon" href="/download/images/thiran-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;1,300&display=swap">
+
+<script>
+/* ==========================================================================
+   RELEASE DATA — the ONLY place to edit for a new release.
+   Every link, file name, size, version, date and SHA-256 on the page comes
+   from here.
+
+   Buttons use the permanent links, which always give the newest version.
+   Each release: change version, date, sizes, file names and sha256 here only.
+   ========================================================================== */
+window.THIRAN_RELEASE = {
+  version: '0.17.10',
+  date: '29 October 2026',
+  windows: {
+    url:  'https://my.thiran.app/download/windows',
+    file: 'Thiran-Setup-0.17.10.exe',
+    size: '130 MB',
+    sha256: '8e6161283301da7b9ffdc75f77b321ad48a3f6609d0146350c93dc7ee129e2a9'
+  },
+  mac: {
+    url:  'https://my.thiran.app/download/mac',
+    file: 'Thiran-0.17.10-mac-universal.dmg',
+    size: '250 MB',
+    sha256: 'c39aa7b256d59de8a3ca67ae3426d97544c6334d15bb38251052a2671d49bcf5'
+  },
+  webApp: 'https://my.thiran.app',
+  support: 'we@tensi.ai'
+};
+</script>
+
+<style>
+:root{
+  --bg:#f5f1ea; --bg2:#eeeae2; --card:#ffffff; --line:#e8dfd6;
+  --ink:#2a1d14; --muted:#5e5249; --orange:#d9631e; --orange-text:#aa4a15; --orange-dark:#b8511a;
+  --btn-ink:#261a11;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--orange-text)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.01em}
+.disp{font-family:'Open Sans',sans-serif;font-weight:300;letter-spacing:-.02em}
+.disp em{font-style:italic;color:var(--orange-text)}
+.lab{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-text)}
+.muted{color:var(--muted)}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+:focus-visible{outline:2px solid var(--orange-dark);outline-offset:3px;border-radius:6px}
+
+/* header */
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo img{height:30px;width:auto}
+.logo span{font-family:'Open Sans',sans-serif;font-weight:300;font-size:28px;line-height:1;color:var(--orange)}
+.nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:500}
+.nav a{color:var(--ink);text-decoration:none}
+.nav a:hover{color:var(--orange-text)}
+.pill{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-weight:600}
+
+/* hero */
+.hero{padding:56px 0 40px;text-align:center}
+.hero h1{font-size:clamp(40px,6vw,64px)}
+.hero .sub{max-width:560px;margin:14px auto 0;color:var(--muted);font-size:18px}
+.dl{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:34px}
+.dlbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:270px;padding:16px 26px;border-radius:16px;text-decoration:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.dlbtn:hover{transform:translateY(-2px)}
+.dlbtn b{font-size:18px;font-weight:600;display:flex;align-items:center;gap:10px}
+.dlbtn small{font-size:13px}
+.dlbtn.primary{background:var(--orange);color:var(--btn-ink);box-shadow:0 14px 30px -14px rgba(217,99,30,.8)}
+.dlbtn.primary small{color:var(--btn-ink);opacity:.85}
+.dlbtn.outline{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.dlbtn.outline small{color:var(--muted)}
+.ver{margin-top:16px;font-size:13px;color:var(--muted)}
+.other{display:none;margin-top:10px;font-size:15px}
+.other.show{display:block}
+
+/* cards */
+section{scroll-margin-top:20px}
+.sec{padding:44px 0}
+.sec>h2,.sec .h2{font-size:clamp(28px,3.4vw,38px);font-weight:300;font-family:'Open Sans',sans-serif;letter-spacing:-.02em;margin:6px 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid3 h3{font-size:16px;margin-bottom:4px}
+.grid3 p{margin:0;color:var(--muted);font-size:15px}
+.browser{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--bg2)}
+.browser h2{font-size:24px;font-weight:600;font-family:'Inter',sans-serif;margin:0 0 4px}
+.browser p{margin:0;color:var(--muted)}
+.btn-o{display:inline-flex;align-items:center;height:46px;padding:0 22px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);text-decoration:none;font-weight:600}
+
+/* install tabs */
+.tabs{display:inline-flex;padding:4px;border-radius:12px;background:var(--card);border:1px solid var(--line);margin:8px 0 22px}
+.tabs button{font:600 15px 'Inter',sans-serif;border:0;background:none;color:var(--muted);padding:9px 20px;border-radius:9px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.panel[hidden]{display:none}
+.intro{max-width:720px;color:var(--muted);margin:0 0 22px}
+.steps{display:flex;flex-direction:column;gap:18px}
+.step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.step h3{font-size:19px;display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--orange);color:var(--btn-ink);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step p{margin:0 0 8px;color:var(--muted);font-size:15.5px}
+.step p b,.step p strong{color:var(--ink)}
+.step figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
+.step figure img{width:100%;max-width:600px}
+.note{font-size:14.5px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:6px}
+.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,100%{box-shadow:none}30%{box-shadow:0 0 0 4px rgba(217,99,30,.35)}}
+
+/* first start */
+.fs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:28px;align-items:start}
+.fs ul{margin:0;padding-left:20px}
+.fs li{margin-bottom:10px;color:var(--muted)}
+.fs li b{color:var(--ink)}
+.fs li ul{margin-top:6px}
+.fs li ul li{margin-bottom:4px}
+.price{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0}
+.price span{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:14.5px;color:var(--ink);font-weight:600}
+
+/* safety */
+.hash{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 14px}
+.hash code{flex:1;min-width:0;overflow-wrap:anywhere;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.copy{font:600 13px 'Inter',sans-serif;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.copy.done{border-color:var(--orange);color:var(--orange-text)}
+.cmd{display:block;background:var(--ink);color:#f6ebdc;border-radius:10px;padding:10px 14px;margin:6px 0 12px;overflow-x:auto;white-space:nowrap}
+
+footer{padding:40px 0 30px;border-top:1px solid var(--line);margin-top:30px;font-size:14px;color:var(--muted)}
+footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+
+@media (max-width:860px){
+  .grid3{grid-template-columns:1fr}
+  .step,.fs{grid-template-columns:1fr}
+  .nav .hide-s{display:none}
+  .dlbtn{min-width:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hd">
+    <a class="logo" href="/" aria-label="thiran home"><img src="/download/images/thiran-mark.png" alt="" width="36" height="30"><span>thiran</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-s" href="/#job">Features</a>
+      <a class="hide-s" href="/#pricing">Pricing</a>
+      <a href="https://my.thiran.app">Sign in</a>
+      <a class="pill" href="/download" aria-current="page">Download</a>
+    </nav>
+  </header>
+</div>
+
+<main>
+<!-- 3.1 HERO -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="disp">Download <em>Thiran</em></h1>
+    <p class="sub">PDF markup and takeoff for construction. Try every feature free for 7 days, with no card needed.</p>
+    <div class="dl" id="dl">
+      <a class="dlbtn primary" id="btn-windows" data-os="windows" href="https://my.thiran.app/download/windows">
+        <b><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Windows</b>
+        <small><span>Windows 10 and 11</span> · <span data-r="windows.size">130 MB</span></small>
+      </a>
+      <a class="dlbtn outline" id="btn-mac" data-os="mac" href="https://my.thiran.app/download/mac">
+        <b><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Mac</b>
+        <small><span>Apple Silicon and Intel</span> · <span data-r="mac.size">250 MB</span></small>
+      </a>
+    </div>
+    <p class="ver">Version <span data-r="version">0.17.10</span> · <span data-r="date">29 October 2026</span></p>
+    <p class="other" id="other">On a phone or another computer? Use Thiran in your browser at <a href="https://my.thiran.app">my.thiran.app</a>.</p>
+  </div>
+</section>
+
+<!-- 3.2 WHAT YOU NEED -->
+<section class="sec" id="need">
+  <div class="wrap">
+    <div class="lab">Before you start</div>
+    <h2>What you need</h2>
+    <div class="grid3">
+      <div class="card"><h3>Windows</h3><p>Windows 10 or Windows 11, 64-bit.</p></div>
+      <div class="card"><h3>Mac</h3><p>macOS 13 Ventura or later, on a Mac with Apple Silicon or Intel.</p></div>
+      <div class="card"><h3>Both</h3><p>An internet connection to sign in and to check your licence the first time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3.3 BROWSER -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="card browser">
+      <div><h2>Or use it in your browser</h2><p>Nothing to install. Sign in at my.thiran.app with the same account.</p></div>
+      <a class="btn-o" href="https://my.thiran.app">Open Thiran in your browser →</a>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="sec" id="install">
+  <div class="wrap">
+    <div class="lab">Install</div>
+    <h2 class="h2 disp">Install in a few <em>easy steps.</em></h2>
+    <div class="tabs" role="tablist" aria-label="Choose your computer">
+      <button role="tab" id="tab-windows" aria-controls="install-windows" aria-selected="true">Windows</button>
+      <button role="tab" id="tab-mac" aria-controls="install-mac" aria-selected="false">Mac</button>
+    </div>
+
+    <!-- 3.4 WINDOWS -->
+    <div class="panel" id="install-windows" role="tabpanel" aria-labelledby="tab-windows">
+      <h3 class="h2 disp" style="font-size:28px;margin-bottom:8px">Installing on Windows</h3>
+      <p class="intro" data-unsigned>Windows shows a blue warning the first time, because Thiran is a new app that isn't signed yet. That's expected. Here's how to get past it.</p>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h3><span class="num">1</span>Open the download</h3>
+            <p>When the download finishes, click <b>Open file</b> in your browser's downloads. The file is called <b data-r="windows.file">Thiran-Setup-0.17.10.exe</b>.</p>
+            <p>Some browsers first say the file "isn't commonly downloaded". If yours does, choose <b>Keep</b>.</p>
+          </div>
+          <figure><img src="/download/images/win-1-download.png" width="1200" height="760" loading="lazy" alt="Browser downloads list with Thiran-Setup-0.17.10.exe and Open file highlighted"></figure>
+        </div>
+
+        <!-- SmartScreen block: shrink to one line when Windows signing arrives -->
+        <div data-section="smartscreen" class="steps">
+          <div class="step">
+            <div>
+              <h3><span class="num">2</span>"Windows protected your PC"</h3>
+              <p>Windows may show a blue box that says <b>Windows protected your PC</b>. This is Microsoft Defender SmartScreen, and it appears for new apps that aren't signed yet. Click <b>More info</b>.</p>
+            </div>
+            <figure><img src="/download/images/win-2-smartscreen.png" width="1200" height="760" loading="lazy" alt="Windows protected your PC message with More info highlighted"></figure>
+          </div>
+          <div class="step">
+            <div>
+              <h3><span class="num">3</span>Run anyway</h3>
+              <p>You'll see <b>App: <span data-r="windows.file">Thiran-Setup-0.17.10.exe</span></b> and <b>Publisher: Unknown publisher</b>. Click <b>Run anyway</b>.</p>
+            </div>
+            <figure><img src="/download/images/win-3-run-anyway.png" width="1200" height="760" loading="lazy" alt="Expanded message showing Unknown publisher, with Run anyway highlighted"></figure>
+          </div>
+        </div>
+
+        <div class="step">
+          <div>
+            <h3><span class="num">4</span>Install</h3>
+            <p>Follow the <b>Thiran Setup</b> steps. You can install just for you, without administrator rights.</p>
+            <p>Setup may ask whether to add the <b>Thiran PDF</b> printer, which lets any program print straight into Thiran. This is optional, and adding it needs administrator permission.</p>
+            <p>When setup finishes, Thiran opens. You'll find it in the Start menu and on your desktop.</p>
+          </div>
+          <figure><img src="/download/images/win-4-installing.png" width="1200" height="760" loading="lazy" alt="Thiran Setup installing, then Thiran opening"></figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.5 MAC — the whole block is the Gatekeeper part (data-section="gatekeeper") -->
+    <div class="panel" id="install-mac" role="tabpanel" aria-labelledby="tab-mac" hidden>
+      <div data-section="gatekeeper">
+        <h3 class="h2 disp" style="font-size:28px;margin-bottom:8px">Installing on Mac</h3>
+        <p class="intro">macOS asks you to allow Thiran once, because it's a new app that Apple hasn't checked (notarised) yet. It takes about a minute, and you only do it once on each Mac.</p>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <h3><span class="num">1</span>Drag Thiran into Applications</h3>
+              <p>Open <b data-r="mac.file">Thiran-0.17.10-mac-universal.dmg</b>. A window called <b>Thiran <span data-r="version">0.17.10</span></b> opens. Drag <b>Thiran</b> onto <b>Applications</b>.</p>
+            </div>
+            <figure><img src="/download/images/mac-1-drag.png" width="1200" height="760" loading="lazy" alt="Thiran disk window, dragging Thiran onto Applications"></figure>
+          </div>
+          <div class="step">
+            <div>
+              <h3><span class="num">2</span>Open Thiran, then click Done</h3>
+              <p>Open Thiran from your Applications folder. macOS says <b>"Thiran" Not Opened</b> and <b>Apple could not verify "Thiran" is free of malware that may harm your Mac or compromise your privacy.</b> This is normal for an app that isn't notarised yet. Click <b>Done</b>. Don't choose Move to Trash.</p>
+            </div>
+            <figure><img src="/download/images/mac-2-cannot-verify.png" width="1200" height="760" loading="lazy" alt="macOS message 'Thiran Not Opened' with Done highlighted"></figure>
+          </div>
+          <div class="step">
+            <div>
+              <h3><span class="num">3</span>Allow it in System Settings</h3>
+              <p>Open <b>System Settings › Privacy &amp; Security</b>. Scroll down to <b>Security</b>, find <b>"Thiran" was blocked to protect your Mac.</b>, and click <b>Open Anyway</b>.</p>
+              <p>The button shows for about an hour after you try to open the app. If you don't see it, open Thiran again and come back.</p>
+            </div>
+            <figure><img src="/download/images/mac-3-open-anyway.png" width="1200" height="760" loading="lazy" alt="System Settings, Privacy &amp; Security, with Open Anyway highlighted"></figure>
+          </div>
+          <div class="step">
+            <div>
+              <h3><span class="num">4</span>Confirm</h3>
+              <p>macOS asks once more. Click <b>Open Anyway</b>, then confirm with your Mac password or Touch ID. Thiran opens, and from now on it opens normally.</p>
+            </div>
+            <figure><img src="/download/images/mac-4-confirm-open.png" width="1200" height="760" loading="lazy" alt="Open Thiran confirmation and password prompt"></figure>
+          </div>
+        </div>
+        <p class="note"><b>Older macOS:</b> on macOS 13 or 14 the wording is a little different ("can't be opened because Apple cannot check it for malicious software"), but the steps are the same: click OK, then open <b>System Settings › Privacy &amp; Security</b> and click <b>Open Anyway</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3.6 FIRST START -->
+<section class="sec" id="first-start">
+  <div class="wrap">
+    <div class="lab">After installing</div>
+    <h2>Your first start</h2>
+    <div class="fs">
+      <ul>
+        <li><b>Sign in, or create an account.</b> Use <b>Continue with Google</b>, or your email and a password. New to Thiran? Click <b>Create an account</b>, and confirm your email address when asked.</li>
+        <li><b>Thiran checks the licence for this computer.</b> This needs an internet connection the first time.</li>
+        <li><b>Your 7-day free trial.</b>
+          <ul>
+            <li>A new account gets 7 days of the full version: every feature, with no card needed.</li>
+            <li>The bar at the top shows <b>Trial: N days left.</b></li>
+            <li>The 7 days start the first time you use Thiran.</li>
+            <li>There is one trial per person and per computer.</li>
+          </ul></li>
+        <li><b>After the trial.</b> Your drawings and markups are all kept, and you can still view and download them. You need a licence to edit.</li>
+        <li><b>Buying</b> (owners and admins of your organisation):
+          <ul>
+            <li>Click <b>Buy</b> in the trial bar, or open <b>Help › Licence and devices › Billing</b>.</li>
+            <li>Choose <b>Yearly</b> or <b>Monthly</b> and the number of computers, then click <b>Continue to payment</b>. Payment opens in your browser.</li>
+            <li>Back in Thiran, your licence is picked up within a few moments.</li>
+            <li>Other members of your organisation should ask their owner or an admin for a licence.</li>
+          </ul></li>
+        <li><b>Prices.</b> In US dollars. GST is included for Australian customers, and nothing is added on top.
+          <div class="price"><span>US$199 per computer per year</span><span>US$19.90 per computer per month</span></div>
+          Buying 6 or more computers gives a volume discount on each one, up to 20% off. This is optional; the app shows the exact price.</li>
+        <li><b>Manage billing</b> (in the same place) lets you change the plan, the number of computers or the card, and see your invoices.</li>
+      </ul>
+      <figure class="card" style="padding:0;overflow:hidden;margin:0"><img src="/download/images/first-start.png" width="1200" height="760" loading="lazy" alt="Thiran sign-in screen, trial bar with Buy, and the Buy screen"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 3.7 UPDATES -->
+<section class="sec" id="updates">
+  <div class="wrap">
+    <h2>Updates</h2>
+    <div class="grid3" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div class="card"><h3>Windows</h3><p>Thiran updates itself. It downloads new versions in the background and shows <b>Restart to update</b>. If you don't restart, the update installs the next time you close Thiran.</p></div>
+      <div class="card" data-section="mac-updates"><h3>Mac</h3><p>For now, you install a new version yourself. Download it from this page and drag it into Applications again, replacing the old one. Your account and work aren't affected.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3.8 SAFE -->
+<section class="sec" id="safe">
+  <div class="wrap">
+    <h2>Is it safe?</h2>
+    <div class="card">
+      <h3 style="font-size:17px;margin-bottom:6px">Why the warning?</h3>
+      <p class="muted" style="margin:0 0 20px">Thiran is a new app. Windows and macOS show these warnings for apps whose installers aren't yet signed (Windows) or notarised by Apple (Mac). The warning means the system couldn't check the app, not that it found anything wrong. We're working on signing.</p>
+
+      <h3 style="font-size:17px;margin-bottom:6px">Check your download (optional)</h3>
+      <p class="muted" style="margin:0 0 6px">Each file has a SHA-256 fingerprint. If yours matches, you have exactly the file we published.</p>
+
+      <p style="margin:14px 0 0;font-weight:600">Windows <code data-r="windows.file">Thiran-Setup-0.17.10.exe</code></p>
+      <div class="hash"><code data-r="windows.sha256">8e6161283301da7b9ffdc75f77b321ad48a3f6609d0146350c93dc7ee129e2a9</code><button class="copy" data-copy="windows.sha256">Copy</button></div>
+      <p class="muted" style="margin:0;font-size:14.5px">To check on Windows, run this in PowerShell:</p>
+      <code class="cmd">Get-FileHash .\<span data-r="windows.file">Thiran-Setup-0.17.10.exe</span></code>
+
+      <p style="margin:14px 0 0;font-weight:600">Mac <code data-r="mac.file">Thiran-0.17.10-mac-universal.dmg</code></p>
+      <div class="hash"><code data-r="mac.sha256">c39aa7b256d59de8a3ca67ae3426d97544c6334d15bb38251052a2671d49bcf5</code><button class="copy" data-copy="mac.sha256">Copy</button></div>
+      <p class="muted" style="margin:0;font-size:14.5px">To check on Mac, run this in Terminal:</p>
+      <code class="cmd">shasum -a 256 ~/Downloads/<span data-r="mac.file">Thiran-0.17.10-mac-universal.dmg</span></code>
+    </div>
+  </div>
+</section>
+
+<!-- 3.9 HELP -->
+<section class="sec" id="help">
+  <div class="wrap">
+    <div class="card browser">
+      <div><h2>Need a hand?</h2><p>Stuck, or something looks different from these pictures? Email us at <a href="mailto:we@tensi.ai"><b>we@tensi.ai</b></a> and we'll help.</p></div>
+      <a class="btn-o" href="mailto:we@tensi.ai">Email we@tensi.ai</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div><div>Thiran by Tensi.ai</div><div>© 2026 Tensi Pty Ltd</div></div>
+      <div><a href="https://my.thiran.app/legal/#privacy">Privacy Policy</a> · <a href="https://my.thiran.app/legal/#terms">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var R = window.THIRAN_RELEASE;
+  function get(path){ return path.split('.').reduce(function(o,k){ return o && o[k]; }, R); }
+
+  /* Fill every [data-r] from the release data */
+  document.querySelectorAll('[data-r]').forEach(function(el){
+    var v = get(el.getAttribute('data-r')); if (v != null) el.textContent = v;
+  });
+
+  /* Download buttons */
+  var bw = document.getElementById('btn-windows'), bm = document.getElementById('btn-mac');
+  bw.href = R.windows.url; bm.href = R.mac.url;
+
+
+
+  /* Detect operating system */
+  function detect(){
+    var p = '';
+    try { if (navigator.userAgentData && navigator.userAgentData.platform) p = navigator.userAgentData.platform; } catch(e){}
+    if (!p) p = navigator.userAgent || '';
+    p = p.toLowerCase();
+    if (/iphone|ipad|ipod|android/.test(navigator.userAgent.toLowerCase())) return 'other';
+    if (p.indexOf('win') > -1) return 'windows';
+    if (p.indexOf('mac') > -1) return 'mac';
+    return 'other';
+  }
+  var os = detect(), dl = document.getElementById('dl');
+  if (os === 'mac') {
+    dl.insertBefore(bm, bw);
+    bm.className = 'dlbtn primary'; bw.className = 'dlbtn outline';
+  } else if (os === 'other') {
+    bw.className = 'dlbtn outline'; bm.className = 'dlbtn outline';
+    document.getElementById('other').classList.add('show');
+  }
+
+  /* Install tabs */
+  var tabs = { windows: document.getElementById('tab-windows'), mac: document.getElementById('tab-mac') };
+  var panels = { windows: document.getElementById('install-windows'), mac: document.getElementById('install-mac') };
+  function show(k){
+    Object.keys(tabs).forEach(function(n){
+      tabs[n].setAttribute('aria-selected', n === k ? 'true' : 'false');
+      panels[n].hidden = n !== k;
+    });
+  }
+  tabs.windows.onclick = function(){ show('windows'); };
+  tabs.mac.onclick = function(){ show('mac'); };
+  show(os === 'mac' ? 'mac' : 'windows');
+
+  /* After a download click, scroll gently to the matching steps */
+  [bw, bm].forEach(function(b){
+    b.addEventListener('click', function(){
+      var k = b.getAttribute('data-os');
+      setTimeout(function(){
+        show(k);
+        var t = document.getElementById('install');
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var first = panels[k].querySelector('.step');
+        if (first){ first.classList.remove('flash'); void first.offsetWidth; first.classList.add('flash'); }
+      }, 400);
+    });
+  });
+
+  /* Copy buttons */
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = get(b.getAttribute('data-copy'));
+      function ok(){ b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function(){ b.textContent = 'Copy'; b.classList.remove('done'); }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(ok, function(){});
+      else { var t = document.createElement('textarea'); t.value = v; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); ok(); } catch(e){} t.remove(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
