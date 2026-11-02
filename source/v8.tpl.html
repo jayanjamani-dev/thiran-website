@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-mode="light">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -236,7 +236,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 /* HERO v2: always one screen tall, photo edge to edge */
 .hero2{position:relative;overflow:hidden;background:var(--hbg);container-type:inline-size;display:flex;flex-direction:column}
 :root{--hbg:#f3e6d6}[data-mode="dark"]{--hbg:#16110d}
-.h2img{position:relative;width:100%;aspect-ratio:4196/1420;margin-top:-90px}
+.h2img{position:relative;width:100%;aspect-ratio:4196/1420;margin-top:-34px}
 .h2img>.photo{display:block;width:100%;height:100%}
 .h2tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--hbg) 0,rgba(0,0,0,0) 11%),linear-gradient(0deg,var(--bg) 0%,rgba(0,0,0,0) 6%)}
 @media(max-width:760px){#heroScr .toast{display:none}}
@@ -244,9 +244,11 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .h2top{position:relative;z-index:3;order:-1}
 .hero2 .hd{padding:12px 0}
 .hero2 .hcopy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:min(4vh,40px) 0 min(3vh,28px)}.hero2 .hcopy>a{margin-top:6px}.hero2 .hcopy>div{margin-top:-4px!important}
-.hero2 .hcopy h1{font-size:min(3.1cqw,50px);line-height:1.08}
+.hero2 .hcopy .hbig{font-size:min(3.1cqw,50px);line-height:1.08}
+.hero2 .hcopy .hkw{margin:0;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.hsub{margin:0;max-width:780px;font-size:15px;line-height:1.55;color:var(--muted)}
 .js .h2img>.photo{animation:kb 2.4s cubic-bezier(.2,.8,.2,1) both}
-@media (max-width:900px){.h2img{width:150%;margin-left:-25%;margin-top:-30px}.h2top{position:relative}.hero2 .hcopy h1{font-size:34px}}
+@media (max-width:900px){.h2img{width:150%;margin-left:-25%;margin-top:-30px}.h2top{position:relative}.hero2 .hcopy .hbig{font-size:34px}}
 #job .panel{position:relative;overflow:hidden;max-width:1352px;margin:40px auto;border-radius:40px;background:#141414;color:#f6ebdc}
 #job .panel .jdots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1.1px,transparent 1.5px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 50%,#000 30%,transparent 92%)}
 #job .jglow{position:absolute;width:50%;height:60%;border-radius:50%;filter:blur(80px);background:rgba(217,99,30,.16);left:-10%;top:10%;animation:dr 24s ease-in-out infinite alternate}
@@ -317,6 +319,19 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .save{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#e3effb;color:#1f5f9e;font-size:12.5px;font-weight:700;margin-left:10px;transition:opacity .3s}
 @media (max-width:900px){.hright{gap:12px}}
 @media (max-width:1250px){.hfloat{display:none!important}}
+
+/* everything + guides (SEO, Nov 2026) */
+.every{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ev{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:22px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s,box-shadow .3s}
+.ev:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--line),0 18px 40px -20px var(--shadow)}
+.ev h3{margin:0;font-size:17px;font-weight:600}.ev p{margin:0;font-size:14.5px;line-height:1.55;flex:1}
+.evg{font-size:14px;font-weight:500;color:var(--acc)}
+.glist{display:flex;flex-direction:column;border-radius:22px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
+.glist a{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;border-top:1px solid var(--line);font-size:17px}
+.glist a:first-child{border-top:0}.glist a:hover{color:var(--acc)}
+@media (max-width:1100px){.every{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.every{grid-template-columns:1fr}}
+img{height:auto}
 </style>
 </head>
 <body>
@@ -343,12 +358,14 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div class="wrap">
         <header class="hd">
           <a class="lock" href="#"><img class="mk" src="a/mark-m7-tight.png" data-d="png/light/brand/brand-mark-m1@1x.png" alt=""><span class="word">thiran</span></a>
-          <div class="hright"><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><nav class="nav"><a href="#job">Features</a><a href="#pricing">Pricing</a></nav><a class="hide-s" href="https://my.thiran.app" style="font-size:14px;font-weight:500;padding:10px 4px">Sign in</a><a class="btn btn-o btn-s" href="/download">Download</a></div>
+          <div class="hright"><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><nav class="nav"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a></nav><a class="hide-s" href="https://my.thiran.app" style="font-size:14px;font-weight:500;padding:10px 4px">Sign in</a><a class="btn btn-o btn-s" href="/download">Download</a></div>
         </header>
         <div class="hcopy">
-          <h1 class="disp">Mark up. Measure.<br><em>Do more on every drawing.</em></h1>
+          <h1 class="hkw">PDF markup software for construction drawings</h1>
+          <div class="disp hbig">Mark up. Measure.<br><em>Do more on every drawing.</em></div>
+          <p class="hsub">Annotate, redline, measure and compare PDF drawings in one tool. Runs on Mac, Windows and the web.</p>
           <a class="btn btn-p" href="https://my.thiran.app">Start your 7-day free trial</a>
-          <div style="font-size:13px;opacity:.8;margin-top:-6px">No credit card needed</div>
+          <div style="font-size:13px;opacity:.8;margin-top:-6px">No credit card needed · Mac · Windows · Web</div>
         </div>
     </div>
   </div>
@@ -368,6 +385,14 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
       <div class="chip bob3" style="position:absolute;right:150px;top:470px"><img src="png/light/brand/brand-mark-m1--48@1x.png" alt=""><span><b>Supply diffusers × 48</b><br>Added to takeoff</span></div>
       <div class="chip bob" style="position:absolute;left:24px;top:30px"><img src="png/light/brand/brand-mark-m1--48@1x.png" alt=""><span><b>Photo pinned</b><br>Grid C4 · facing north-east</span></div>
     </div>
+  </div>
+</section>
+
+<!-- EVERYTHING ON A DRAWING -->
+<section class="bgsec sec" id="everything" style="padding-top:20px">
+  <div class="wrap" style="position:relative">
+    <div style="text-align:center;margin-bottom:40px"><div class="lab">PDF markup and takeoff</div><h2 class="disp h2" style="margin-top:8px">Everything you do on a drawing, <em>in one place.</em></h2></div>
+    <div class="every"><a class="ev" href="/guides/annotate-and-redline-a-pdf-drawing"><h3>Mark up and redline.</h3><p class="muted">Revision clouds, callouts, text, stamps and freehand pen, saved inside the PDF so anyone can open them.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/set-the-scale-on-a-pdf-drawing"><h3>Set the scale once.</h3><p class="muted">The scale is read from the drawing when it opens. Calibrate from a known distance when a sheet was printed at the wrong size.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/measure-areas-and-lengths-on-a-pdf"><h3>Measure to scale.</h3><p class="muted">Lengths, runs, areas and volumes, totalled as you go.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/compare-two-drawing-revisions"><h3>Compare revisions.</h3><p class="muted">Every change between two revisions, traced and listed. Keep the ones that matter and cloud them.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/count-symbols-and-export-quantities-to-excel"><h3>Count and export.</h3><p class="muted">Count symbols with a click, or find every copy at once, then send the quantities to Excel.</p><span class="evg">Read the guide →</span></a></div>
   </div>
 </section>
 
@@ -489,6 +514,15 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   </div>
 </section>
 
+<!-- GUIDES -->
+<section class="bgsec sec" id="guides" style="padding-top:20px;padding-bottom:40px">
+  <div class="wrap" style="position:relative;max-width:1060px">
+    <div style="text-align:center;margin-bottom:30px"><div class="lab">Guides</div><h2 class="disp h2" style="margin-top:8px">Guides to PDF markup <em>and takeoff</em></h2><p class="muted" style="margin:10px 0 0">Step-by-step help for the jobs you do every day.</p></div>
+    <div class="glist"><a href="/guides/annotate-and-redline-a-pdf-drawing"><span>How to annotate and redline a PDF drawing</span><span aria-hidden="true">→</span></a><a href="/guides/set-the-scale-on-a-pdf-drawing"><span>How to set the scale on a PDF drawing</span><span aria-hidden="true">→</span></a><a href="/guides/measure-areas-and-lengths-on-a-pdf"><span>How to measure areas and lengths on a PDF</span><span aria-hidden="true">→</span></a><a href="/guides/compare-two-drawing-revisions"><span>How to compare two drawing revisions</span><span aria-hidden="true">→</span></a><a href="/guides/count-symbols-and-export-quantities-to-excel"><span>How to count symbols and export quantities to Excel</span><span aria-hidden="true">→</span></a></div>
+    <div style="text-align:center;margin-top:26px"><a class="btn btn-o" href="/guides">See all guides</a></div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="bgsec sec" style="padding-top:30px">
   <div class="bg wash"></div><div class="blobs"><i></i><i></i><i></i></div><div class="bg dots" style="-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 60%,#000 20%,transparent 80%)"></div>
@@ -518,7 +552,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 <footer class="bgsec">
   <div class="bg" style="background:radial-gradient(60% 80% at 80% 100%,var(--wash1),transparent 70%),var(--bg)"></div><div class="bg dots" style="-webkit-mask-image:linear-gradient(0deg,#000,transparent 70%)"></div>
   <div class="wrap" style="position:relative;padding-top:40px;padding-bottom:30px">
-    <div style="display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;font-size:14px"><div class="muted"><div>Thiran by Tensi.ai</div><div style="font-size:13px">© 2026 Tensi Pty Ltd</div><div style="font-size:13px;margin-top:6px"><a href="https://my.thiran.app/legal/#privacy" style="text-decoration:underline">Privacy Policy</a> · <a href="https://my.thiran.app/legal/#terms" style="text-decoration:underline">Terms of Use</a></div></div><div class="fcols"><div><b>Product</b><a href="#job">Features</a><a href="#tools">Takeoff</a><a href="#reads">Revisions</a><a href="#live">Collaboration</a><a href="#site">Platforms</a><a href="#tools">Security</a></div><div><b>Company</b><a href="mailto:we@tensi.ai">Contact</a><a href="https://my.thiran.app">Sign in</a><a href="/download">Download</a></div><div class="legal"><b>Legal</b><a href="https://my.thiran.app/legal/#licence">Licence</a><a href="https://my.thiran.app/legal/#terms">Terms of Use</a><a href="https://my.thiran.app/legal/#acceptable-use">Acceptable Use</a><a href="https://my.thiran.app/legal/#privacy">Privacy Policy</a><a href="https://my.thiran.app/legal/#contact">Contact</a></div></div></div>
+    <div style="display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;font-size:14px"><div class="muted"><div>Thiran by Tensi.ai</div><div style="font-size:13px">© 2026 Tensi Pty Ltd</div><div style="font-size:13px;margin-top:6px"><a href="https://my.thiran.app/legal/#privacy" style="text-decoration:underline">Privacy Policy</a> · <a href="https://my.thiran.app/legal/#terms" style="text-decoration:underline">Terms of Use</a></div></div><div class="fcols"><div><b>Product</b><a href="#job">Features</a><a href="#tools">Takeoff</a><a href="#reads">Revisions</a><a href="#live">Collaboration</a><a href="#site">Platforms</a><a href="#tools">Security</a><a href="/guides">Guides</a></div><div><b>Company</b><a href="mailto:we@tensi.ai">Contact</a><a href="https://my.thiran.app">Sign in</a><a href="/download">Download</a></div><div class="legal"><b>Legal</b><a href="https://my.thiran.app/legal/#licence">Licence</a><a href="https://my.thiran.app/legal/#terms">Terms of Use</a><a href="https://my.thiran.app/legal/#acceptable-use">Acceptable Use</a><a href="https://my.thiran.app/legal/#privacy">Privacy Policy</a><a href="https://my.thiran.app/legal/#contact">Contact</a></div></div></div>
     <div class="fword" style="margin-top:30px;font-family:'Thiran Open Sans','Open Sans',sans-serif;font-weight:300;letter-spacing:-.03em;line-height:.95;font-size:clamp(80px,13vw,190px);color:#d9631e;overflow:hidden"><span>t</span><span>h</span><span>i</span><span>r</span><span>a</span><span>n</span></div>
   </div>
 </footer>
@@ -584,7 +618,8 @@ const FQ=[['Can I create schedules directly on a PDF?','Yes. Start from a built-
 ['Can I export and import markups?','Yes. Export the Register to Excel, CSV or a PDF summary, and import or export markups as XFDF or FDF.'],
 ['Does thiran work in the browser?','Yes. It runs in any modern browser and as a desktop app for Windows and Mac. It’s the same app everywhere.'],
 ['Do my files stay on my device?','Yes. Files open on your own device and stay there unless you put them in a cloud project.'],
-['Can I work offline?','Yes. Once your device is activated, thiran works offline for 30 days.']];
+['Can I work offline?','Yes. Once your device is activated, thiran works offline for 30 days.'],
+['Will my markups open in other PDF readers?','Yes. Markups are saved inside the PDF, so the people you send it to see them in their usual PDF reader.']];
 const qs=$('#qs');let typer=null;
 FQ.forEach((q,i)=>{const b=document.createElement('button');b.className='q';b.textContent=q[0];b.onclick=()=>ask(i);qs.appendChild(b)});
 function ask(i){$$('#qs .q').forEach((b,j)=>b.classList.toggle('on',j===i));$('#qa').textContent=FQ[i][0];const a=$('#ans'),txt=FQ[i][1];clearInterval(typer);let c=0;a.innerHTML='<span class="caret"></span>';typer=setInterval(()=>{c+=2;a.innerHTML=txt.slice(0,c)+'<span class="caret"></span>';if(c>=txt.length)clearInterval(typer)},16)}

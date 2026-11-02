@@ -1,11 +1,26 @@
 <!doctype html>
-<html lang="en-AU" data-mode="light">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thiran: PDF markup and takeoff for construction</title>
-<meta name="description" content="Mark up, measure and review construction drawings in one place. Try every feature free for 7 days, no card needed.">
+<title>Thiran: PDF markup and takeoff for construction drawings</title>
+<meta name="description" content="Mark up, measure and compare construction drawings on Mac, Windows and the web. PDF markup, annotation and takeoff in one tool. Try it free for 7 days.">
+<link rel="canonical" href="https://thiran.app/">
 <link rel="icon" href="assets/brand-mark-m1--48-69edfdd0.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thiran">
+<meta property="og:title" content="Thiran: PDF markup and takeoff for construction drawings">
+<meta property="og:description" content="Mark up, measure and compare construction drawings on Mac, Windows and the web. PDF markup, annotation and takeoff in one tool. Try it free for 7 days.">
+<meta property="og:url" content="https://thiran.app/">
+<meta property="og:image" content="https://thiran.app/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thiran with a revision cloud and callout on a construction drawing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thiran: PDF markup and takeoff for construction drawings">
+<meta name="twitter:description" content="Mark up, measure and compare construction drawings on Mac, Windows and the web. PDF markup, annotation and takeoff in one tool. Try it free for 7 days.">
+<meta name="twitter:image" content="https://thiran.app/og/home.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Thiran","url":"https://thiran.app/","description":"PDF markup and takeoff software for construction drawings. Annotate, redline, measure and compare PDF drawings in one tool.","applicationCategory":"BusinessApplication","applicationSubCategory":"PDF markup and takeoff","operatingSystem":"Windows, macOS, Web","image":"https://thiran.app/og/home.jpg","downloadUrl":"https://thiran.app/download","inLanguage":"en","publisher":{"@id":"https://tensi.ai/#org"},"offers":[{"@type":"Offer","name":"Annual licence, per device","price":"199.00","priceCurrency":"USD","url":"https://thiran.app/#pricing"},{"@type":"Offer","name":"Monthly licence, per device","price":"19.90","priceCurrency":"USD","url":"https://thiran.app/#pricing"}]},{"@type":"Organization","@id":"https://tensi.ai/#org","name":"Tensi.ai","legalName":"Tensi Pty Ltd","url":"https://tensi.ai","email":"we@tensi.ai"},{"@type":"WebSite","name":"Thiran","url":"https://thiran.app/","inLanguage":"en","publisher":{"@id":"https://tensi.ai/#org"}}]}</script>
 <link rel="stylesheet" href="assets/thiran-ui.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
 <style>
@@ -238,7 +253,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 /* HERO v2: always one screen tall, photo edge to edge */
 .hero2{position:relative;overflow:hidden;background:var(--hbg);container-type:inline-size;display:flex;flex-direction:column}
 :root{--hbg:#f3e6d6}[data-mode="dark"]{--hbg:#16110d}
-.h2img{position:relative;width:100%;aspect-ratio:4196/1420;margin-top:-90px}
+.h2img{position:relative;width:100%;aspect-ratio:4196/1420;margin-top:-34px}
 .h2img>.photo{display:block;width:100%;height:100%}
 .h2tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--hbg) 0,rgba(0,0,0,0) 11%),linear-gradient(0deg,var(--bg) 0%,rgba(0,0,0,0) 6%)}
 @media(max-width:760px){#heroScr .toast{display:none}}
@@ -246,9 +261,11 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .h2top{position:relative;z-index:3;order:-1}
 .hero2 .hd{padding:12px 0}
 .hero2 .hcopy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:min(4vh,40px) 0 min(3vh,28px)}.hero2 .hcopy>a{margin-top:6px}.hero2 .hcopy>div{margin-top:-4px!important}
-.hero2 .hcopy h1{font-size:min(3.1cqw,50px);line-height:1.08}
+.hero2 .hcopy .hbig{font-size:min(3.1cqw,50px);line-height:1.08}
+.hero2 .hcopy .hkw{margin:0;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.hsub{margin:0;max-width:780px;font-size:15px;line-height:1.55;color:var(--muted)}
 .js .h2img>.photo{animation:kb 2.4s cubic-bezier(.2,.8,.2,1) both}
-@media (max-width:900px){.h2img{width:150%;margin-left:-25%;margin-top:-30px}.h2top{position:relative}.hero2 .hcopy h1{font-size:34px}}
+@media (max-width:900px){.h2img{width:150%;margin-left:-25%;margin-top:-30px}.h2top{position:relative}.hero2 .hcopy .hbig{font-size:34px}}
 #job .panel{position:relative;overflow:hidden;max-width:1352px;margin:40px auto;border-radius:40px;background:#141414;color:#f6ebdc}
 #job .panel .jdots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1.1px,transparent 1.5px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 50%,#000 30%,transparent 92%)}
 #job .jglow{position:absolute;width:50%;height:60%;border-radius:50%;filter:blur(80px);background:rgba(217,99,30,.16);left:-10%;top:10%;animation:dr 24s ease-in-out infinite alternate}
@@ -301,7 +318,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 #job .jtbl td span{opacity:0;transition:opacity .25s}
 #job .jtbl td span.on{opacity:1}
 #job .jphoto{border-radius:10px;overflow:hidden;border:1px solid #3a3530;background:#1f1f1f;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
-#job .jphoto .jph{height:150px;background:url(assets/site-tablet-240828b4.jpg) 72% 28%/cover}
+#job .jphoto .jph{height:150px;background:url(assets/site-tablet-240828b4.webp) 72% 28%/cover}
 #job .jphoto .jmeta{padding:8px 10px;font-size:11px;color:#b9a799}
 #job .jbelow{max-width:1100px;width:100%;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:end}
 #job .jnext{font:600 15px 'Inter',sans-serif;height:46px;padding:0 22px;border-radius:999px;border:0;background:none;color:#f6ebdc;box-shadow:inset 0 0 0 1px #3a3530;cursor:pointer}
@@ -319,6 +336,19 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .save{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#e3effb;color:#1f5f9e;font-size:12.5px;font-weight:700;margin-left:10px;transition:opacity .3s}
 @media (max-width:900px){.hright{gap:12px}}
 @media (max-width:1250px){.hfloat{display:none!important}}
+
+/* everything + guides (SEO, Nov 2026) */
+.every{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ev{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:22px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s,box-shadow .3s}
+.ev:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--line),0 18px 40px -20px var(--shadow)}
+.ev h3{margin:0;font-size:17px;font-weight:600}.ev p{margin:0;font-size:14.5px;line-height:1.55;flex:1}
+.evg{font-size:14px;font-weight:500;color:var(--acc)}
+.glist{display:flex;flex-direction:column;border-radius:22px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
+.glist a{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;border-top:1px solid var(--line);font-size:17px}
+.glist a:first-child{border-top:0}.glist a:hover{color:var(--acc)}
+@media (max-width:1100px){.every{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.every{grid-template-columns:1fr}}
+img{height:auto}
 </style>
 </head>
 <body>
@@ -327,30 +357,32 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 <!-- HERO -->
 <section class="hero2">
   <div class="h2img">
-    <img class="photo" src="assets/hero-lap4-2cf74de5.jpg" alt="thiran open on a laptop at a construction site at sunset" width="4196" height="1420">
+    <img class="photo" src="assets/hero-lap4-2cf74de5.webp" alt="thiran open on a laptop at a construction site at sunset" width="4196" height="1420">
     <div class="h2tint"></div>
     <div class="scr2" id="heroScr" data-loop="9000">
-      <img class="scrimg" src="assets/hero-full-a4ddcdf5.jpg" alt="" style="left:0;top:0;width:100%;height:100%;display:block">
+      <img width="3174" height="1796" class="scrimg" src="assets/hero-full-a4ddcdf5.webp" alt="" style="left:0;top:0;width:100%;height:100%;display:block">
       <svg viewBox="0 0 1094 619" style="left:0;top:0;width:100%;height:100%;overflow:visible"><polyline id="hLine" points="215,281 348,281 348,312" fill="none" stroke="#378add" stroke-width="3" stroke-linejoin="round" stroke-dasharray="401" stroke-dashoffset="401"/><circle id="hDot" cx="348" cy="312" r="5" fill="#378add" opacity="0"/></svg>
       <div class="lbl tl" data-t="1600,8200" style="left:22%;top:58%"><span id="hVal">0.00 m</span></div>
       <svg class="curs" id="hCur" viewBox="0 0 24 24" style="left:30%;top:40%"><path d="M3 2l7 19 2-8 8-2z" fill="#fff" stroke="#121212" stroke-width="1.5"/></svg>
-      <div class="toast tlx" data-t="3600,8400" style="right:17%;top:22%"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Run length · 9.88 m</b><br>Added to the Register</span></div>
-      <div class="toast tlx" data-t="5200,8400" style="right:17%;top:36%"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Supply diffusers × 48</b><br>Found with Find Similar</span></div>
-    <div class="hfloat bob" style="left:-19%;top:30%"><div class="chip"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>What changed</b><br>Rev B → Rev C · 9 changes</span></div></div>
-    <div class="hfloat bob2" style="right:-22%;top:56%"><div class="chip"><span class="avs"><img src="assets/av2-supervisor-39f2e348.png" alt=""><img src="assets/av-consultant-16a3c97b.png" alt=""><img src="assets/av2-engineer-5d073963.png" alt=""></span><span><b>Live Markup</b><br>3 people on this drawing</span></div></div>
+      <div class="toast tlx" data-t="3600,8400" style="right:17%;top:22%"><img width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Run length · 9.88 m</b><br>Added to the Register</span></div>
+      <div class="toast tlx" data-t="5200,8400" style="right:17%;top:36%"><img width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Supply diffusers × 48</b><br>Found with Find Similar</span></div>
+    <div class="hfloat bob" style="left:-19%;top:30%"><div class="chip"><img width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>What changed</b><br>Rev B → Rev C · 9 changes</span></div></div>
+    <div class="hfloat bob2" style="right:-22%;top:56%"><div class="chip"><span class="avs"><img width="256" height="256" src="assets/av2-supervisor-39f2e348.webp" alt=""><img width="256" height="256" src="assets/av-consultant-16a3c97b.webp" alt=""><img width="256" height="256" src="assets/av2-engineer-5d073963.webp" alt=""></span><span><b>Live Markup</b><br>3 people on this drawing</span></div></div>
 
     </div>
   </div>
   <div class="h2top">
     <div class="wrap">
         <header class="hd">
-          <a class="lock" href="#"><img class="mk" src="assets/mark-m7-tight-f1127286.png" data-d="assets/brand-mark-m1-3cd4c7ad.png" alt=""><span class="word">thiran</span></a>
-          <div class="hright"><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><nav class="nav"><a href="#job">Features</a><a href="#pricing">Pricing</a></nav><a class="hide-s" href="https://my.thiran.app" style="font-size:14px;font-weight:500;padding:10px 4px">Sign in</a><a class="btn btn-o btn-s" href="/download">Download</a></div>
+          <a class="lock" href="#"><img width="64" height="53" class="mk" src="assets/mark-m7-tight-f1127286.webp" data-d="assets/brand-mark-m1-3cd4c7ad.png" alt=""><span class="word">thiran</span></a>
+          <div class="hright"><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><nav class="nav"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a></nav><a class="hide-s" href="https://my.thiran.app" style="font-size:14px;font-weight:500;padding:10px 4px">Sign in</a><a class="btn btn-o btn-s" href="/download">Download</a></div>
         </header>
         <div class="hcopy">
-          <h1 class="disp">Mark up. Measure.<br><em>Do more on every drawing.</em></h1>
+          <h1 class="hkw">PDF markup software for construction drawings</h1>
+          <div class="disp hbig">Mark up. Measure.<br><em>Do more on every drawing.</em></div>
+          <p class="hsub">Annotate, redline, measure and compare PDF drawings in one tool. Runs on Mac, Windows and the web.</p>
           <a class="btn btn-p" href="https://my.thiran.app">Start your 7-day free trial</a>
-          <div style="font-size:13px;opacity:.8;margin-top:-6px">No credit card needed</div>
+          <div style="font-size:13px;opacity:.8;margin-top:-6px">No credit card needed · Mac · Windows · Web</div>
         </div>
     </div>
   </div>
@@ -362,14 +394,22 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   <div class="wrap" style="position:relative">
     <div style="text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;margin-bottom:56px"><div class="lab">For everyone on the project</div><h2 class="disp h2">Everyone who marks up <em>a drawing.</em></h2></div>
     <div class="mosaic">
-      <div class="ph" style="left:0;top:70px;width:300px;height:400px"><img src="assets/site-thiran-92e0ac54.jpg" alt="Site team reviewing a drawing in thiran" style="object-position:38% 45%"></div>
-      <div class="ph" style="left:330px;top:0;width:560px;height:600px"><img src="assets/woman-thiran-5b981a1f.jpg" alt="Consultant marking up a drawing in thiran" style="object-position:46% 45%"></div>
-      <div class="ph" style="right:0;top:140px;width:320px;height:360px"><img src="assets/site-tablet2-bed14a4a.jpg" alt="Engineer marking up a mechanical drawing in thiran on a tablet on site" style="object-position:62% 45%"></div>
-      <div class="float bob" style="left:210px;top:420px;width:250px"><img src="assets/props-callout-fff9cffd.png" alt="" style="height:170px;object-fit:cover;object-position:top"></div>
-      <div class="chip bob2" style="position:absolute;left:760px;top:44px"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>What changed</b><br>Rev B → Rev C · 9 changes</span></div>
-      <div class="chip bob3" style="position:absolute;right:150px;top:470px"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Supply diffusers × 48</b><br>Added to takeoff</span></div>
-      <div class="chip bob" style="position:absolute;left:24px;top:30px"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Photo pinned</b><br>Grid C4 · facing north-east</span></div>
+      <div class="ph" style="left:0;top:70px;width:300px;height:400px"><img loading="lazy" decoding="async" width="1536" height="1024" src="assets/site-thiran-92e0ac54.webp" alt="Site team reviewing a drawing in thiran" style="object-position:38% 45%"></div>
+      <div class="ph" style="left:330px;top:0;width:560px;height:600px"><img loading="lazy" decoding="async" width="1536" height="1024" src="assets/woman-thiran-5b981a1f.webp" alt="Consultant marking up a drawing in thiran" style="object-position:46% 45%"></div>
+      <div class="ph" style="right:0;top:140px;width:320px;height:360px"><img loading="lazy" decoding="async" width="1535" height="1025" src="assets/site-tablet2-bed14a4a.webp" alt="Engineer marking up a mechanical drawing in thiran on a tablet on site" style="object-position:62% 45%"></div>
+      <div class="float bob" style="left:210px;top:420px;width:250px"><img loading="lazy" decoding="async" width="356" height="1058" src="assets/props-callout-fff9cffd.webp" alt="" style="height:170px;object-fit:cover;object-position:top"></div>
+      <div class="chip bob2" style="position:absolute;left:760px;top:44px"><img loading="lazy" decoding="async" width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>What changed</b><br>Rev B → Rev C · 9 changes</span></div>
+      <div class="chip bob3" style="position:absolute;right:150px;top:470px"><img loading="lazy" decoding="async" width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Supply diffusers × 48</b><br>Added to takeoff</span></div>
+      <div class="chip bob" style="position:absolute;left:24px;top:30px"><img loading="lazy" decoding="async" width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Photo pinned</b><br>Grid C4 · facing north-east</span></div>
     </div>
+  </div>
+</section>
+
+<!-- EVERYTHING ON A DRAWING -->
+<section class="bgsec sec" id="everything" style="padding-top:20px">
+  <div class="wrap" style="position:relative">
+    <div style="text-align:center;margin-bottom:40px"><div class="lab">PDF markup and takeoff</div><h2 class="disp h2" style="margin-top:8px">Everything you do on a drawing, <em>in one place.</em></h2></div>
+    <div class="every"><a class="ev" href="/guides/annotate-and-redline-a-pdf-drawing"><h3>Mark up and redline.</h3><p class="muted">Revision clouds, callouts, text, stamps and freehand pen, saved inside the PDF so anyone can open them.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/set-the-scale-on-a-pdf-drawing"><h3>Set the scale once.</h3><p class="muted">The scale is read from the drawing when it opens. Calibrate from a known distance when a sheet was printed at the wrong size.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/measure-areas-and-lengths-on-a-pdf"><h3>Measure to scale.</h3><p class="muted">Lengths, runs, areas and volumes, totalled as you go.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/compare-two-drawing-revisions"><h3>Compare revisions.</h3><p class="muted">Every change between two revisions, traced and listed. Keep the ones that matter and cloud them.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/count-symbols-and-export-quantities-to-excel"><h3>Count and export.</h3><p class="muted">Count symbols with a click, or find every copy at once, then send the quantities to Excel.</p><span class="evg">Read the guide →</span></a></div>
   </div>
 </section>
 
@@ -381,7 +421,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div style="text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center"><div class="jlab">See it work</div><h2 class="disp" style="font-size:52px;line-height:1.08;color:#f6ebdc">Pick a job. <em>See how easy it is.</em></h2></div>
     <div class="tabs" id="tabs"></div>
     <div class="jstage">
-      <div class="jclip"><div class="jscr"><img id="shot" src="assets/screen-real-v5-74ced736.jpg" alt="thiran with a drawing open"><img id="shot-cmp" src="assets/cmp-77628e24.jpg" alt="" hidden><img id="shot-m04" src="assets/m04-b0b94a43.jpg" alt="" hidden><img id="shot-main" src="assets/screen-real-v5-74ced736.jpg" alt="" hidden><div class="ov" id="ov"></div></div></div>
+      <div class="jclip"><div class="jscr"><img loading="lazy" decoding="async" width="1094" height="619" id="shot" src="assets/screen-real-v5-74ced736.webp" alt="thiran with a drawing open"><img loading="lazy" decoding="async" width="2000" height="983" id="shot-cmp" src="assets/cmp-77628e24.webp" alt="" hidden><img loading="lazy" decoding="async" width="2000" height="983" id="shot-m04" src="assets/m04-b0b94a43.webp" alt="" hidden><img loading="lazy" decoding="async" width="1094" height="619" id="shot-main" src="assets/screen-real-v5-74ced736.webp" alt="" hidden><div class="ov" id="ov"></div></div></div>
       <div class="jcap" id="cap"><b id="capn">1</b><span id="capt"></span></div>
     </div>
     <div class="jbelow">
@@ -399,13 +439,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div style="text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center"><div class="lab">Less repetition. More progress.</div><h2 class="disp h2">It reads the drawings. <em>You just check and keep.</em></h2></div>
     <div class="bento4">
       <article class="b dark" style="grid-column:span 2"><h3>What changed</h3><p>Every change listed as Changed, Added or Removed. Keep it or dismiss it.</p>
-        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;align-items:start"><div class="pulse-wrap"><img class="shot cap" src="assets/change-pins--zoomed-91d9a99c.png" alt=""><i class="ring" style="left:30%;top:42%"></i><i class="ring" style="left:72%;top:60%;animation-delay:1.2s"></i></div><div class="scan-wrap"><img class="shot cap" src="assets/compare-dark-ab3d1654.png" alt="" style="border:1px solid #3a3530"><i class="scan"></i></div></div></article>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;align-items:start"><div class="pulse-wrap"><img loading="lazy" decoding="async" width="966" height="391" class="shot cap" src="assets/change-pins--zoomed-91d9a99c.webp" alt=""><i class="ring" style="left:30%;top:42%"></i><i class="ring" style="left:72%;top:60%;animation-delay:1.2s"></i></div><div class="scan-wrap"><img loading="lazy" decoding="async" width="356" height="316" class="shot cap" src="assets/compare-dark-ab3d1654.webp" alt="" style="border:1px solid #3a3530"><i class="scan"></i></div></div></article>
       <article class="b light"><h3>Automatic legends</h3><p>A key of the symbols on the sheet.</p>
         <div style="border:1px solid #e8dfd6;border-radius:12px;overflow:hidden"><div style="padding:7px 12px;font-size:11px;font-weight:700;letter-spacing:.1em;background:#f6ebdc">LEGEND · M-201</div>
-        <div class="row lg"><img src="assets/canvas-count-cd609990.svg" alt="">Supply diffuser</div><div class="row lg"><img src="assets/canvas-cloud-4bb0ae3e.svg" alt="">Revision cloud</div><div class="row lg"><img src="assets/canvas-duct-8091640c.svg" alt="">Supply duct</div></div></article>
+        <div class="row lg"><img loading="lazy" decoding="async" src="assets/canvas-count-cd609990.svg" alt="">Supply diffuser</div><div class="row lg"><img loading="lazy" decoding="async" src="assets/canvas-cloud-4bb0ae3e.svg" alt="">Revision cloud</div><div class="row lg"><img loading="lazy" decoding="async" src="assets/canvas-duct-8091640c.svg" alt="">Supply duct</div></div></article>
       <article class="b light"><h3>Approval stamps</h3><p>Consultants approve, approve as noted or reject, then sign. Right on the drawing.</p><div class="stampw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 164" width="100%" role="img" aria-label="Approval stamp: Approved as noted" class="th-approval-stamp" style="font-family:Helvetica, Arial, sans-serif"><rect x="1.5" y="1.5" width="317" height="161" rx="6" fill="#fff" stroke="#1d4ed8" stroke-width="2.5"></rect><text x="14" y="22" font-size="13" font-weight="700" fill="#1f2937">Harbourview Mechanical</text><line x1="14" x2="306" y1="31" y2="31" stroke="#1d4ed8" stroke-width="1"></line><g transform="translate(14 42)"><rect width="11" height="11" rx="2" fill="#fff" stroke="#15803d" stroke-width="1.4"></rect><text x="18" y="9.5" font-size="11" font-weight="400" fill="#374151">Approved</text></g><g transform="translate(14 60)"><rect width="11" height="11" rx="2" fill="#1d4ed8" stroke="#1d4ed8" stroke-width="1.4"></rect><path d="M2.5 5.8l2.2 2.2 4-4.6" fill="none" stroke="#fff" stroke-width="1.8"></path><text x="18" y="9.5" font-size="11" font-weight="700" fill="#1d4ed8">Approved as noted</text></g><g transform="translate(14 78)"><rect width="11" height="11" rx="2" fill="#fff" stroke="#c2410c" stroke-width="1.4"></rect><text x="18" y="9.5" font-size="11" font-weight="400" fill="#374151">Revise and resubmit</text></g><g transform="translate(14 96)"><rect width="11" height="11" rx="2" fill="#fff" stroke="#b91c1c" stroke-width="1.4"></rect><text x="18" y="9.5" font-size="11" font-weight="400" fill="#374151">Rejected</text></g><g transform="translate(14 122)" font-size="10" fill="#374151"><text y="0"><tspan font-weight="700">M. Okafor</tspan>, Lead mechanical engineer</text><text y="15">24/10/2026 · P-1024 Harbourview Offices</text><path d="M190 6c8-14 14 10 22-2s10-12 16 0 8 6 14-4 12 4 20 0" fill="none" stroke="#1f2937" stroke-width="1.4"></path><line x1="186" x2="292" y1="14" y2="14" stroke="#9ca3af" stroke-width="0.8"></line></g></svg></div></article>
-      <article class="b dark" style="grid-column:span 2"><h3>Markup layers</h3><p>Add a layer from the Layers panel beside the drawing to group markups by trade or reviewer, then hide or lock it.</p><div class="lay-wrap"><img class="shot" src="assets/layers-real-dark-bb42e582.jpg" alt="The Layers panel beside a drawing" style="border:1px solid #3a3530"></div></article>
-      <article class="b light" style="grid-column:span 2"><div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start"><div style="display:flex;flex-direction:column;gap:10px"><h3>The scale, set for you</h3><p>Read from the view titles when you open a drawing. Change it any time, give a snapshot its own scale, and keep it on layers.</p><img class="scl" src="assets/scale-indicator-5b810dc7.png" alt="" style="width:150px"></div><img class="shot" src="assets/setscale-light-56c0a92b.png" alt="" style="border:1px solid #e8dfd6;box-shadow:0 18px 40px -20px rgba(42,29,20,.4)"></div></article>
+      <article class="b dark" style="grid-column:span 2"><h3>Markup layers</h3><p>Add a layer from the Layers panel beside the drawing to group markups by trade or reviewer, then hide or lock it.</p><div class="lay-wrap"><img loading="lazy" decoding="async" width="1146" height="376" class="shot" src="assets/layers-real-dark-bb42e582.webp" alt="The Layers panel beside a drawing" style="border:1px solid #3a3530"></div></article>
+      <article class="b light" style="grid-column:span 2"><div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start"><div style="display:flex;flex-direction:column;gap:10px"><h3>The scale, set for you</h3><p>Read from the view titles when you open a drawing. Change it any time, give a snapshot its own scale, and keep it on layers.</p><img loading="lazy" decoding="async" width="152" height="40" class="scl" src="assets/scale-indicator-5b810dc7.webp" alt="" style="width:150px"></div><img loading="lazy" decoding="async" width="438" height="409" class="shot" src="assets/setscale-light-56c0a92b.webp" alt="" style="border:1px solid #e8dfd6;box-shadow:0 18px 40px -20px rgba(42,29,20,.4)"></div></article>
     </div>
   </div>
 </section>
@@ -417,20 +457,20 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div style="text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;margin-bottom:46px"><div class="lab">Live Markup</div><h2 class="disp" style="font-size:clamp(38px,5vw,68px);line-height:1.04">Mark up together, <em>live.</em></h2><p class="muted" style="margin:0;max-width:60ch">Share a drawing or your screen, talk and chat, and bring in anyone from inside or outside the company in one click. Every markup and conversation is kept to go back to.</p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:560px"><span class="pill"><i></i>Share drawings</span><span class="pill"><i></i>Share screen</span><span class="pill"><i></i>Talk and chat</span><span class="pill"><i></i>Invite anyone</span><span class="pill"><i></i>Markup history</span></div></div>
     <div class="stage st" id="liveStage" data-loop="12000">
-      <div class="bezel"><img src="assets/screen-real-v5-74ced736.jpg" alt="Live Markup in thiran"></div>
+      <div class="bezel"><img loading="lazy" decoding="async" width="1094" height="619" src="assets/screen-real-v5-74ced736.webp" alt="Live Markup in thiran"></div>
       <div class="lcur lc1" style="left:46%;top:44%"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 2l7 19 2-8 8-2z" fill="#d9631e" stroke="#fff" stroke-width="1.5"/></svg><span style="background:#d9631e">M. Okafor · has the pen</span></div>
       <div class="lcur lc2" style="left:68%;top:62%"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 2l7 19 2-8 8-2z" fill="#378add" stroke="#fff" stroke-width="1.5"/></svg><span style="background:#378add">S. Patel · on site</span></div>
       <div class="lcur lc3" style="left:30%;top:36%"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 2l7 19 2-8 8-2z" fill="#1d9e75" stroke="#fff" stroke-width="1.5"/></svg><span style="background:#1d9e75">A. Nguyen · consultant</span></div>
       <div class="toast tl lside" data-t="300,11600" style="position:absolute;left:-34px;top:70px"><span style="width:8px;height:8px;border-radius:50%;background:#d9631e;box-shadow:0 0 0 4px rgba(217,99,30,.25)"></span><span><b>Sharing screen</b> · R. Chen</span></div>
-      <div class="toast tl lside" data-t="800,11600" style="position:absolute;right:-40px;top:60px;gap:12px"><span class="avs"><img src="assets/av2-supervisor-39f2e348.png" alt=""><img src="assets/av-consultant-16a3c97b.png" alt=""><img src="assets/av2-engineer-5d073963.png" alt=""><img src="assets/av2-architect-ebdb764c.png" alt=""></span><span class="wave"><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="toast tl lside" data-t="800,11600" style="position:absolute;right:-40px;top:60px;gap:12px"><span class="avs"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-supervisor-39f2e348.webp" alt=""><img loading="lazy" decoding="async" width="256" height="256" src="assets/av-consultant-16a3c97b.webp" alt=""><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-engineer-5d073963.webp" alt=""><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-architect-ebdb764c.webp" alt=""></span><span class="wave"><i></i><i></i><i></i><i></i><i></i></span></div>
       <div class="toast tl lside" data-t="2200,11600" style="position:absolute;right:-40px;top:122px;background:#d9631e;color:#261a11;border-color:#d9631e"><span><b>+ Invite</b> · link copied for an outside consultant</span></div>
       <div class="lside" style="position:absolute;left:-46px;bottom:70px;display:flex;flex-direction:column;gap:10px;z-index:5">
-        <div class="bub tl" data-t="3000,11600"><img src="assets/av2-engineer-5d073963.png" alt=""><span><b>S. Patel</b>Can we confirm access before the pour?</span></div>
-        <div class="bub tl" data-t="5000,11600"><img src="assets/av2-supervisor-39f2e348.png" alt=""><span><b>M. Okafor</b>Yes, note added on A-0510.</span></div>
-        <div class="bub tl" data-t="7000,11600"><img src="assets/av-consultant-16a3c97b.png" alt=""><span><b>A. Nguyen</b>Looks good from our side.</span></div>
+        <div class="bub tl" data-t="3000,11600"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-engineer-5d073963.webp" alt=""><span><b>S. Patel</b>Can we confirm access before the pour?</span></div>
+        <div class="bub tl" data-t="5000,11600"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-supervisor-39f2e348.webp" alt=""><span><b>M. Okafor</b>Yes, note added on A-0510.</span></div>
+        <div class="bub tl" data-t="7000,11600"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av-consultant-16a3c97b.webp" alt=""><span><b>A. Nguyen</b>Looks good from our side.</span></div>
       </div>
-      <div class="float tl lside" data-t="4200,11600" style="right:-46px;bottom:-30px;width:230px;position:absolute"><img src="assets/panel-live-edb61dda.png" data-d="assets/panel-live-ce04308a.png" alt=""></div>
-      <div class="toast tl" data-t="9000,11600" style="position:absolute;left:50%;bottom:-22px;transform:translateX(-50%)"><img src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Saved</b> · markups and chat kept to go back to</span></div>
+      <div class="float tl lside" data-t="4200,11600" style="right:-46px;bottom:-30px;width:230px;position:absolute"><img loading="lazy" decoding="async" width="356" height="436" src="assets/panel-live-edb61dda.webp" data-d="assets/panel-live-ce04308a.webp" alt=""></div>
+      <div class="toast tl" data-t="9000,11600" style="position:absolute;left:50%;bottom:-22px;transform:translateX(-50%)"><img loading="lazy" decoding="async" width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt=""><span><b>Saved</b> · markups and chat kept to go back to</span></div>
     </div>
   </div>
 </section>
@@ -445,10 +485,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><span class="pill"><i></i>Save your own defaults</span><span class="pill"><i></i>Tool Library</span><span class="pill"><i></i>Snap to drawing</span><span class="pill"><i></i>Keyboard shortcuts</span></div>
     <div class="two" style="width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px">
       <div class="fcard rv"><div class="lab">Your drives</div><h3 class="disp" style="font-size:23px;line-height:1.15">Open and save <em>where your files live.</em></h3>
-        <div class="drv"><img src="assets/logo-gdrive-c4706724.svg" alt="Google Drive"><span><b>Google Drive</b>Open and save back</span><svg class="sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="#d9631e" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div class="drv"><img src="assets/logo-onedrive-364b37b1.svg" alt="OneDrive"><span><b>OneDrive</b>Open and save back</span><svg class="sync" viewBox="0 0 24 24" style="animation-delay:-1.5s"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="#d9631e" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+        <div class="drv"><img loading="lazy" decoding="async" src="assets/logo-gdrive-c4706724.svg" alt="Google Drive"><span><b>Google Drive</b>Open and save back</span><svg class="sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="#d9631e" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="drv"><img loading="lazy" decoding="async" src="assets/logo-onedrive-364b37b1.svg" alt="OneDrive"><span><b>OneDrive</b>Open and save back</span><svg class="sync" viewBox="0 0 24 24" style="animation-delay:-1.5s"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M6 21v-4h4" fill="none" stroke="#d9631e" stroke-width="2" stroke-linecap="round"/></svg></div></div>
       <div class="fcard rv" style="padding-bottom:0"><div class="lab">Document tools</div><h3 class="disp" style="font-size:23px;line-height:1.15">Every PDF job, <em>built in.</em></h3>
-        <div class="menus" style="position:relative;flex:1;min-height:200px"><div class="float" style="left:0;top:0;width:64%"><img src="assets/menu-pages-light-fb46752b.png" data-d="assets/menu-pages-dark-5986ca03.png" alt=""></div><div class="float" style="right:0;top:56px;width:56%"><img src="assets/menu-file-light-51fc09c7.png" data-d="assets/menu-file-dark-c6ddb3c4.png" alt=""></div></div></div>
+        <div class="menus" style="position:relative;flex:1;min-height:200px"><div class="float" style="left:0;top:0;width:64%"><img loading="lazy" decoding="async" width="272" height="408" src="assets/menu-pages-light-fb46752b.webp" data-d="assets/menu-pages-dark-5986ca03.webp" alt=""></div><div class="float" style="right:0;top:56px;width:56%"><img loading="lazy" decoding="async" width="226" height="392" src="assets/menu-file-light-51fc09c7.webp" data-d="assets/menu-file-dark-c6ddb3c4.webp" alt=""></div></div></div>
       <div class="fcard rv"><div class="lab">Security</div><h3 class="disp" style="font-size:23px;line-height:1.15">Your files, <em>your device.</em></h3>
         <div style="display:flex;justify-content:center;padding:6px 0"><svg class="shield" width="64" height="72" viewBox="0 0 64 72"><path d="M32 3l26 10v19c0 17-11 30-26 37C17 62 6 49 6 32V13z" fill="#d9631e" opacity=".14"/><path d="M32 3l26 10v19c0 17-11 30-26 37C17 62 6 49 6 32V13z" fill="none" stroke="#d9631e" stroke-width="3"/><path d="M21 36l8 8 15-16" fill="none" stroke="#d9631e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div style="display:flex;flex-direction:column;gap:7px">
@@ -481,13 +521,22 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   <div class="wrap" style="position:relative;max-width:1320px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
     <div class="lab">On site</div><h2 class="disp h2">Mark up on site, <em>as easy as pen on paper.</em></h2>
     <div style="position:relative;margin-top:44px;width:100%;padding-bottom:40px">
-      <div class="ipad st" id="ipad"><div class="sc"><img src="assets/app2-bdf22e88.jpg" alt="thiran on a tablet with a basement plan open" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
-        <img src="assets/finishbar-light-6bfd470d.png" alt="" style="position:absolute;left:54%;bottom:18%;transform:translateX(-50%);width:42%;border-radius:12px;box-shadow:0 14px 30px -10px rgba(0,0,0,.35)"></div></div>
-      <div class="pop bob" style="left:0;top:8%"><img src="assets/av2-supervisor-39f2e348.png" alt=""><span><b>Construction supervisor</b>Pencil draws, a finger pans.</span></div>
-      <div class="pop bob2" style="left:2%;top:52%"><img src="assets/av-consultant-16a3c97b.png" alt=""><span><b>Consultant</b>Photo pins from the phone camera.</span></div>
-      <div class="pop bob3" style="right:0;top:26%"><img src="assets/av2-engineer-5d073963.png" alt=""><span><b>Engineer</b>Touch buttons to finish a measurement.</span></div>
-      <div class="pop" style="left:50%;bottom:0;transform:translateX(-50%)"><img src="assets/av2-architect-ebdb764c.png" alt=""><span><b>Architect</b>Pinch to zoom. Big sheets stay sharp.</span></div>
+      <div class="ipad st" id="ipad"><div class="sc"><img loading="lazy" decoding="async" width="2000" height="983" src="assets/app2-bdf22e88.webp" alt="thiran on a tablet with a basement plan open" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+        <img loading="lazy" decoding="async" width="424" height="62" src="assets/finishbar-light-6bfd470d.webp" alt="" style="position:absolute;left:54%;bottom:18%;transform:translateX(-50%);width:42%;border-radius:12px;box-shadow:0 14px 30px -10px rgba(0,0,0,.35)"></div></div>
+      <div class="pop bob" style="left:0;top:8%"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-supervisor-39f2e348.webp" alt=""><span><b>Construction supervisor</b>Pencil draws, a finger pans.</span></div>
+      <div class="pop bob2" style="left:2%;top:52%"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av-consultant-16a3c97b.webp" alt=""><span><b>Consultant</b>Photo pins from the phone camera.</span></div>
+      <div class="pop bob3" style="right:0;top:26%"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-engineer-5d073963.webp" alt=""><span><b>Engineer</b>Touch buttons to finish a measurement.</span></div>
+      <div class="pop" style="left:50%;bottom:0;transform:translateX(-50%)"><img loading="lazy" decoding="async" width="256" height="256" src="assets/av2-architect-ebdb764c.webp" alt=""><span><b>Architect</b>Pinch to zoom. Big sheets stay sharp.</span></div>
     </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="bgsec sec" id="guides" style="padding-top:20px;padding-bottom:40px">
+  <div class="wrap" style="position:relative;max-width:1060px">
+    <div style="text-align:center;margin-bottom:30px"><div class="lab">Guides</div><h2 class="disp h2" style="margin-top:8px">Guides to PDF markup <em>and takeoff</em></h2><p class="muted" style="margin:10px 0 0">Step-by-step help for the jobs you do every day.</p></div>
+    <div class="glist"><a href="/guides/annotate-and-redline-a-pdf-drawing"><span>How to annotate and redline a PDF drawing</span><span aria-hidden="true">→</span></a><a href="/guides/set-the-scale-on-a-pdf-drawing"><span>How to set the scale on a PDF drawing</span><span aria-hidden="true">→</span></a><a href="/guides/measure-areas-and-lengths-on-a-pdf"><span>How to measure areas and lengths on a PDF</span><span aria-hidden="true">→</span></a><a href="/guides/compare-two-drawing-revisions"><span>How to compare two drawing revisions</span><span aria-hidden="true">→</span></a><a href="/guides/count-symbols-and-export-quantities-to-excel"><span>How to count symbols and export quantities to Excel</span><span aria-hidden="true">→</span></a></div>
+    <div style="text-align:center;margin-top:26px"><a class="btn btn-o" href="/guides">See all guides</a></div>
   </div>
 </section>
 
@@ -498,14 +547,14 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     <div style="text-align:center"><div class="lab">FAQs</div><h2 class="disp" style="font-size:clamp(40px,5vw,66px);line-height:1.02;margin-top:8px">Good <em>questions.</em></h2></div>
     <div class="two rv" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:14px;border-radius:30px;background:var(--soft)">
       <div style="border-radius:20px;background:#1a1a1a;padding:20px 12px" id="qs"><div class="disp" style="font-size:22px;color:#f6ebdc;padding:2px 16px 8px">Questions</div></div>
-      <div style="padding:22px 26px;display:flex;flex-direction:column;gap:14px"><div class="disp" style="font-size:22px">Answer</div><div class="muted" id="qa" style="align-self:flex-end;font-size:14px;text-align:right"></div><div class="ans" id="ans"></div><img src="assets/brand-mark-m1--48-69edfdd0.png" alt="" style="width:30px;height:30px;border-radius:50%"></div>
+      <div style="padding:22px 26px;display:flex;flex-direction:column;gap:14px"><div class="disp" style="font-size:22px">Answer</div><div class="muted" id="qa" style="align-self:flex-end;font-size:14px;text-align:right"></div><div class="ans" id="ans"></div><img loading="lazy" decoding="async" width="64" height="64" src="assets/brand-mark-m1--48-69edfdd0.png" alt="" style="width:30px;height:30px;border-radius:50%"></div>
     </div>
   </div>
 </section>
 
 <!-- CLOSING -->
 <section style="position:relative;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">
-  <img src="assets/site-sunset-1db266d6.jpg" alt="" class="kbl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  <img loading="lazy" decoding="async" width="1916" height="821" src="assets/site-sunset-1db266d6.webp" alt="" class="kbl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 50% 50%,rgba(0,0,0,.42),rgba(0,0,0,.06) 80%)"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 86%,var(--bg) 100%)"></div>
   <svg class="g" style="mix-blend-mode:soft-light;opacity:.3"><rect width="100%" height="100%" filter="url(#fg)"/></svg>
@@ -520,7 +569,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 <footer class="bgsec">
   <div class="bg" style="background:radial-gradient(60% 80% at 80% 100%,var(--wash1),transparent 70%),var(--bg)"></div><div class="bg dots" style="-webkit-mask-image:linear-gradient(0deg,#000,transparent 70%)"></div>
   <div class="wrap" style="position:relative;padding-top:40px;padding-bottom:30px">
-    <div style="display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;font-size:14px"><div class="muted"><div>Thiran by Tensi.ai</div><div style="font-size:13px">© 2026 Tensi Pty Ltd</div><div style="font-size:13px;margin-top:6px"><a href="https://my.thiran.app/legal/#privacy" style="text-decoration:underline">Privacy Policy</a> · <a href="https://my.thiran.app/legal/#terms" style="text-decoration:underline">Terms of Use</a></div></div><div class="fcols"><div><b>Product</b><a href="#job">Features</a><a href="#tools">Takeoff</a><a href="#reads">Revisions</a><a href="#live">Collaboration</a><a href="#site">Platforms</a><a href="#tools">Security</a></div><div><b>Company</b><a href="mailto:we@tensi.ai">Contact</a><a href="https://my.thiran.app">Sign in</a><a href="/download">Download</a></div><div class="legal"><b>Legal</b><a href="https://my.thiran.app/legal/#licence">Licence</a><a href="https://my.thiran.app/legal/#terms">Terms of Use</a><a href="https://my.thiran.app/legal/#acceptable-use">Acceptable Use</a><a href="https://my.thiran.app/legal/#privacy">Privacy Policy</a><a href="https://my.thiran.app/legal/#contact">Contact</a></div></div></div>
+    <div style="display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;font-size:14px"><div class="muted"><div>Thiran by Tensi.ai</div><div style="font-size:13px">© 2026 Tensi Pty Ltd</div><div style="font-size:13px;margin-top:6px"><a href="https://my.thiran.app/legal/#privacy" style="text-decoration:underline">Privacy Policy</a> · <a href="https://my.thiran.app/legal/#terms" style="text-decoration:underline">Terms of Use</a></div></div><div class="fcols"><div><b>Product</b><a href="#job">Features</a><a href="#tools">Takeoff</a><a href="#reads">Revisions</a><a href="#live">Collaboration</a><a href="#site">Platforms</a><a href="#tools">Security</a><a href="/guides">Guides</a></div><div><b>Company</b><a href="mailto:we@tensi.ai">Contact</a><a href="https://my.thiran.app">Sign in</a><a href="/download">Download</a></div><div class="legal"><b>Legal</b><a href="https://my.thiran.app/legal/#licence">Licence</a><a href="https://my.thiran.app/legal/#terms">Terms of Use</a><a href="https://my.thiran.app/legal/#acceptable-use">Acceptable Use</a><a href="https://my.thiran.app/legal/#privacy">Privacy Policy</a><a href="https://my.thiran.app/legal/#contact">Contact</a></div></div></div>
     <div class="fword" style="margin-top:30px;font-family:'Thiran Open Sans','Open Sans',sans-serif;font-weight:300;letter-spacing:-.03em;line-height:.95;font-size:clamp(80px,13vw,190px);color:#d9631e;overflow:hidden"><span>t</span><span>h</span><span>i</span><span>r</span><span>a</span><span>n</span></div>
   </div>
 </footer>
@@ -564,7 +613,7 @@ function heroTick(t){
 /* tools */
 const TD=JSON.parse($('#tooldata').textContent);const ttabs=$$('#tooltabs .ltab');let curTab=1,toolTimer=null,userTool=false;
 function buildTools(k,anim=true){curTab=k;ttabs.forEach((t,j)=>t.classList.toggle('on',j===k));const m=R.dataset.mode==='dark'?'d':'l';
- $('#toolgrid').innerHTML=TD[k].map((t,i)=>`<div class="tool ${anim?'tpop':''}" style="animation-delay:${i*35}ms"><img src="${t[m]}" alt=""><span>${t.n}</span></div>`).join('');}
+ $('#toolgrid').innerHTML=TD[k].map((t,i)=>`<div class="tool ${anim?'tpop':''}" style="animation-delay:${i*35}ms"><img loading="lazy" decoding="async" src="${t[m]}" alt=""><span>${t.n}</span></div>`).join('');}
 ttabs.forEach((t,j)=>t.addEventListener('click',()=>{userTool=true;buildTools(j)}));
 let hot=0;setInterval(()=>{const g=$$('#toolgrid .tool');g.forEach(x=>x.classList.remove('hot'));if(g.length){hot=(hot+1)%g.length;g[hot].classList.add('hot')}},900);
 new IntersectionObserver(es=>es.forEach(en=>{clearInterval(toolTimer);if(en.isIntersecting){buildTools(curTab);toolTimer=setInterval(()=>{if(!userTool)buildTools((curTab+1)%TD.length)},5200)}}),{threshold:.3}).observe($('#toolgrid'));
@@ -586,7 +635,8 @@ const FQ=[['Can I create schedules directly on a PDF?','Yes. Start from a built-
 ['Can I export and import markups?','Yes. Export the Register to Excel, CSV or a PDF summary, and import or export markups as XFDF or FDF.'],
 ['Does thiran work in the browser?','Yes. It runs in any modern browser and as a desktop app for Windows and Mac. It’s the same app everywhere.'],
 ['Do my files stay on my device?','Yes. Files open on your own device and stay there unless you put them in a cloud project.'],
-['Can I work offline?','Yes. Once your device is activated, thiran works offline for 30 days.']];
+['Can I work offline?','Yes. Once your device is activated, thiran works offline for 30 days.'],
+['Will my markups open in other PDF readers?','Yes. Markups are saved inside the PDF, so the people you send it to see them in their usual PDF reader.']];
 const qs=$('#qs');let typer=null;
 FQ.forEach((q,i)=>{const b=document.createElement('button');b.className='q';b.textContent=q[0];b.onclick=()=>ask(i);qs.appendChild(b)});
 function ask(i){$$('#qs .q').forEach((b,j)=>b.classList.toggle('on',j===i));$('#qa').textContent=FQ[i][0];const a=$('#ans'),txt=FQ[i][1];clearInterval(typer);let c=0;a.innerHTML='<span class="caret"></span>';typer=setInterval(()=>{c+=2;a.innerHTML=txt.slice(0,c)+'<span class="caret"></span>';if(c>=txt.length)clearInterval(typer)},16)}

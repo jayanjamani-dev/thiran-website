@@ -1,0 +1,18 @@
+# Thiran
+
+> Thiran is PDF markup and takeoff software for construction drawings, made by Tensi.ai (Tensi Pty Ltd). Annotate, redline, measure, compare revisions and count symbols on PDF drawings. It runs on Mac, Windows and the web, with a 7-day free trial.
+
+## Main pages
+
+- [Home](https://thiran.app/): what Thiran does, features and pricing (USD, one licence per device).
+- [Download](https://thiran.app/download): the desktop app for Windows and Mac.
+- [Guides](https://thiran.app/guides): step-by-step how-tos.
+- [Sign in or start a free trial](https://my.thiran.app)
+
+## Guides
+
+- [How to annotate and redline a PDF drawing](https://thiran.app/guides/annotate-and-redline-a-pdf-drawing): Mark up a construction drawing in a few clicks: revision clouds, callouts, text and stamps, saved inside the PDF so anyone can open them. Step-by-step guide.
+- [How to set the scale on a PDF drawing](https://thiran.app/guides/set-the-scale-on-a-pdf-drawing): Set the scale on a PDF drawing so every measurement is right: pick it from a list, calibrate from a known distance, or give each detail its own scale.
+- [How to measure areas and lengths on a PDF](https://thiran.app/guides/measure-areas-and-lengths-on-a-pdf): Measure lengths, wall runs and floor areas on a PDF drawing to scale. Take out voids, add a depth for volume, and see the totals as you go. Step by step.
+- [How to compare two drawing revisions](https://thiran.app/guides/compare-two-drawing-revisions): Compare two revisions of a PDF drawing and see every change: added in blue, removed in orange. Keep or dismiss each one, then cloud the changes that matter.
+- [How to count symbols and export quantities to Excel](https://thiran.app/guides/count-symbols-and-export-quantities-to-excel): Count symbols on a PDF drawing with a click each, or find every copy at once, then export your quantities to an Excel spreadsheet or CSV. Step-by-step guide.
