@@ -33,19 +33,19 @@
    Each release: change version, date, sizes, file names and sha256 here only.
    ========================================================================== */
 window.THIRAN_RELEASE = {
-  version: '0.17.10',
-  date: '29 October 2026',
+  version: '0.17.11',
+  date: '4 November 2026',
   windows: {
     url:  'https://my.thiran.app/download/windows',
-    file: 'Thiran-Setup-0.17.10.exe',
+    file: 'Thiran-Setup-0.17.11.exe',
     size: '130 MB',
-    sha256: '8e6161283301da7b9ffdc75f77b321ad48a3f6609d0146350c93dc7ee129e2a9'
+    sha256: '3453a46ff0f2607934cfafcac67dd62c59a2fd441f1753afb217310b4241728d'
   },
   mac: {
     url:  'https://my.thiran.app/download/mac',
-    file: 'Thiran-0.17.10-mac-universal.dmg',
-    size: '250 MB',
-    sha256: 'c39aa7b256d59de8a3ca67ae3426d97544c6334d15bb38251052a2671d49bcf5'
+    file: 'Thiran-0.17.11-mac-universal.dmg',
+    size: '251 MB',
+    sha256: '43824b8fdb6dc0560b35322121467558e526bf105db2d6dd26a638cf6e2490f0'
   },
   webApp: 'https://my.thiran.app',
   support: 'we@tensi.ai'
@@ -191,7 +191,7 @@ footer a{color:var(--muted)}
         <small><span>Apple Silicon and Intel</span> · <span data-r="mac.size">250 MB</span></small>
       </a>
     </div>
-    <p class="ver">Version <span data-r="version">0.17.10</span> · <span data-r="date">29 October 2026</span></p>
+    <p class="ver">Version <span data-r="version">0.17.11</span> · <span data-r="date">4 November 2026</span></p>
     <p class="other" id="other">On a phone or another computer? Use Thiran in your browser at <a href="https://my.thiran.app">my.thiran.app</a>.</p>
   </div>
 </section>
@@ -237,10 +237,10 @@ footer a{color:var(--muted)}
         <div class="step">
           <div>
             <h3><span class="num">1</span>Open the download</h3>
-            <p>When the download finishes, click <b>Open file</b> in your browser's downloads. The file is called <b data-r="windows.file">Thiran-Setup-0.17.10.exe</b>.</p>
+            <p>When the download finishes, click <b>Open file</b> in your browser's downloads. The file is called <b data-r="windows.file">Thiran-Setup-0.17.11.exe</b>.</p>
             <p>Some browsers first say the file "isn't commonly downloaded". If yours does, choose <b>Keep</b>.</p>
           </div>
-          <figure><img src="/download/images/win-1-download.png" width="1200" height="760" loading="lazy" alt="Browser downloads list with Thiran-Setup-0.17.10.exe and Open file highlighted"></figure>
+          <figure><img src="/download/images/win-1-download.png" width="1200" height="760" loading="lazy" alt="Browser downloads list with Thiran-Setup-0.17.11.exe and Open file highlighted"></figure>
         </div>
 
         <!-- SmartScreen block: shrink to one line when Windows signing arrives -->
@@ -255,7 +255,7 @@ footer a{color:var(--muted)}
           <div class="step">
             <div>
               <h3><span class="num">3</span>Run anyway</h3>
-              <p>You'll see <b>App: <span data-r="windows.file">Thiran-Setup-0.17.10.exe</span></b> and <b>Publisher: Unknown publisher</b>. Click <b>Run anyway</b>.</p>
+              <p>You'll see <b>App: <span data-r="windows.file">Thiran-Setup-0.17.11.exe</span></b> and <b>Publisher: Unknown publisher</b>. Click <b>Run anyway</b>.</p>
             </div>
             <figure><img src="/download/images/win-3-run-anyway.png" width="1200" height="760" loading="lazy" alt="Expanded message showing Unknown publisher, with Run anyway highlighted"></figure>
           </div>
@@ -282,7 +282,7 @@ footer a{color:var(--muted)}
           <div class="step">
             <div>
               <h3><span class="num">1</span>Drag Thiran into Applications</h3>
-              <p>Open <b data-r="mac.file">Thiran-0.17.10-mac-universal.dmg</b>. A window called <b>Thiran <span data-r="version">0.17.10</span></b> opens. Drag <b>Thiran</b> onto <b>Applications</b>.</p>
+              <p>Open <b data-r="mac.file">Thiran-0.17.11-mac-universal.dmg</b>. A window called <b>Thiran <span data-r="version">0.17.11</span></b> opens. Drag <b>Thiran</b> onto <b>Applications</b>.</p>
             </div>
             <figure><img src="/download/images/mac-1-drag.png" width="1200" height="760" loading="lazy" alt="Thiran disk window, dragging Thiran onto Applications"></figure>
           </div>
@@ -371,15 +371,15 @@ footer a{color:var(--muted)}
       <h3 style="font-size:17px;margin-bottom:6px">Check your download (optional)</h3>
       <p class="muted" style="margin:0 0 6px">Each file has a SHA-256 fingerprint. If yours matches, you have exactly the file we published.</p>
 
-      <p style="margin:14px 0 0;font-weight:600">Windows <code data-r="windows.file">Thiran-Setup-0.17.10.exe</code></p>
+      <p style="margin:14px 0 0;font-weight:600">Windows <code data-r="windows.file">Thiran-Setup-0.17.11.exe</code></p>
       <div class="hash"><code data-r="windows.sha256">8e6161283301da7b9ffdc75f77b321ad48a3f6609d0146350c93dc7ee129e2a9</code><button class="copy" data-copy="windows.sha256">Copy</button></div>
       <p class="muted" style="margin:0;font-size:14.5px">To check on Windows, run this in PowerShell:</p>
-      <code class="cmd">Get-FileHash .\<span data-r="windows.file">Thiran-Setup-0.17.10.exe</span></code>
+      <code class="cmd">Get-FileHash .\<span data-r="windows.file">Thiran-Setup-0.17.11.exe</span></code>
 
-      <p style="margin:14px 0 0;font-weight:600">Mac <code data-r="mac.file">Thiran-0.17.10-mac-universal.dmg</code></p>
+      <p style="margin:14px 0 0;font-weight:600">Mac <code data-r="mac.file">Thiran-0.17.11-mac-universal.dmg</code></p>
       <div class="hash"><code data-r="mac.sha256">c39aa7b256d59de8a3ca67ae3426d97544c6334d15bb38251052a2671d49bcf5</code><button class="copy" data-copy="mac.sha256">Copy</button></div>
       <p class="muted" style="margin:0;font-size:14.5px">To check on Mac, run this in Terminal:</p>
-      <code class="cmd">shasum -a 256 ~/Downloads/<span data-r="mac.file">Thiran-0.17.10-mac-universal.dmg</span></code>
+      <code class="cmd">shasum -a 256 ~/Downloads/<span data-r="mac.file">Thiran-0.17.11-mac-universal.dmg</span></code>
     </div>
   </div>
 </section>
