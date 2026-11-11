@@ -245,7 +245,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .hero2 .hd{padding:12px 0}
 .hero2 .hcopy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:min(4vh,40px) 0 min(3vh,28px)}.hero2 .hcopy>a{margin-top:6px}.hero2 .hcopy>div{margin-top:-4px!important}
 .hero2 .hcopy .hbig{font-size:min(3.1cqw,50px);line-height:1.08}
-.hero2 .hcopy .hkw{margin:0;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.hero2 .hcopy .hkw{margin:0 0 10px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
 .hsub{margin:0;max-width:780px;font-size:15px;line-height:1.55;color:var(--muted)}
 .js .h2img>.photo{animation:kb 2.4s cubic-bezier(.2,.8,.2,1) both}
 @media (max-width:900px){.h2img{width:150%;margin-left:-25%;margin-top:-30px}.h2top{position:relative}.hero2 .hcopy .hbig{font-size:34px}}
@@ -486,14 +486,14 @@ img{height:auto}
 <section id="pricing" class="bgsec sec" style="padding-top:40px">
   <div class="bg wash"></div><div class="blobs"><i></i><i></i><i></i></div><div class="bg dots" style="-webkit-mask-image:radial-gradient(ellipse 50% 70% at 80% 50%,#000 20%,transparent 80%)"></div>
   <div class="wrap two" style="position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center">
-    <div style="display:flex;flex-direction:column;gap:14px"><div class="lab">Pricing</div><h2 class="disp h2">One licence per device. <em>Every tool included.</em></h2><p class="muted" style="margin:0">Choose annual or monthly, set your number of devices and see your price. The more devices, the bigger the discount.</p><p class="muted" style="margin:0;font-size:13px">Prices in USD, GST included for Australian customers. See the <a href="https://my.thiran.app/legal/#terms" style="text-decoration:underline">Terms of Use</a>.</p></div>
+    <div style="display:flex;flex-direction:column;gap:14px"><div class="lab">Pricing</div><h2 class="disp h2">One licence, two devices. <em>Every tool included.</em></h2><p class="muted" style="margin:0">Each licence covers one person on up to two devices. Choose monthly or annual, set your number of licences and see your price. The more licences, the bigger the discount.</p><p class="muted" style="margin:0;font-size:13px">Prices in USD, GST included for Australian customers. See the <a href="https://my.thiran.app/legal/#terms" style="text-decoration:underline">Terms of Use</a>.</p></div>
     <div class="b light rv" style="border-radius:24px;padding:28px;gap:18px;box-shadow:0 40px 80px -50px var(--shadow)">
-      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px"><div class="seg" id="seg" style="align-self:auto"><button class="on" data-p="y">Annual</button><button data-p="m">Monthly</button></div><span class="save" id="save">Saving 17% · US$39.80 a year</span></div>
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><b style="font-weight:600">Number of devices</b><div style="display:flex;gap:8px;align-items:center"><button class="stepb" id="dm" aria-label="Fewer devices">−</button><span id="nd" style="width:86px;height:46px;border-radius:10px;border:1px solid #e8dfd6;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600">1</span><button class="stepb" id="dp" aria-label="More devices">+</button></div></div>
-      <input type="range" id="rng" min="1" max="50" value="1" aria-label="Number of devices">
-      <div style="display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:15px;padding-top:6px;border-top:1px solid #e8dfd6"><span style="color:#5e5249">Volume discount</span><span id="disc">7%</span><span style="color:#5e5249">Saving vs monthly</span><span id="svm" style="color:#1f5f9e;font-weight:600">US$0.00 / year</span><span style="color:#5e5249">Price per device</span><span id="ppd">US$185.07 / year</span></div>
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px"><div class="seg" id="seg" style="align-self:auto"><button class="on" data-p="m">Monthly</button><button data-p="y">Annual</button></div><span class="save" id="save">Saving 17% · US$39.80 a year</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><b style="font-weight:600">Number of licences</b><div style="display:flex;gap:8px;align-items:center"><button class="stepb" id="dm" aria-label="Fewer licences">−</button><span id="nd" style="width:86px;height:46px;border-radius:10px;border:1px solid #e8dfd6;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600">1</span><button class="stepb" id="dp" aria-label="More licences">+</button></div></div>
+      <input type="range" id="rng" min="1" max="50" value="1" aria-label="Number of licences">
+      <div style="display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:15px;padding-top:6px;border-top:1px solid #e8dfd6"><span style="color:#5e5249">Volume discount</span><span id="disc">7%</span><span style="color:#5e5249">Saving vs monthly</span><span id="svm" style="color:#1f5f9e;font-weight:600">US$0.00 / year</span><span style="color:#5e5249">Price per licence</span><span id="ppd">US$185.07 / year</span></div>
       <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap"><span style="color:#5e5249">Total</span><span class="disp" style="font-size:44px;color:#2a1d14"><span id="tot">US$2,220.84</span><span id="per" style="font-size:15px;color:#5e5249"> per year</span></span></div>
-      <a class="btn btn-p" id="buy" href="https://my.thiran.app/?plan=annual&amp;devices=1">Buy 1 licence</a>
+      <a class="btn btn-p" id="buy" href="https://my.thiran.app/?plan=monthly&amp;devices=1">Buy 1 licence</a>
     </div>
   </div>
 </section>
@@ -601,7 +601,7 @@ ttabs.forEach((t,j)=>t.addEventListener('click',()=>{userTool=true;buildTools(j)
 let hot=0;setInterval(()=>{const g=$$('#toolgrid .tool');g.forEach(x=>x.classList.remove('hot'));if(g.length){hot=(hot+1)%g.length;g[hot].classList.add('hot')}},900);
 new IntersectionObserver(es=>es.forEach(en=>{clearInterval(toolTimer);if(en.isIntersecting){buildTools(curTab);toolTimer=setInterval(()=>{if(!userTool)buildTools((curTab+1)%TD.length)},5200)}}),{threshold:.3}).observe($('#toolgrid'));
 /* pricing */
-let n=1,per='y';const f=v=>'US$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+let n=1,per='m';const f=v=>'US$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 let shown=2220.84;
 function price(){const d=Math.min(20,Math.max(0,n-5));const base=per==='y'?199:19.90;const ppd=base*(1-d/100);const tot=ppd*n;
  $('#nd').textContent=n;{const ya=199*(1-d/100)*n,ma=19.90*(1-d/100)*12*n;$('#svm').textContent=per==='y'?f(ma-ya)+' / year':'Switch to annual to save '+f(ma-ya);$('#save').textContent=(per==='y'?'Saving 17% · ':'Save 17% · ')+f(ma-ya)+' a year';}$('#disc').textContent=d+'%';$('#ppd').textContent=f(ppd)+(per==='y'?' / year':' / month');$('#per').textContent=per==='y'?' per year':' per month';

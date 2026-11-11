@@ -4,7 +4,7 @@
 
 ## Main pages
 
-- [Home](https://thiran.app/): what Thiran does, features and pricing (USD, one licence per device).
+- [Home](https://thiran.app/): what Thiran does, features and pricing (USD; one licence covers one person on up to two devices).
 - [Download](https://thiran.app/download): the desktop app for Windows and Mac.
 - [Guides](https://thiran.app/guides): step-by-step how-tos.
 - [Sign in or start a free trial](https://my.thiran.app)

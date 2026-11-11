@@ -14,7 +14,7 @@ open(os.path.join(OUT, 'llms.txt'), 'w').write(f'''# Thiran
 
 ## Main pages
 
-- [Home]({SITE}/): what Thiran does, features and pricing (USD, one licence per device).
+- [Home]({SITE}/): what Thiran does, features and pricing (USD; one licence covers one person on up to two devices).
 - [Download]({SITE}/download): the desktop app for Windows and Mac.
 - [Guides]({SITE}/guides): step-by-step how-tos.
 - [Sign in or start a free trial](https://my.thiran.app)
