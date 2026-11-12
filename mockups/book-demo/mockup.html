@@ -1,0 +1,134 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Book a demo mockup</title>
+<style>
+@font-face{font-family:'T';src:url(../../source/kit/fonts/OpenSans-Light-latin.woff2);font-weight:300}
+@font-face{font-family:'Inter';src:url(../../source/kit/fonts/inter-latin-wght-normal.woff2);font-weight:100 900}
+:root{--bg:#F7F4EF;--sand:#F3E6D6;--ink:#2A1D14;--mute:#6E6158;--line:#E6DDD2;--org:#D9631E;--org2:#B8511A;--panel:#141414;--cream:#F6EBDC}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e9e4dc;font-family:Inter,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;padding:40px}
+.lbl{font:600 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0 0 12px 4px}
+.frame{background:var(--bg);border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(42,29,20,.12);max-width:1280px;margin:0 auto 44px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 48px}
+.lock{display:flex;align-items:center;gap:10px;font:300 24px T}.lock img{height:26px}
+nav{display:flex;gap:30px;align-items:center;font:400 15px Inter}
+.pill{background:var(--org);color:#fff;border-radius:999px;padding:12px 24px;font:500 15px Inter;display:inline-block;border:0}
+.out{border:1.5px solid var(--ink);border-radius:999px;padding:10px 20px;font:500 15px Inter}
+.note{position:relative}.note:after{content:"new";position:absolute;top:-16px;right:-6px;background:var(--org2);color:#fff;font:600 10px Inter;padding:2px 6px;border-radius:6px}
+.sec{display:grid;grid-template-columns:420px 1fr;gap:56px;padding:64px 48px 72px;border-top:1px solid var(--line)}
+.ey{font:600 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--org2)}
+h2{font:300 46px/1.1 T;letter-spacing:-.01em;margin:14px 0 18px}em{font-style:italic;color:var(--org2);font-family:'Open Sans',sans-serif;font-weight:300}
+.lede{font-size:17px;line-height:1.65;color:#4a3d33}
+.pts{list-style:none;margin:26px 0 0;display:grid;gap:14px}
+.pts li{display:flex;gap:12px;font-size:15.5px;line-height:1.5;color:#3d3027}
+.pts i{flex:0 0 22px;height:22px;border-radius:50%;background:var(--sand);color:var(--org2);font:700 12px Inter;font-style:normal;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.who{display:flex;align-items:center;gap:12px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+.who b{color:var(--ink);font-weight:600;display:block}
+.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#D9631E,#7a3410)}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 44px rgba(42,29,20,.10);display:grid;grid-template-columns:1fr 250px;overflow:hidden}
+.cal{padding:28px 30px;border-right:1px solid var(--line)}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.ch h3{font:300 24px T}.arr{display:flex;gap:6px}.arr span{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--mute)}
+.meta{display:flex;gap:16px;font-size:13px;color:var(--mute);margin-bottom:20px}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.dow span{font:600 11px Inter;letter-spacing:.08em;color:var(--mute);padding:6px 0}
+.days span{height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font:500 15px Inter;color:#c4b8ab}
+.days .ok{background:var(--sand);color:var(--ink);position:relative}
+.days .ok:after{content:"";position:absolute;bottom:8px;width:4px;height:4px;border-radius:50%;background:var(--org)}
+.days .sel{background:var(--ink);color:#fff}.days .sel:after{background:#fff}
+.tz{margin-top:18px;font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px}
+.tz b{color:var(--ink);font-weight:500;border-bottom:1px dashed var(--mute)}
+.times{padding:28px 22px;background:#FCFAF7}
+.times h4{font:500 15px Inter;margin-bottom:4px}.times p{font-size:13px;color:var(--mute);margin-bottom:16px}
+.slot{display:block;border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center;font:500 15px Inter;margin-bottom:9px;background:#fff}
+.slot.on{border-color:var(--org);display:flex;gap:6px;padding:0;overflow:hidden;background:transparent}
+.slot.on span{flex:1;padding:12px;background:var(--ink);color:#fff}.slot.on b{flex:1;padding:12px;background:var(--org);color:#fff;font-weight:500}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1280px;margin:0 auto}
+.mini{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 18px 44px rgba(42,29,20,.10)}
+.back{font-size:13px;color:var(--mute)}
+.pick{display:flex;gap:10px;align-items:center;background:var(--sand);border-radius:12px;padding:12px 14px;margin:14px 0 20px;font-size:14px}
+.pick b{font-weight:600}
+label{display:block;font:500 13px Inter;margin:0 0 6px}
+.f{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;color:#9a8d82;margin-bottom:14px;background:#fff}
+.f.fill{color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13.5px}
+.chips .on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.full{width:100%;text-align:center;padding:14px}
+.small{font-size:12px;color:var(--mute);margin-top:12px;text-align:center}
+.done{text-align:center;padding:40px 30px}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--org);color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.done h3{font:300 32px T;margin-bottom:8px}.done p{color:var(--mute);font-size:15px;line-height:1.6}
+.when{background:var(--sand);border-radius:14px;padding:16px;margin:20px 0;font-size:15px;line-height:1.6}
+.when b{font-weight:600}
+.adds{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.adds span{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;background:#fff}
+.ann{max-width:1280px;margin:0 auto 18px;display:flex;gap:14px;flex-wrap:wrap}
+.ann span{background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;color:#4a3d33}
+</style></head><body>
+
+<p class="lbl">1 · Home page: new “Book a demo” button in the menu, and a new section above Pricing</p>
+<div class="frame">
+ <div class="top"><div class="lock"><img src="../../source/a/mark-m7-tight.png">thiran</div>
+  <nav><span>Features</span><span>Guides</span><span>Pricing</span><span>Download</span><span class="out note">Book a demo</span><span class="pill">Try free for 7 days</span></nav></div>
+ <div class="sec">
+  <div>
+   <div class="ey">Book a demo</div>
+   <h2>See Thiran on <em>your</em> drawings</h2>
+   <p class="lede">Pick a time that suits you. In 20 minutes we'll show you markup, measuring and counting on a drawing like yours, and answer your questions.</p>
+   <ul class="pts">
+    <li><i>✓</i>A live video call with someone from the Thiran team</li>
+    <li><i>✓</i>Bring a PDF drawing if you like, and we'll work on it together</li>
+    <li><i>✓</i>A calendar invite and email straight away, and a reminder before the call</li>
+    <li><i>✓</i>Change or cancel any time from the email</li>
+   </ul>
+   <div class="who"><div class="av"></div><div><b>Thiran team</b>20-minute video call · free</div></div>
+  </div>
+  <div class="card">
+   <div class="cal">
+    <div class="ch"><h3>November 2026</h3><div class="arr"><span>‹</span><span>›</span></div></div>
+    <div class="meta"><span>⏱ 20 min</span><span>🎥 Video call</span></div>
+    <div class="dow"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+    <div class="days">
+     <span></span><span></span><span></span><span></span><span></span><span></span><span>1</span>
+     <span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+     <span>9</span><span>10</span><span>11</span><span>12</span><span class="ok">13</span><span>14</span><span>15</span>
+     <span class="ok">16</span><span class="ok sel">17</span><span class="ok">18</span><span class="ok">19</span><span class="ok">20</span><span>21</span><span>22</span>
+     <span class="ok">23</span><span class="ok">24</span><span class="ok">25</span><span class="ok">26</span><span class="ok">27</span><span>28</span><span>29</span>
+     <span class="ok">30</span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="tz">🌐 Times shown in <b>your time zone (Sydney, AEDT)</b></div>
+   </div>
+   <div class="times">
+    <h4>Tuesday 17 November</h4><p>Pick a time</p>
+    <span class="slot">9:00 am</span><span class="slot">9:30 am</span>
+    <span class="slot on"><span>10:30 am</span><b>Next ›</b></span>
+    <span class="slot">11:00 am</span><span class="slot">1:30 pm</span><span class="slot">2:00 pm</span><span class="slot">3:30 pm</span>
+   </div>
+  </div>
+ </div>
+</div>
+
+<p class="lbl">2 · After picking a time: a short form in the same card</p>
+<p class="lbl" style="margin-left:calc(50% + 18px);margin-top:-29px">3 · Booked: a thank-you right there, with the invite on its way</p>
+<div class="row">
+ <div class="mini">
+  <span class="back">‹ Back to times</span>
+  <div class="pick">📅 <span><b>Tue 17 Nov, 10:30 am</b> · 20 min · Sydney time</span></div>
+  <div class="two"><div><label>Your name</label><div class="f fill">Sam Lee</div></div><div><label>Work email</label><div class="f fill">sam@builder.co</div></div></div>
+  <label>Company</label><div class="f">Your company (optional)</div>
+  <label>What do you mostly work on?</label>
+  <div class="chips"><span class="on">Estimating / takeoff</span><span>Drawing review</span><span>Site / supervision</span><span>HVAC</span><span>Other</span></div>
+  <label>Anything we should know?</label><div class="f" style="height:64px">Optional</div>
+  <span class="pill full">Book my demo</span>
+  <p class="small">We use your details only to run this call.</p>
+ </div>
+ <div class="mini done">
+  <div class="tick">✓</div>
+  <h3>You're booked, Sam</h3>
+  <p>A calendar invite and confirmation are on their way to sam@builder.co.</p>
+  <div class="when"><b>Tuesday 17 November, 10:30 am</b><br>20-minute video call · link in your invite</div>
+  <div class="adds"><span>+ Google Calendar</span><span>+ Outlook</span><span>+ Apple (.ics)</span></div>
+  <p style="margin-top:20px;font-size:13px">We'll send a reminder before the call. Need a different time? Use the link in the email.</p>
+ </div>
+</div>
+</body></html>

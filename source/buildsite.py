@@ -1,6 +1,7 @@
 import re,os,json,shutil,hashlib,sys
 from PIL import Image
 OUT=sys.argv[1]; t=open('v8.tpl.html').read()
+t=t.replace('__BOOKDEMO__',open('book-demo.part.html').read())
 A=os.path.join(OUT,'assets'); os.makedirs(A,exist_ok=True)
 cache={}; DIM={}
 def asset(p):

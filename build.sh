@@ -7,6 +7,7 @@ rm -rf site && mkdir site
 (cd source && python3 buildguides.py ../site "$(cat ../site/.icon)")
 cp -r source/download site/download
 cp source/vercel.json site/vercel.json
+cp -r source/api site/api
 mkdir -p site/og && cp source/og/*.jpg site/og/ 2>/dev/null || echo "No link preview pictures yet: run node source/og/make-og.cjs, then build again"
 cp source/static/* site/
 python3 source/buildseo.py site

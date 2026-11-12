@@ -1,0 +1,343 @@
+<style>
+#demo{--bdT:'Thiran Open Sans','Open Sans',sans-serif;--card:#fff;--inv:#fff;--body:#4a3d33;--tbg:#FCFAF7;--off:#cbbfb2;--chg:#e8c9b0;--bg:#F7F4EF;--sand:#F3E6D6;--sand2:#EBD9C4;--ink:#2A1D14;--mute:#6E6158;--line:#E6DDD2;--org:#D9631E;--org2:#B8511A;--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1)}
+#demo *{box-sizing:border-box;margin:0;padding:0}
+#demo{color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:normal;-webkit-font-smoothing:antialiased;position:relative}
+[data-mode="dark"] #demo{--card:#1a1a1a;--inv:#121212;--body:#d9cbbd;--tbg:#161616;--off:#4a433d;--chg:#9a5a2c;--bg:#121212;--sand:#26201b;--sand2:#33291f;--ink:#f6ebdc;--mute:#b9a799;--line:#3a3530;--org2:#f0914f}
+[data-mode="dark"] #demo .booker{box-shadow:0 30px 70px rgba(0,0,0,.5)}
+
+#demo button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+#demo .demo{max-width:1180px;margin:0 auto;padding:40px 24px 80px}
+#demo .intro{text-align:center;max-width:700px;margin:0 auto 40px}
+#demo .ey{font:600 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--org2)}
+#demo h2{font:300 52px/1.08 var(--bdT);letter-spacing:-.01em;margin:14px 0 16px}
+#demo h2 em{font-style:italic;color:var(--org2);font-family:'Open Sans',sans-serif;font-weight:300;position:relative;white-space:nowrap}
+#demo h2 em svg{position:absolute;left:-6%;bottom:-10px;width:112%;height:18px;overflow:visible}
+#demo h2 em path{fill:none;stroke:var(--org);stroke-width:3;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;animation:bddraw 1.1s .5s var(--ease) forwards}
+@keyframes bddraw{to{stroke-dashoffset:0}}
+#demo .lede{font-size:18px;line-height:1.6;color:var(--body)}
+#demo .trust{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+#demo .trust span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;color:var(--body)}
+
+/* booker */
+#demo .booker{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 70px rgba(42,29,20,.12),0 2px 0 rgba(42,29,20,.03);display:grid;grid-template-columns:270px minmax(0,1fr) 0px;min-height:520px;overflow:hidden;transition:grid-template-columns .6s var(--ease);margin:0 auto;max-width:1000px}
+#demo .booker.has-day{grid-template-columns:270px minmax(0,1fr) 250px}
+#demo .booker.step-form,#demo .booker.step-done{grid-template-columns:270px minmax(0,1fr) 0px}
+#demo .info{padding:30px 26px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+#demo .host{display:flex;align-items:center;gap:10px}
+#demo .mark{width:44px;height:44px;border-radius:14px;background:var(--sand);display:flex;align-items:center;justify-content:center}
+#demo .mark img{height:24px}
+#demo .host small{display:block;font-size:13px;color:var(--mute)}
+#demo .info h3{font:300 28px/1.15 var(--bdT);margin-top:6px}
+#demo .facts{display:grid;gap:10px;font-size:14.5px;color:var(--body)}
+#demo .facts div{display:flex;gap:10px;align-items:center}
+#demo .ic{width:18px;height:18px;flex:0 0 18px;color:var(--mute)}
+#demo select{font:inherit;font-size:14px;color:var(--ink);border:0;background:transparent;cursor:pointer;max-width:190px;text-decoration:underline dashed var(--mute);text-underline-offset:4px;-webkit-appearance:none;appearance:none}
+#demo .chosen{margin-top:auto;border-radius:14px;background:var(--ink);color:var(--inv);padding:14px 16px;font-size:14px;line-height:1.5;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .5s var(--ease),transform .6s var(--spring);pointer-events:none;position:relative;overflow:hidden}
+#demo .chosen b{display:block;font-size:16px;font-weight:600}
+#demo .chosen.on{opacity:1;transform:none;pointer-events:auto}
+#demo .chosen.on:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);transform:translateX(-100%);animation:bdsheen 1.1s .25s var(--ease)}
+@keyframes bdsheen{to{transform:translateX(100%)}}
+#demo .chosen button{font-size:12.5px;color:var(--chg);text-decoration:underline;margin-top:6px}
+
+#demo .cal{padding:28px 30px 26px;position:relative;overflow:hidden}
+#demo .ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+#demo .ch h4{font:300 26px var(--bdT)}#demo .ch h4 span{color:var(--mute)}
+#demo .arr{display:flex;gap:6px}
+#demo .arr button{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+#demo .arr button:hover:not(:disabled){background:var(--sand);transform:scale(1.06)}
+#demo .arr button:disabled{opacity:.35;cursor:default}
+#demo .dow,#demo .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;text-align:center}
+#demo .dow span{font:600 11px Inter;letter-spacing:.08em;color:var(--mute);padding:4px 0 8px}
+#demo .days button,#demo .days i{aspect-ratio:1/1;max-height:58px;border-radius:14px;display:flex;align-items:center;justify-content:center;font:500 15px Inter;position:relative}
+#demo .days i{font-style:normal;color:var(--off)}
+#demo .days button{background:var(--sand);opacity:0;animation:bdpop .5s var(--spring) forwards;transition:background .2s,transform .25s var(--spring),color .2s}
+#demo .days button:after{content:"";position:absolute;bottom:18%;width:4px;height:4px;border-radius:50%;background:var(--org)}
+#demo .days button:hover{background:var(--sand2);transform:translateY(-2px)}
+#demo .days button.sel{background:var(--ink);color:var(--inv);transform:scale(1.06)}
+#demo .days button.sel:after{background:var(--inv)}
+#demo .days button.today:before{content:"";position:absolute;top:14%;width:14px;height:2px;border-radius:2px;background:var(--org)}
+@keyframes bdpop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+#demo .hint{margin-top:18px;font-size:13px;color:var(--mute);display:flex;align-items:center;gap:8px;transition:opacity .3s}
+#demo .hint i{width:8px;height:8px;border-radius:50%;background:var(--org);animation:bdpulse 1.8s infinite}
+@keyframes bdpulse{0%{box-shadow:0 0 0 0 rgba(217,99,30,.5)}80%,100%{box-shadow:0 0 0 10px rgba(217,99,30,0)}}
+
+#demo .times{border-left:1px solid var(--line);background:var(--tbg);overflow:hidden;min-width:0}
+#demo .tin{width:250px;padding:28px 18px 20px;height:100%;display:flex;flex-direction:column}
+#demo .th{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+#demo .th b{font:600 15px Inter}#demo .th b span{color:var(--mute);font-weight:400}
+#demo .tog{display:flex;background:var(--sand);border-radius:999px;padding:3px;font-size:12px}
+#demo .tog button{padding:4px 9px;border-radius:999px;transition:background .25s}
+#demo .tog button.on{background:var(--card);box-shadow:0 1px 3px rgba(42,29,20,.15)}
+#demo .list{overflow-y:auto;flex:1;max-height:430px;padding:2px;margin:-2px;scrollbar-width:thin}
+#demo .slot{display:flex;height:46px;margin-bottom:8px;border-radius:12px;overflow:hidden;opacity:0;transform:translateX(18px);animation:bdslin .45s var(--ease) forwards}
+@keyframes bdslin{to{opacity:1;transform:none}}
+#demo .slot .t{flex:1;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font:500 15px Inter;transition:flex .35s var(--ease),border-color .2s,background .2s,color .2s,border-radius .35s}
+#demo .slot .t:hover{border-color:var(--org)}
+#demo .slot .go{flex:0;width:0;overflow:hidden;white-space:nowrap;background:var(--org);color:#fff;font:600 14px Inter;border-radius:12px;transition:flex .35s var(--ease),margin .35s}
+#demo .slot.on .t{background:var(--ink);border-color:var(--ink);color:var(--inv)}
+#demo .slot.on .go{flex:1;margin-left:6px}
+#demo .slot.on .go:hover{background:var(--org2)}
+#demo .empty{font-size:14px;color:var(--mute);padding:20px 4px}
+
+/* panes */
+#demo .stg{position:relative;grid-column:2 / 4;grid-row:1;display:none}
+#demo .booker.step-form .stg,#demo .booker.step-done .stg{display:block}
+#demo .booker.step-form .cal,#demo .booker.step-form .times,#demo .booker.step-done .cal,#demo .booker.step-done .times{display:none}
+#demo .form{padding:30px 34px;animation:bdinR .55s var(--ease)}
+@keyframes bdinR{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+#demo .form h4{font:300 26px var(--bdT);margin-bottom:4px}#demo .form>p{color:var(--mute);font-size:14px;margin-bottom:22px}
+#demo .two2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#demo .fld{margin-bottom:16px;position:relative}
+#demo .fld label{display:block;font:500 13px Inter;margin-bottom:6px}
+#demo .fld input,#demo .fld textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card);transition:border-color .2s,box-shadow .2s;outline:none}
+#demo .fld textarea{height:70px;resize:none}
+#demo .fld input:focus,#demo .fld textarea:focus{border-color:var(--org);box-shadow:0 0 0 4px rgba(217,99,30,.12)}
+#demo .fld.bad input{border-color:#c0392b;animation:bdshake .35s}
+@keyframes bdshake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+#demo .chips{display:flex;flex-wrap:wrap;gap:8px}
+#demo .chips button{border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13.5px;background:var(--card);transition:all .25s var(--spring)}
+#demo .chips button:hover{border-color:var(--org)}
+#demo .chips button.on{background:var(--ink);border-color:var(--ink);color:var(--inv);transform:scale(1.04)}
+#demo .hp{position:absolute;left:-9999px}
+#demo .book{position:relative;width:100%;height:52px;border-radius:999px;background:var(--org);color:#fff;font:600 16px Inter;margin-top:6px;overflow:hidden;transition:transform .2s,background .2s,width .4s var(--ease)}
+#demo .book:hover{transform:translateY(-2px);background:var(--org2)}
+#demo .book .sp{display:none;width:22px;height:22px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:bdspin .8s linear infinite;margin:0 auto}
+#demo .book.load span{display:none}#demo .book.load .sp{display:block}
+@keyframes bdspin{to{transform:rotate(360deg)}}
+#demo .small{font-size:12px;color:var(--mute);text-align:center;margin-top:12px}
+
+#demo .done{padding:34px 34px 30px;text-align:center;animation:bdinR .5s var(--ease)}
+#demo .stamp{position:relative;width:min(420px,100%);height:150px;margin:0 auto 10px}
+#demo .stamp svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#demo .stamp .cloud{fill:none;stroke:var(--org);stroke-width:3;stroke-linejoin:round}
+#demo .stamp .when{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;animation:bdfadeUp .6s .2s var(--ease) forwards}
+#demo .when small{font:600 11px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--org2)}
+#demo .when b{font:300 30px/1.15 var(--bdT);margin-top:4px}
+#demo .when span{font-size:14px;color:var(--mute);margin-top:2px}
+#demo .tick{position:absolute;right:-6px;top:-8px;width:46px;height:46px;border-radius:50%;background:var(--org);color:#fff;display:flex;align-items:center;justify-content:center;transform:scale(0) rotate(-30deg);animation:bdtick .6s 1.15s var(--spring) forwards;box-shadow:0 8px 20px rgba(217,99,30,.4)}
+#demo .tick svg{position:static;width:22px;height:22px}
+#demo .tick path{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;animation:bddraw .4s 1.5s forwards}
+@keyframes bdtick{to{transform:none}}
+@keyframes bdfadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#demo .done h4{font:300 34px var(--bdT);opacity:0;animation:bdfadeUp .6s 1.2s var(--ease) forwards}
+#demo .done p{color:var(--body);font-size:15px;line-height:1.6;max-width:440px;margin:8px auto 0;opacity:0;animation:bdfadeUp .6s 1.35s var(--ease) forwards}
+#demo .count{display:inline-flex;gap:8px;align-items:center;background:var(--sand);border-radius:999px;padding:8px 16px;font-size:14px;margin-top:18px;opacity:0;animation:bdfadeUp .6s 1.5s var(--ease) forwards}
+#demo .count i{width:8px;height:8px;border-radius:50%;background:var(--org);animation:bdpulse 1.8s infinite}
+#demo .adds{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+#demo .adds a{border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;background:var(--card);opacity:0;animation:bdfadeUp .5s var(--ease) forwards;transition:border-color .2s,transform .2s}
+#demo .adds a:hover{border-color:var(--org);transform:translateY(-2px)}
+#demo .again{margin-top:20px;font-size:13px;color:var(--mute);text-decoration:underline;opacity:0;animation:bdfadeUp .5s 2s forwards}
+#demo canvas.fx{position:absolute;inset:0;pointer-events:none;z-index:5}
+
+@media (max-width:860px){
+ #demo h2{font-size:38px}#demo .lede{font-size:16px}
+ #demo .booker,#demo .booker.has-day,#demo .booker.step-form,#demo .booker.step-done{grid-template-columns:1fr;transition:none}
+ #demo .info{border-right:0;border-bottom:1px solid var(--line);padding:22px}
+ #demo .info h3{font-size:24px}#demo .chosen{display:none}#demo .chosen.on{display:block}
+ #demo .cal{padding:22px 16px}
+ #demo .times{border-left:0;border-top:1px solid var(--line);display:none}
+ #demo .booker.has-day .times{display:block}
+ #demo .tin{width:auto;padding:20px 16px}
+ #demo .list{max-height:none;display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+ #demo .stg{grid-column:1;grid-row:auto}
+ #demo .form,#demo .done{padding:24px 18px}#demo .two2{grid-template-columns:1fr}
+}
+@media (max-width:420px){#demo .demo{padding:28px 16px 60px}#demo .days{gap:4px}#demo .days button,#demo .days i{border-radius:10px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){#demo *,#demo *:before,#demo *:after{animation:none!important;transition:none!important}#demo .days button,#demo .slot,#demo .stamp .when,#demo .done h4,#demo .done p,#demo .count,#demo .adds a,#demo .again,#demo .tick,#demo .form,#demo .done{opacity:1!important;transform:none!important}#demo .tick path,#demo h2 em path{stroke-dashoffset:0!important}}
+#demo .bd-msg{margin-top:14px;font-size:13.5px;color:var(--org2);min-height:1em}
+#demo .ts{margin:4px 0 10px}
+#demo .days.loading:before{content:"";grid-column:1/-1;height:260px;border-radius:14px;background:linear-gradient(100deg,var(--sand) 40%,var(--sand2) 50%,var(--sand) 60%) 0 0/200% 100%;animation:bdshim 1.4s linear infinite}
+@keyframes bdshim{to{background-position:-200% 0}}
+</style>
+<section id="demo">
+ <div class="demo">
+ <div class="intro">
+  <div class="ey">Book a demo</div>
+  <h2>See Thiran on <em>your<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 25 2, 55 2, 98 6"/></svg></em> drawings</h2>
+  <p class="lede">Pick a time that suits you. In 20 minutes we'll mark up, measure and count on a drawing like yours, and answer every question.</p>
+  <div class="trust"><span>20 minutes</span><span>Free</span><span>Google Meet</span><span>Bring your own PDF</span></div>
+ </div>
+
+ <div class="booker" id="bd-bk">
+  <aside class="info">
+   <div class="host"><div class="mark"><img src="png/light/brand/brand-mark-m1--48@1x.png" alt="" width="24" height="24"></div><div>Thiran team<small>Product specialists</small></div></div>
+   <h3>Thiran demo</h3>
+   <div class="facts">
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>20 min</div>
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Google Meet video call</div>
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><select id="bd-tz" aria-label="Time zone"></select></div>
+   </div>
+   <div class="chosen" id="bd-chosen"></div>
+  </aside>
+
+  <div class="cal">
+   <div class="ch"><h4 id="bd-mon"></h4><div class="arr"><button id="bd-prev" aria-label="Previous month">‹</button><button id="bd-next" aria-label="Next month">›</button></div></div>
+   <div class="dow"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+   <div class="days loading" id="bd-days"></div>
+   <div class="hint" id="bd-hint"><i></i><span>Finding free times…</span></div>
+  </div>
+
+  <div class="times"><div class="tin">
+   <div class="th"><b id="bd-dayname"></b><div class="tog"><button id="bd-h12" class="on">12h</button><button id="bd-h24">24h</button></div></div>
+   <div class="list" id="bd-list"></div>
+  </div></div>
+
+  <div class="stg" id="bd-stage"></div>
+  <canvas class="fx" id="bd-fx"></canvas>
+ </div>
+ </div>
+</section>
+<script>
+(()=>{
+const HOST_TZ='Australia/Sydney';let MIN=20;
+const $=s=>document.querySelector(s), bk=$('#bd-bk');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let tz=HOST_TZ;try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||HOST_TZ}catch(e){}
+let h12=true, view, selDay=null, selSlot=null, role='', slots=[], siteKey='', tsToken='', tsId=null, loaded=false;
+const esc=v=>String(v).replace(/[<>&"]/g,'');
+
+// time zones
+const zones=[...new Set([tz,'Australia/Sydney','Australia/Melbourne','Australia/Brisbane','Australia/Adelaide','Australia/Perth','Pacific/Auckland','Asia/Singapore','Asia/Kolkata','Asia/Dubai','Europe/London'])];
+const zname=z=>{try{const n=new Intl.DateTimeFormat('en-AU',{timeZone:z,timeZoneName:'short'}).formatToParts(new Date()).find(p=>p.type==='timeZoneName').value;return z.split('/').pop().replace(/_/g,' ')+' ('+n+')'}catch(e){return z}};
+$('#bd-tz').innerHTML=zones.map(z=>`<option value="${z}">${zname(z)}</option>`).join('');
+$('#bd-tz').value=tz;
+
+const key=t=>t.toLocaleDateString('en-CA',{timeZone:tz});
+const byDay=()=>{const m={};slots.forEach(t=>(m[key(t)]=m[key(t)]||[]).push(t));return m};
+let days={};
+const fmtT=t=>t.toLocaleTimeString(h12?'en-US':'en-GB',{timeZone:tz,hour:'numeric',minute:'2-digit',hour12:h12}).replace(' AM',' am').replace(' PM',' pm');
+const fmtD=(t,o)=>t.toLocaleDateString('en-AU',Object.assign({timeZone:tz},o));
+const todayKey=()=>new Date().toLocaleDateString('en-CA',{timeZone:tz});
+const hint=t=>{$('#bd-hint span').textContent=t};
+
+function startView(){const k=Object.keys(days).sort()[0]||todayKey();const [y,m]=k.split('-').map(Number);view={y,m:m-1}}
+function renderCal(){
+ const {y,m}=view, first=new Date(Date.UTC(y,m,1)), lead=(first.getUTCDay()+6)%7, n=new Date(Date.UTC(y,m+1,0)).getUTCDate();
+ $('#bd-mon').innerHTML=first.toLocaleDateString('en-AU',{month:'long',timeZone:'UTC'})+' <span>'+y+'</span>';
+ let h='',idx=0;for(let i=0;i<lead;i++)h+='<i></i>';
+ for(let d=1;d<=n;d++){const k=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+  if(days[k])h+=`<button data-k="${k}" class="${k===selDay?'sel':''} ${k===todayKey()?'today':''}" style="animation-delay:${(idx++)*22}ms" aria-label="${d} ${first.toLocaleDateString('en-AU',{month:'long',timeZone:'UTC'})}, ${days[k].length} times free">${d}</button>`;
+  else h+=`<i>${d}</i>`}
+ $('#bd-days').innerHTML=loaded?h:'';
+ const t=todayKey().split('-').map(Number);$('#bd-prev').disabled=(y<t[0]||(y===t[0]&&m<=t[1]-1));
+ const lk=Object.keys(days).sort().pop();const last=(lk||todayKey()).split('-').map(Number);$('#bd-next').disabled=(y>last[0]||(y===last[0]&&m>=last[1]-1));
+}
+function renderTimes(){
+ if(!selDay)return;const list=days[selDay]||[];
+ const d=list[0];$('#bd-dayname').innerHTML=d?fmtD(d,{weekday:'short'})+' <span>'+fmtD(d,{day:'numeric',month:'short'})+'</span>':'';
+ $('#bd-list').innerHTML=list.length?list.map((t,i)=>`<div class="slot ${selSlot&&+selSlot===+t?'on':''}" style="animation-delay:${120+i*35}ms"><button class="t" data-ts="${+t}">${fmtT(t)}</button><button class="go" data-go="${+t}">Next →</button></div>`).join(''):'<p class="empty">No times left this day.</p>';
+}
+
+async function load(){
+ try{const r=await fetch('/api/slots',{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json();
+  MIN=j.len||20;siteKey=j.siteKey||'';slots=j.slots.map(s=>new Date(s));days=byDay();loaded=true;
+  $('#bd-days').classList.remove('loading');
+  hint(slots.length?'Days with a dot have free times. Pick one.':'No free times in the next three weeks. Please check back soon.');
+  if(selDay&&!days[selDay]){selDay=null;bk.classList.remove('has-day')}
+  if(!view)startView();renderCal();renderTimes();
+ }catch(e){$('#bd-days').classList.remove('loading');hint('We couldn’t load the free times. Please refresh the page to try again.');if(!view)startView();renderCal()}
+}
+
+$('#bd-days').onclick=e=>{const b=e.target.closest('button');if(!b)return;selDay=b.dataset.k;selSlot=null;
+ document.querySelectorAll('#bd-days button').forEach(x=>x.classList.toggle('sel',x===b));bk.classList.add('has-day');$('#bd-hint').style.opacity=0;renderTimes()};
+$('#bd-list').onclick=e=>{const t=e.target.closest('[data-ts]'),g=e.target.closest('[data-go]');
+ if(t){selSlot=new Date(+t.dataset.ts);document.querySelectorAll('#bd-list .slot').forEach(s=>s.classList.toggle('on',s.contains(t)))}
+ if(g)toForm()};
+$('#bd-prev').onclick=()=>{view.m--;if(view.m<0){view.m=11;view.y--}renderCal()};
+$('#bd-next').onclick=()=>{view.m++;if(view.m>11){view.m=0;view.y++}renderCal()};
+$('#bd-h12').onclick=()=>{h12=true;$('#bd-h12').classList.add('on');$('#bd-h24').classList.remove('on');renderTimes();chosen()};
+$('#bd-h24').onclick=()=>{h12=false;$('#bd-h24').classList.add('on');$('#bd-h12').classList.remove('on');renderTimes();chosen()};
+$('#bd-tz').onchange=e=>{tz=e.target.value;days=byDay();selDay=selSlot&&key(selSlot);if(!days[selDay]){selDay=null;bk.classList.remove('has-day')}startView();if(selDay){const[y,m]=selDay.split('-').map(Number);view={y,m:m-1}}renderCal();renderTimes();chosen()};
+
+function chosen(){const c=$('#bd-chosen');if(!selSlot||!bk.className.match(/step-/)){c.classList.remove('on');return}
+ c.innerHTML=`<b>${fmtD(selSlot,{weekday:'long',day:'numeric',month:'long'})}</b>${fmtT(selSlot)} – ${fmtT(new Date(+selSlot+MIN*6e4))}${bk.classList.contains('step-form')?'<br><button id="bd-chg">Change time</button>':''}`;
+ c.classList.remove('on');void c.offsetWidth;c.classList.add('on');
+ const ch=$('#bd-chg');if(ch)ch.onclick=back}
+function back(){bk.classList.remove('step-form','step-done');bk.classList.add('has-day');$('#bd-stage').innerHTML='';tsId=null;chosen();renderCal();renderTimes()}
+
+// free Cloudflare Turnstile check, only when a site key is set
+function turnstile(){
+ if(!siteKey)return;tsToken='';
+ const draw=()=>{const el=$('#bd-ts');if(el&&window.turnstile)tsId=window.turnstile.render(el,{sitekey:siteKey,appearance:'interaction-only',callback:t=>{tsToken=t},'expired-callback':()=>{tsToken=''}})};
+ if(window.turnstile)return draw();
+ if(!document.getElementById('bd-ts-js')){const s=document.createElement('script');s.id='bd-ts-js';s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';s.async=true;s.onload=draw;document.head.appendChild(s)}
+ else{const w=setInterval(()=>{if(window.turnstile){clearInterval(w);draw()}},200)}
+}
+const waitToken=()=>new Promise(r=>{if(!siteKey||tsToken)return r(tsToken);let n=0;const w=setInterval(()=>{if(tsToken||++n>40){clearInterval(w);r(tsToken)}},200)});
+
+function toForm(){
+ bk.classList.add('step-form');
+ $('#bd-stage').innerHTML=`<form class="form" id="bd-f" novalidate>
+  <h4>Almost there</h4><p>Tell us a little about you, so the demo fits your work.</p>
+  <div class="two2"><div class="fld"><label for="bd-nm">Your name</label><input id="bd-nm" autocomplete="name" placeholder="Sam Lee" maxlength="80"></div>
+  <div class="fld"><label for="bd-em">Work email</label><input id="bd-em" type="email" autocomplete="email" placeholder="sam@company.com" maxlength="120"></div></div>
+  <div class="fld"><label for="bd-co">Company <span style="color:var(--mute);font-weight:400">(optional)</span></label><input id="bd-co" autocomplete="organization" maxlength="120"></div>
+  <div class="fld"><label>What do you mostly work on?</label><div class="chips" id="bd-roles">${['Estimating and takeoff','Drawing review','Site and supervision','HVAC','Something else'].map(r=>`<button type="button" class="${r===role?'on':''}">${r}</button>`).join('')}</div></div>
+  <div class="fld"><label for="bd-nt">Anything we should know? <span style="color:var(--mute);font-weight:400">(optional)</span></label><textarea id="bd-nt" maxlength="1000" placeholder="Drawings you work with, questions, team size…"></textarea></div>
+  <input class="hp" id="bd-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="ts" id="bd-ts"></div>
+  <button class="book" id="bd-go"><span>Book my demo</span><i class="sp"></i></button>
+  <p class="bd-msg" id="bd-msg" role="status"></p>
+  <p class="small">We only use your details to run this call.</p></form>`;
+ chosen();turnstile();setTimeout(()=>$('#bd-nm').focus({preventScroll:true}),350);
+ $('#bd-roles').onclick=e=>{const b=e.target.closest('button');if(!b)return;role=b.textContent;document.querySelectorAll('#bd-roles button').forEach(x=>x.classList.toggle('on',x===b))};
+ $('#bd-f').onsubmit=async e=>{e.preventDefault();let ok=true;const b=$('#bd-go');if(b.classList.contains('load'))return;
+  [['bd-nm',v=>v.trim().length>1],['bd-em',v=>/^\S+@\S+\.\S+$/.test(v)]].forEach(([id,t])=>{const f=$('#'+id).parentNode;f.classList.remove('bad');if(!t($('#'+id).value)){void f.offsetWidth;f.classList.add('bad');ok=false}});
+  if(!ok)return;b.classList.add('load');$('#bd-msg').textContent='';
+  const name=$('#bd-nm').value.trim(), email=$('#bd-em').value.trim();
+  try{
+   const token=await waitToken();
+   const r=await fetch('/api/book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({start:selSlot.toISOString(),name,email,company:$('#bd-co').value,role,notes:$('#bd-nt').value,tz,hp:$('#bd-hp').value,token})});
+   const j=await r.json().catch(()=>({}));
+   if(r.ok&&j.ok){slots=slots.filter(t=>+t!==+selSlot);days=byDay();done(name.split(' ')[0],email);return}
+   b.classList.remove('load');$('#bd-msg').textContent=j.msg||'Something went wrong. Please try again.';
+   if(window.turnstile&&tsId!==null){try{window.turnstile.reset(tsId)}catch(_){}tsToken=''}
+   if(j.error==='taken'){slots=slots.filter(t=>+t!==+selSlot);days=byDay();setTimeout(()=>{selSlot=null;back();load()},1600)}
+  }catch(err){b.classList.remove('load');$('#bd-msg').textContent='We couldn’t reach the booking service. Please try again.'}
+ };
+}
+
+function cloud(w,h,r){const pts=[],per=2*(w+h),n=Math.round(per/(r*1.6));for(let i=0;i<n;i++){let d=i/n*per,x,y;if(d<w){x=d;y=0}else if(d<w+h){x=w;y=d-w}else if(d<2*w+h){x=w-(d-w-h);y=h}else{x=0;y=h-(d-2*w-h)}pts.push([x,y])}
+ let p=`M${pts[0][0]} ${pts[0][1]}`;pts.concat([pts[0]]).slice(1).forEach(([x,y])=>{p+=` A${r} ${r} 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}`});return p}
+
+function done(name,email){
+ bk.classList.remove('step-form');bk.classList.add('step-done');selDay=null;
+ const end=new Date(+selSlot+MIN*6e4), dd=Math.round((new Date(key(selSlot))-new Date(todayKey()))/864e5);
+ const z=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+ const gcal=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Thiran demo')}&dates=${z(selSlot)}/${z(end)}&details=${encodeURIComponent('Your Thiran demo. The Meet link is in your invite.')}`;
+ const ics=URL.createObjectURL(new Blob([`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Thiran//Demo//EN\r\nBEGIN:VEVENT\r\nUID:${+selSlot}@thiran.app\r\nDTSTAMP:${z(new Date())}\r\nDTSTART:${z(selSlot)}\r\nDTEND:${z(end)}\r\nSUMMARY:Thiran demo\r\nDESCRIPTION:The Google Meet link is in your invite email.\r\nBEGIN:VALARM\r\nTRIGGER:-PT15M\r\nACTION:DISPLAY\r\nDESCRIPTION:Thiran demo\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR`],{type:'text/calendar'}));
+ const W=400,H=130;
+ $('#bd-stage').innerHTML=`<div class="done">
+  <div class="stamp"><svg viewBox="-14 -14 ${W+28} ${H+28}" preserveAspectRatio="none"><path class="cloud" id="bd-cl" d="${cloud(W,H,13)}"/></svg>
+   <div class="when"><small>${dd<=1?(dd===1?'Tomorrow':'Today'):'In '+dd+' days'}</small><b>${fmtD(selSlot,{weekday:'long',day:'numeric',month:'long'})}</b><span>${fmtT(selSlot)} – ${fmtT(end)} · ${zname(tz)}</span></div>
+   <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
+  <h4>You're booked${name?', '+esc(name):''}!</h4>
+  <p>The calendar invite with your Google Meet link is on its way to <b>${esc(email)}</b>. We'll send a reminder the day before.</p>
+  <div class="count"><i></i>Bring a PDF drawing and we'll work on it together</div>
+  <div class="adds"><a href="${gcal}" target="_blank" rel="noopener" style="animation-delay:1.65s">+ Google Calendar</a><a href="${ics}" download="thiran-demo.ics" style="animation-delay:1.75s">+ Outlook</a><a href="${ics}" download="thiran-demo.ics" style="animation-delay:1.85s">+ Apple Calendar</a></div>
+  <button class="again" id="bd-again">Book another time</button></div>`;
+ chosen();
+ const cl=$('#bd-cl'),L=cl.getTotalLength();cl.style.strokeDasharray=L;cl.style.strokeDashoffset=L;
+ cl.animate([{strokeDashoffset:L},{strokeDashoffset:0}],{duration:reduce?1:1100,easing:'cubic-bezier(.65,0,.35,1)',fill:'forwards'});
+ $('#bd-again').onclick=()=>{selSlot=null;bk.className='booker';$('#bd-stage').innerHTML='';$('#bd-hint').style.opacity=1;chosen();renderCal();load()};
+ if(!reduce)setTimeout(burst,1150);
+}
+
+// celebration: little markup shapes (ticks, circles, arrows, dashes) in brand colours
+function burst(){const c=$('#bd-fx'),r=bk.getBoundingClientRect(),dpr=devicePixelRatio||1;c.width=r.width*dpr;c.height=r.height*dpr;const x=c.getContext('2d');x.scale(dpr,dpr);
+ const st=document.querySelector('#demo .stamp').getBoundingClientRect(),ox=st.left-r.left+st.width/2,oy=st.top-r.top+st.height/2;
+ const col=['#D9631E','#B8511A','#2A1D14','#EBD9C4','#F0A060'],P=[];
+ for(let i=0;i<70;i++){const a=Math.random()*Math.PI*2,s=4+Math.random()*7;P.push({x:ox,y:oy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-3,r:Math.random()*6.3,vr:(Math.random()-.5)*.3,c:col[i%5],k:i%4,z:5+Math.random()*6,l:1})}
+ let f=0;(function step(){x.clearRect(0,0,r.width,r.height);f++;
+  P.forEach(p=>{p.vy+=.22;p.vx*=.985;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l=Math.max(0,1-f/95);x.save();x.globalAlpha=p.l;x.translate(p.x,p.y);x.rotate(p.r);x.strokeStyle=x.fillStyle=p.c;x.lineWidth=2.4;x.lineCap='round';x.beginPath();
+   if(p.k===0){x.moveTo(-p.z*.6,0);x.lineTo(-p.z*.1,p.z*.5);x.lineTo(p.z*.7,-p.z*.5);x.stroke()}
+   else if(p.k===1){x.arc(0,0,p.z*.55,0,7);x.stroke()}
+   else if(p.k===2){x.moveTo(-p.z*.7,0);x.lineTo(p.z*.7,0);x.moveTo(p.z*.3,-p.z*.4);x.lineTo(p.z*.7,0);x.lineTo(p.z*.3,p.z*.4);x.stroke()}
+   else{x.fillRect(-p.z*.5,-p.z*.2,p.z,p.z*.4)}x.restore()});
+  if(f<95)requestAnimationFrame(step);else x.clearRect(0,0,r.width,r.height)})()}
+
+// load the free times once the section is near the screen
+const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();load()}},{rootMargin:'800px'});io.observe($('#demo'));
+startView();renderCal();
+})();
+</script>
