@@ -1,6 +1,11 @@
 # Book a demo: our own build (no paid tools)
 
-## STATUS 13 Nov 2026: built, on a test link, waiting for Jay to try it
+## LIVE 13 Nov 2026 (Jay: "yes put it live")
+- Production deploy thiran-website-64vxwc2u1-tensi.vercel.app, aliased to https://thiran.app. book-demo merged into main (fast-forward to 512f694) and pushed.
+- Live check: /api/slots gave 447 free times (every day, 9-5 plus 6-9pm Sydney); booker, fixed frosted menu and the world time zone list (406) show in light and dark mode; reminder refuses without the secret (401); honeypot refused (400). The daily reminder runs at 8am Sydney from now on.
+- Still for Jay: confirm the test invites/reminder reached jay@tensi.com.au, then cancel "Jay Test" and "Jay Teams Test" (Fri 4 Dec 11:00 and 11:30). Optional later: Turnstile, Gmail "Send mail as" we@tensi.ai.
+
+## (earlier) STATUS 13 Nov 2026: built, on a test link, waiting for Jay to try it
 - **Branch `book-demo`** in ~/motion_graphics/thiran-website (commits d57df55, 3393845). Not merged and not live.
 - **Test link:** https://thiran-website-d5htjpz8h-tensi.vercel.app/#demo (behind the Vercel sign-in).
 - **Hours (updated 13 Nov):** every day, 9–5 and 6–9pm Sydney, 20-minute calls, 10 minutes clear either side, up to 3 weeks ahead, earliest booking 12 hours from now. These are set in `source/api/_lib/demo.js` (RULES).
