@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
         `Hi${first ? ' ' + first : ''},`, '',
         `A quick reminder of your Thiran demo:`, '',
         `${day}, ${t(s)} – ${t(e)} (${tz.replace(/_/g, ' ')})`,
-        ev.hangoutLink ? `Join with Google Meet: ${ev.hangoutLink}` : '', '',
+        ev.hangoutLink ? `Join with Google Meet: ${ev.hangoutLink}` : p.via === 'teams' ? `We'll meet on Microsoft Teams. The link is in our email to you; if you can't find it, just reply to this email.` : '', '',
         `Bring a PDF drawing you work with and we'll mark up, measure and count on it together.`,
         `Need another time? Just reply to this email.`, '',
         `The Thiran team`, `https://thiran.app`,

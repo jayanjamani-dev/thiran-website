@@ -27,6 +27,7 @@ module.exports = async (req, res) => {
   const role = ROLES.includes(b.role) ? b.role : '', notes = String(b.notes ?? '').replace(/[\u0000-\u0008\u000b-\u001f\u007f<>]/g, ' ').trim().slice(0, 1000);
   let tz = clean(b.tz, 60);
   try { new Intl.DateTimeFormat('en', { timeZone: tz }); } catch { tz = 'Australia/Sydney'; }
+  const teams = b.via === 'teams';
   const start = Date.parse(b.start);
   if (name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || !Number.isFinite(start))
     return send(res, 400, { error: 'fields', msg: 'Please check your name and email.' });
@@ -49,6 +50,7 @@ module.exports = async (req, res) => {
       'Name: ' + name, 'Email: ' + email,
       company && 'Company: ' + company,
       role && 'Works on: ' + role,
+      'Meeting: ' + (teams ? 'MICROSOFT TEAMS. Please email them a Teams link before the call.' : 'Google Meet (link in this invite)'),
       'Their time zone: ' + tz,
       notes && '\nNotes:\n' + notes,
     ].filter(Boolean).join('\n');
@@ -56,18 +58,19 @@ module.exports = async (req, res) => {
       method: 'POST',
       query: { conferenceDataVersion: '1', sendUpdates: 'all' },
       body: {
-        summary: `Thiran demo: ${name}${company ? ' (' + company + ')' : ''}`,
+        summary: `Thiran demo${teams ? ' (TEAMS: send link)' : ''}: ${name}${company ? ' (' + company + ')' : ''}`,
         description: desc,
         start: { dateTime: s.toISOString(), timeZone: 'Australia/Sydney' },
         end: { dateTime: e.toISOString(), timeZone: 'Australia/Sydney' },
         attendees: [{ email, displayName: name }],
         guestsCanSeeOtherGuests: false, guestsCanInviteOthers: false,
-        conferenceData: { createRequest: { requestId: 'thiran-' + start + '-' + Math.random().toString(36).slice(2, 10), conferenceSolutionKey: { type: 'hangoutsMeet' } } },
-        extendedProperties: { private: { thiranDemo: '1', email, tz, reminded: '0' } },
+        ...(teams ? { location: 'Microsoft Teams (we will email you the link)' } : {}),
+        ...(teams ? {} : { conferenceData: { createRequest: { requestId: 'thiran-' + start + '-' + Math.random().toString(36).slice(2, 10), conferenceSolutionKey: { type: 'hangoutsMeet' } } } }),
+        extendedProperties: { private: { thiranDemo: '1', email, tz, reminded: '0', via: teams ? 'teams' : 'meet' } },
         reminders: { useDefault: true },
       },
     });
-    send(res, 200, { ok: true, start: s.toISOString(), end: e.toISOString(), meet: !!ev.hangoutLink });
+    send(res, 200, { ok: true, start: s.toISOString(), end: e.toISOString(), meet: !!ev.hangoutLink, via: teams ? 'teams' : 'meet' });
   } catch (err) {
     console.error('book', err.message);
     send(res, 502, { error: 'calendar', msg: 'We couldn’t book that just now. Please try again in a minute.' });

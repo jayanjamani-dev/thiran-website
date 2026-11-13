@@ -331,6 +331,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 @media (max-width:900px){#job .jinner{padding:56px 16px 40px}#job .jbelow{grid-template-columns:1fr}#job .disp{font-size:34px!important}#job .panel{border-radius:24px}}
 
 .hright{display:flex;align-items:center;gap:22px}
+.navc{position:absolute;left:50%;transform:translateX(-50%)}
+.hlink{font-size:14px;font-weight:500;padding:10px 2px}.hdemo{text-decoration:underline;text-decoration-color:#d9631e;text-decoration-thickness:1.5px;text-underline-offset:5px}.hdemo:hover{color:var(--acc)}
+.hcta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .modeb{border:0;background:none;padding:4px;color:var(--ink);opacity:.75;cursor:pointer;display:flex}.modeb:hover{opacity:1}
 .modeb .i-sun{display:none}[data-mode="dark"] .modeb .i-sun{display:block}[data-mode="dark"] .modeb .i-moon{display:none}
 .save{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#e3effb;color:#1f5f9e;font-size:12.5px;font-weight:700;margin-left:10px;transition:opacity .3s}
@@ -375,13 +378,13 @@ img{height:auto}
     <div class="wrap">
         <header class="hd">
           <a class="lock" href="#"><img width="64" height="53" class="mk" src="assets/mark-m7-tight-f1127286.webp" data-d="assets/brand-mark-m1-3cd4c7ad.png" alt=""><span class="word">thiran</span></a>
-          <div class="hright"><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><nav class="nav"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a></nav><a class="hide-s" href="https://my.thiran.app" style="font-size:14px;font-weight:500;padding:10px 4px">Sign in</a><a class="btn btn-o btn-s hide-s" href="#demo">Book a demo</a><a class="btn btn-o btn-s" href="/download">Download</a></div>
+          <nav class="nav navc"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a></nav><div class="hright"><a class="hide-s hlink" href="https://my.thiran.app">Sign in</a><a class="hide-s hlink hdemo" href="#demo">Book a demo</a><a class="btn btn-p btn-s" href="https://my.thiran.app">Start free trial</a><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
         </header>
         <div class="hcopy">
           <h1 class="hkw">PDF markup software for construction drawings</h1>
           <div class="disp hbig">Mark up. Measure.<br><em>Do more on every drawing.</em></div>
           <p class="hsub">Annotate, redline, measure and compare PDF drawings in one tool. Runs on Mac, Windows and the web.</p>
-          <a class="btn btn-p" href="https://my.thiran.app">Start your 7-day free trial</a>
+          <div class="hcta"><a class="btn btn-p" href="https://my.thiran.app">Start your 7-day free trial</a><a class="btn btn-o" href="/download">Download</a></div>
           <div style="font-size:13px;opacity:.8;margin-top:-6px">No credit card needed · Mac · Windows · Web</div>
         </div>
     </div>
@@ -648,6 +651,14 @@ img{height:auto}
 @media (prefers-reduced-motion:reduce){#demo *,#demo *:before,#demo *:after{animation:none!important;transition:none!important}#demo .days button,#demo .slot,#demo .stamp .when,#demo .done h4,#demo .done p,#demo .count,#demo .adds a,#demo .again,#demo .tick,#demo .form,#demo .done{opacity:1!important;transform:none!important}#demo .tick path,#demo h2 em path{stroke-dashoffset:0!important}}
 #demo select{color-scheme:light}#demo select option{background:#fff;color:#2A1D14}
 [data-mode="dark"] #demo select{color-scheme:dark}[data-mode="dark"] #demo select option{background:#1a1a1a;color:#f6ebdc}
+#demo .via{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#demo .via button{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--card);transition:border-color .2s,box-shadow .25s var(--spring),transform .25s var(--spring)}
+#demo .via button:hover{border-color:var(--org)}
+#demo .via button b{display:block;font:600 14.5px Inter}#demo .via button small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px;line-height:1.4}
+#demo .via button i{width:18px;height:18px;flex:0 0 18px;border-radius:50%;border:1.5px solid var(--line);margin-top:1px;transition:border .25s var(--spring)}
+#demo .via button.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);transform:scale(1.01)}#demo .via button.on i{border:5px solid var(--org)}
+#demo .vianote{font-size:13px;color:var(--mute);margin-top:8px}
+@media (max-width:860px){#demo .via{grid-template-columns:1fr}}
 #demo .bd-msg{margin-top:14px;font-size:13.5px;color:var(--org2);min-height:1em}
 #demo .ts{margin:4px 0 10px}
 #demo .days.loading:before{content:"";grid-column:1/-1;height:260px;border-radius:14px;background:linear-gradient(100deg,var(--sand) 40%,var(--sand2) 50%,var(--sand) 60%) 0 0/200% 100%;animation:bdshim 1.4s linear infinite}
@@ -659,7 +670,7 @@ img{height:auto}
   <div class="ey">Book a demo</div>
   <h2>See Thiran on <em>your<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 25 2, 55 2, 98 6"/></svg></em> drawings</h2>
   <p class="lede">Pick a time that suits you. In 20 minutes we'll mark up, measure and count on a drawing like yours, and answer every question.</p>
-  <div class="trust"><span>20 minutes</span><span>Free</span><span>Google Meet</span><span>Bring your own PDF</span></div>
+  <div class="trust"><span>20 minutes</span><span>Free</span><span>Google Meet or Teams</span><span>Bring your own PDF</span></div>
  </div>
 
  <div class="booker" id="bd-bk">
@@ -668,7 +679,7 @@ img{height:auto}
    <h3>Thiran demo</h3>
    <div class="facts">
     <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>20 min</div>
-    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Google Meet video call</div>
+    <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Google Meet or Teams call</div>
     <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><select id="bd-tz" aria-label="Time zone"></select></div>
    </div>
    <div class="chosen" id="bd-chosen"></div>
@@ -697,7 +708,7 @@ const HOST_TZ='Australia/Sydney';let MIN=20;
 const $=s=>document.querySelector(s), bk=$('#bd-bk');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let tz=HOST_TZ;try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||HOST_TZ}catch(e){}
-let h12=true, view, selDay=null, selSlot=null, role='', slots=[], siteKey='', tsToken='', tsId=null, loaded=false;
+let h12=true, view, selDay=null, selSlot=null, role='', via='meet', slots=[], siteKey='', tsToken='', tsId=null, loaded=false;
 const esc=v=>String(v).replace(/[<>&"]/g,'');
 
 // time zones
@@ -778,12 +789,15 @@ function toForm(){
   <div class="fld"><label for="bd-co">Company <span style="color:var(--mute);font-weight:400">(optional)</span></label><input id="bd-co" autocomplete="organization" maxlength="120"></div>
   <div class="fld"><label>What do you mostly work on?</label><div class="chips" id="bd-roles">${['Estimating and takeoff','Drawing review','Site and supervision','HVAC','Something else'].map(r=>`<button type="button" class="${r===role?'on':''}">${r}</button>`).join('')}</div></div>
   <div class="fld"><label for="bd-nt">Anything we should know? <span style="color:var(--mute);font-weight:400">(optional)</span></label><textarea id="bd-nt" maxlength="1000" placeholder="Drawings you work with, questions, team size…"></textarea></div>
+  <div class="fld"><label>How would you like to meet?</label><div class="via" id="bd-via">${[['meet','Google Meet','We send the link in your invite'],['teams','Microsoft Teams','We email you a Teams link']].map(([k,t,d])=>`<button type="button" data-via="${k}" class="${k===via?'on':''}"><i></i><span><b>${t}</b><small>${d}</small></span></button>`).join('')}</div><p class="vianote" id="bd-vianote"></p></div>
   <input class="hp" id="bd-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
   <div class="ts" id="bd-ts"></div>
   <button class="book" id="bd-go"><span>Book my demo</span><i class="sp"></i></button>
   <p class="bd-msg" id="bd-msg" role="status"></p>
   <p class="small">We only use your details to run this call.</p></form>`;
  chosen();turnstile();setTimeout(()=>$('#bd-nm').focus({preventScroll:true}),350);
+ const vn=()=>{$('#bd-vianote').textContent=via==='teams'?'Your invite comes straight away, and we email you the Teams link before the call.':'Your invite with the Google Meet link comes straight away.'};vn();
+ $('#bd-via').onclick=e=>{const b=e.target.closest('button');if(!b)return;via=b.dataset.via;document.querySelectorAll('#bd-via button').forEach(x=>x.classList.toggle('on',x===b));vn()};
  $('#bd-roles').onclick=e=>{const b=e.target.closest('button');if(!b)return;role=b.textContent;document.querySelectorAll('#bd-roles button').forEach(x=>x.classList.toggle('on',x===b))};
  $('#bd-f').onsubmit=async e=>{e.preventDefault();let ok=true;const b=$('#bd-go');if(b.classList.contains('load'))return;
   [['bd-nm',v=>v.trim().length>1],['bd-em',v=>/^\S+@\S+\.\S+$/.test(v)]].forEach(([id,t])=>{const f=$('#'+id).parentNode;f.classList.remove('bad');if(!t($('#'+id).value)){void f.offsetWidth;f.classList.add('bad');ok=false}});
@@ -791,7 +805,7 @@ function toForm(){
   const name=$('#bd-nm').value.trim(), email=$('#bd-em').value.trim();
   try{
    const token=await waitToken();
-   const r=await fetch('/api/book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({start:selSlot.toISOString(),name,email,company:$('#bd-co').value,role,notes:$('#bd-nt').value,tz,hp:$('#bd-hp').value,token})});
+   const r=await fetch('/api/book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({start:selSlot.toISOString(),name,email,company:$('#bd-co').value,role,notes:$('#bd-nt').value,tz,via,hp:$('#bd-hp').value,token})});
    const j=await r.json().catch(()=>({}));
    if(r.ok&&j.ok){slots=slots.filter(t=>+t!==+selSlot);days=byDay();done(name.split(' ')[0],email);return}
    b.classList.remove('load');$('#bd-msg').textContent=j.msg||'Something went wrong. Please try again.';
@@ -808,15 +822,15 @@ function done(name,email){
  bk.classList.remove('step-form');bk.classList.add('step-done');selDay=null;
  const end=new Date(+selSlot+MIN*6e4), dd=Math.round((new Date(key(selSlot))-new Date(todayKey()))/864e5);
  const z=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
- const gcal=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Thiran demo')}&dates=${z(selSlot)}/${z(end)}&details=${encodeURIComponent('Your Thiran demo. The Meet link is in your invite.')}`;
- const ics=URL.createObjectURL(new Blob([`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Thiran//Demo//EN\r\nBEGIN:VEVENT\r\nUID:${+selSlot}@thiran.app\r\nDTSTAMP:${z(new Date())}\r\nDTSTART:${z(selSlot)}\r\nDTEND:${z(end)}\r\nSUMMARY:Thiran demo\r\nDESCRIPTION:The Google Meet link is in your invite email.\r\nBEGIN:VALARM\r\nTRIGGER:-PT15M\r\nACTION:DISPLAY\r\nDESCRIPTION:Thiran demo\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR`],{type:'text/calendar'}));
+ const gcal=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Thiran demo')}&dates=${z(selSlot)}/${z(end)}&details=${encodeURIComponent(via==='teams'?'Your Thiran demo. We will email you the Teams link.':'Your Thiran demo. The Meet link is in your invite.')}`;
+ const ics=URL.createObjectURL(new Blob([`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Thiran//Demo//EN\r\nBEGIN:VEVENT\r\nUID:${+selSlot}@thiran.app\r\nDTSTAMP:${z(new Date())}\r\nDTSTART:${z(selSlot)}\r\nDTEND:${z(end)}\r\nSUMMARY:Thiran demo\r\nDESCRIPTION:${via==='teams'?'We will email you the Microsoft Teams link.':'The Google Meet link is in your invite email.'}\r\nBEGIN:VALARM\r\nTRIGGER:-PT15M\r\nACTION:DISPLAY\r\nDESCRIPTION:Thiran demo\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR`],{type:'text/calendar'}));
  const W=400,H=130;
  $('#bd-stage').innerHTML=`<div class="done">
   <div class="stamp"><svg viewBox="-14 -14 ${W+28} ${H+28}" preserveAspectRatio="none"><path class="cloud" id="bd-cl" d="${cloud(W,H,13)}"/></svg>
    <div class="when"><small>${dd<=1?(dd===1?'Tomorrow':'Today'):'In '+dd+' days'}</small><b>${fmtD(selSlot,{weekday:'long',day:'numeric',month:'long'})}</b><span>${fmtT(selSlot)} – ${fmtT(end)} · ${zname(tz)}</span></div>
    <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
   <h4>You're booked${name?', '+esc(name):''}!</h4>
-  <p>The calendar invite with your Google Meet link is on its way to <b>${esc(email)}</b>. We'll send a reminder the day before.</p>
+  <p>${via==='teams'?`The calendar invite is on its way to <b>${esc(email)}</b>, and we'll email you the Microsoft Teams link before the call.`:`The calendar invite with your Google Meet link is on its way to <b>${esc(email)}</b>.`} We'll send a reminder the day before.</p>
   <div class="count"><i></i>Bring a PDF drawing and we'll work on it together</div>
   <div class="adds"><a href="${gcal}" target="_blank" rel="noopener" style="animation-delay:1.65s">+ Google Calendar</a><a href="${ics}" download="thiran-demo.ics" style="animation-delay:1.75s">+ Outlook</a><a href="${ics}" download="thiran-demo.ics" style="animation-delay:1.85s">+ Apple Calendar</a></div>
   <button class="again" id="bd-again">Book another time</button></div>`;
