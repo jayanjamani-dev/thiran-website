@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/thiran-ui.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e9e4dc;font-family:Inter,sans-serif;color:#2a1d14;padding:28px;width:1640px}
+h1{font:300 34px 'Thiran Open Sans';margin-bottom:4px}.sub{color:#5e5249;font-size:15px;margin-bottom:22px}
+.var{display:grid;grid-template-columns:44px 1fr 250px;gap:16px;align-items:start;margin-bottom:22px}
+.tag{width:44px;height:44px;border-radius:12px;background:#d9631e;color:#fff;font:600 22px Inter;display:flex;align-items:center;justify-content:center}
+.desc{font-size:13.5px;color:#5e5249;margin:6px 0 0;max-width:1000px}.desc b{color:#2a1d14}
+.frames{display:flex;flex-direction:column;gap:8px}
+.fr{border-radius:14px;overflow:visible;box-shadow:0 10px 30px -18px rgba(0,0,0,.4)}
+.L{--bg:#f7f4ef;--ink:#2a1d14;--mut:#5e5249;--ghost:rgba(42,29,20,.18);--bar:#f3e6d6}
+.D{--bg:#121212;--ink:#f6ebdc;--mut:#b9a799;--ghost:rgba(246,235,220,.25);--bar:#26201b}
+.fr{background:var(--bg);color:var(--ink)}
+.ann{border-radius:14px 14px 0 0;background:var(--bar);font-size:13px;text-align:center;padding:7px;font-weight:500}.ann a{color:#d9631e}
+.hd{display:flex;align-items:center;gap:26px;padding:16px 26px;height:68px}
+.lock{display:flex;align-items:center;gap:8px}.lock img{height:26px}.lock span{font:300 26px 'Thiran Open Sans';letter-spacing:-.01em}
+.nav{display:flex;gap:24px;font-size:14px;font-weight:500;opacity:.85}
+.sp{flex:1}.r{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:500}
+.btn{display:inline-flex;align-items:center;height:38px;padding:0 17px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap}
+.p{background:#d9631e;color:#fff;box-shadow:0 8px 20px -10px rgba(217,99,30,.8)}
+.g{box-shadow:inset 0 0 0 1px var(--ghost)}
+.lnk{color:var(--ink)}.lnk.u{text-decoration:underline;text-decoration-color:#d9631e;text-underline-offset:5px}
+.ic{width:18px;height:18px;flex:0 0 18px;opacity:.75}
+.hero{padding:6px 26px 18px;display:flex;align-items:center;gap:14px}.hero .t{font:300 24px 'Thiran Open Sans';flex:1}.hero .t em{font-style:italic;color:#d9631e}
+.dd{position:relative}.menu{position:absolute;right:0;top:44px;background:var(--bg);border:1px solid var(--ghost);border-radius:12px;padding:6px;width:210px;box-shadow:0 18px 40px -18px rgba(0,0,0,.5);z-index:2}
+.menu div{padding:9px 10px;border-radius:8px;font-size:13.5px}.menu div:first-child{background:rgba(217,99,30,.1)}.menu small{display:block;color:var(--mut);font-size:12px}
+.ph{width:250px;overflow:hidden!important;border-radius:26px;border:6px solid #2a1d14;overflow:hidden}
+.ph .hd{height:auto;padding:12px 12px;gap:8px}.ph .lock span{display:none}.ph .lock img{height:20px}.ph .lock span{font-size:20px}.ph .btn{height:32px;font-size:12.5px;padding:0 12px}
+.ph .ann{font-size:11.5px}
+.ph .body{padding:10px 14px 18px}.ph .body .t{font:300 21px/1.15 'Thiran Open Sans'}.ph .body .t em{font-style:italic;color:#d9631e}
+.ph .body .row{display:flex;gap:8px;margin-top:12px}
+.burger{width:20px;height:14px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);position:relative}.burger:after{content:"";position:absolute;left:0;right:0;top:4px;border-top:2px solid var(--ink)}
+.now{margin-bottom:26px;background:#fff;border-radius:14px;padding:12px 16px}
+.now .fr{box-shadow:none;border:1px solid #e8dfd6}
+.pill{display:flex;gap:4px;padding:4px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--ghost);font-size:14px;font-weight:500}.pill a{padding:7px 14px;border-radius:999px}.pill a.on{background:rgba(217,99,30,.12);color:#d9631e}
+.dlink{font-size:13.5px;color:#d9631e;font-weight:600;align-self:center}
+.panel{position:absolute;right:16px;top:58px;width:250px;background:var(--bg);border:1px solid var(--ghost);border-radius:14px;padding:8px;box-shadow:0 20px 40px -16px rgba(0,0,0,.5);z-index:3;font-size:14px}
+.panel a{display:block;padding:9px 10px;border-radius:8px}.panel hr{border:0;border-top:1px solid var(--ghost);margin:6px 4px}.panel .row2{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;color:var(--mut)}
+.mbtn{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--ghost);font-weight:600;font-size:14px}
+.hd{position:relative}
+</style></head><body>
+<h1>Top menu, less crowded: pick one</h1><p class="sub">Each option shows light and dark on desktop, plus a phone. Option A (on the test link now) is at the top for comparison. Nothing is built yet.</p>
+<div id="out"></div>
+<script>
+const SUN='<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const MOON='<svg class="ic" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+const lock='<a class="lock"><img src="assets/brand-mark-m1-3cd4c7ad.png"><span>thiran</span></a>';
+const NAV='<nav class="nav"><a>Features</a><a>Pricing</a><a>Guides</a></nav>';
+const BUR='<i class="burger"></i>';
+const hero=(btns)=>`<div class="hero"><div class="t">PDF markup and takeoff, <em>built for construction.</em></div>${btns}</div>`;
+const H1='<a class="btn p">Start your 7-day free trial</a><a class="btn g">Download</a>';
+const H2=H1+'<a class="dlink">or book a 20-min demo →</a>';
+const V=[
+ {k:'A',d:'<b>On the test link now.</b> Seven things in one row: three links, Sign in, Book a demo, the trial button and the theme icon.',
+  hd:m=>`${lock}<span class="sp"></span>${NAV}<span class="sp"></span><div class="r"><a class="lnk">Sign in</a><a class="lnk u">Book a demo</a><a class="btn p">Start free trial</a>${m}</div>`,hero:H1,
+  ph:m=>`${lock}<span class="sp"></span><a class="btn p">Start free trial</a>${m}`,phb:'<a class="btn g">Download</a>'},
+ {k:'E',d:'<b>Just the essentials.</b> Three links and one orange button. "Book a demo" moves under the hero buttons as a link; Sign in and the theme icon move to the footer (Sign in stays on every page there).',
+  hd:m=>`${lock}<span class="sp"></span><div class="r">${NAV}<a class="btn p">Start free trial</a></div>`,hero:H2,
+  ph:m=>`${lock}<span class="sp"></span><a class="btn p">Start free trial</a>`,phb:'<a class="dlink">or book a 20-min demo →</a>'},
+ {k:'F',d:'<b>A pill in the middle.</b> Features, Pricing, Guides and Demo sit together in one rounded pill; the right side has only Sign in and the orange button. The theme icon moves to the footer.',
+  hd:m=>`${lock}<span class="sp"></span><div class="pill"><a>Features</a><a>Pricing</a><a>Guides</a><a class="on">Demo</a></div><span class="sp"></span><div class="r"><a class="lnk">Sign in</a><a class="btn p">Start free trial</a></div>`,hero:H1,
+  ph:m=>`${lock}<span class="sp"></span><a class="btn p">Start free trial</a>${BUR}`,phb:'<a class="btn g">Download</a>'},
+ {k:'G',d:'<b>Everything behind one "Menu" button.</b> The bar shows only the logo, the orange button and "Menu". Menu opens Features, Pricing, Guides, Book a demo, Download, Sign in and the theme switch (shown open in dark). Same on phone and desktop.',
+  hd:(m,dark)=>`${lock}<span class="sp"></span><div class="r"><a class="btn p">Start free trial</a><a class="mbtn">Menu ${BUR}</a></div>${dark?`<div class="panel"><a>Features</a><a>Pricing</a><a>Guides</a><a style="color:#d9631e;font-weight:600">Book a demo →</a><a>Download</a><hr><a>Sign in</a><div class="row2"><span>Dark mode</span>${SUN}</div></div>`:''}`,hero:H1,
+  ph:m=>`${lock}<span class="sp"></span><a class="btn p">Free trial</a><a class="mbtn" style="height:32px;padding:0 10px">${BUR}</a>`,phb:'<a class="btn g">Download</a>'},
+];
+document.getElementById('out').innerHTML=V.map(v=>{
+ const f=(cls,dark)=>`<div class="fr ${cls}" style="${dark&&v.k==='G'?'margin-bottom:250px':''}"><header class="hd">${v.hd(dark?SUN:MOON,dark)}</header>${hero(v.hero)}</div>`;
+ const phone=`<div class="ph fr L"><header class="hd">${v.ph(MOON)}</header><div class="body"><div class="t">PDF markup and takeoff, <em>built for construction.</em></div><div class="row">${v.phb}</div></div></div>`;
+ return `<div class="var ${v.k==='A'?'now':''}"><div class="tag" ${v.k==='A'?'style="background:#5e5249"':''}>${v.k}</div><div class="frames">${f('L',0)}${f('D',1)}<p class="desc">${v.d}</p></div>${phone}</div>`}).join('');
+</script></body></html>
