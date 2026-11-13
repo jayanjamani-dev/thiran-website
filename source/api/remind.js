@@ -8,8 +8,9 @@ const hdr = s => /^[\x20-\x7e]*$/.test(s) ? s : '=?UTF-8?B?' + Buffer.from(s, 'u
 module.exports = async (req, res) => {
   if (!process.env.CRON_SECRET || req.headers.authorization !== 'Bearer ' + process.env.CRON_SECRET) return send(res, 401, { error: 'auth' });
   const now = Date.now(), sent = [];
+  const hours = Math.min(Math.max(+new URL(req.url, 'http://x').searchParams.get('hours') || 26, 1), 24 * 30); // ?hours= only for testing; default 26
   try {
-    const list = await g(`/calendars/${encodeURIComponent(CAL())}/events`, { query: { privateExtendedProperty: ['thiranDemo=1', 'reminded=0'], timeMin: new Date(now + 60 * 6e4).toISOString(), timeMax: new Date(now + 26 * 36e5).toISOString(), singleEvents: 'true', maxResults: '50' } });
+    const list = await g(`/calendars/${encodeURIComponent(CAL())}/events`, { query: { privateExtendedProperty: ['thiranDemo=1', 'reminded=0'], timeMin: new Date(now + 60 * 6e4).toISOString(), timeMax: new Date(now + hours * 36e5).toISOString(), singleEvents: 'true', maxResults: '50' } });
     for (const ev of list.items || []) {
       const p = ev.extendedProperties?.private || {}, guest = (ev.attendees || []).find(a => a.email === p.email);
       if (ev.status === 'cancelled' || !guest || guest.responseStatus === 'declined') continue;
@@ -26,7 +27,7 @@ module.exports = async (req, res) => {
         `Need another time? Just reply to this email.`, '',
         `The Thiran team`, `https://thiran.app`,
       ].join('\r\n');
-      const mime = [`To: ${guest.email}`, `Subject: ${hdr(`Reminder: your Thiran demo, ${day}`)}`, 'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: 8bit', '', body].join('\r\n');
+      const mime = ['From: Thiran <we@tensi.ai>', 'Reply-To: we@tensi.ai', `To: ${guest.email}`, `Subject: ${hdr(`Reminder: your Thiran demo, ${day}`)}`, 'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: 8bit', '', body].join('\r\n');
       await g('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', { method: 'POST', body: { raw: b64url(mime) } });
       await g(`/calendars/${encodeURIComponent(CAL())}/events/${ev.id}`, { method: 'PATCH', query: { sendUpdates: 'none' }, body: { extendedProperties: { private: { ...p, reminded: '1' } } } });
       sent.push(ev.id);

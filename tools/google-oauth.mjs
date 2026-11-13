@@ -43,7 +43,8 @@ const srv = http.createServer(async (req, res) => {
     // check it is really we@tensi.ai, via the calendar it can see
     const cal = await (await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events?maxResults=1', { headers: { authorization: 'Bearer ' + t.access_token } })).json();
     const who = cal.summary || '?';
-    if (who.toLowerCase() !== 'we@tensi.ai') throw new Error('signed in as ' + who + ', not we@tensi.ai');
+    // we@tensi.ai is an alias of the Workspace mailbox we@tensi.com.au
+    if (!['we@tensi.ai', 'we@tensi.com.au'].includes(who.toLowerCase())) throw new Error('signed in as ' + who + ', not we@tensi.ai');
     res.end('Done. Thiran can now see free times and book demos in the we@tensi.ai calendar. You can close this tab.');
     console.log('Signed in as', who);
     envAdd('GOOGLE_CLIENT_ID', c.client_id);
