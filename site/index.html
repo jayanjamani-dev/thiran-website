@@ -255,6 +255,12 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 :root{--hbg:#f3e6d6}[data-mode="dark"]{--hbg:#16110d}
 .h2img{position:relative;width:100%;aspect-ratio:4196/1420;margin-top:calc(35px - 4.67cqw)}
 .h2top>.wrap{max-width:1080px}
+html{scroll-padding-top:84px}
+.hbar{position:fixed;top:0;left:0;right:0;z-index:60;transition:background-color .3s,box-shadow .3s}
+.hbar .wrap{max-width:1080px}.hbar .hd{padding:12px 0;transition:padding .3s}
+.hbar.on{background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 1px 0 var(--line),0 10px 30px -20px var(--shadow)}
+.hbar.on .hd{padding:9px 0}
+.hero2{padding-top:67px}
 .h2img>.photo{display:block;width:100%;height:100%}
 .h2tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--hbg) 0,rgba(0,0,0,0) 11%),linear-gradient(0deg,var(--bg) 0%,rgba(0,0,0,0) 6%)}
 @media(max-width:760px){#heroScr .toast{display:none}}
@@ -359,6 +365,10 @@ img{height:auto}
 <svg width="0" height="0" style="position:absolute"><filter id="fg"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></svg>
 
 <!-- HERO -->
+<div class="hbar" id="hbar"><div class="wrap"><header class="hd">
+          <a class="lock" href="#"><img width="64" height="53" class="mk" src="assets/mark-m7-tight-f1127286.webp" data-d="assets/brand-mark-m1-3cd4c7ad.png" alt=""><span class="word">thiran</span></a>
+          <nav class="nav navc"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a><a href="/download">Download</a></nav><div class="hright"><a class="hide-s hlink" href="https://my.thiran.app">Sign in</a><a class="btn btn-o btn-s" href="#demo">Book a demo</a><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+        </header></div></div>
 <section class="hero2">
   <div class="h2img">
     <img class="photo" src="assets/hero-lap4-2cf74de5.webp" alt="thiran open on a laptop at a construction site at sunset" width="4196" height="1420">
@@ -377,10 +387,6 @@ img{height:auto}
   </div>
   <div class="h2top">
     <div class="wrap">
-        <header class="hd">
-          <a class="lock" href="#"><img width="64" height="53" class="mk" src="assets/mark-m7-tight-f1127286.webp" data-d="assets/brand-mark-m1-3cd4c7ad.png" alt=""><span class="word">thiran</span></a>
-          <nav class="nav navc"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a><a href="/download">Download</a></nav><div class="hright"><a class="hide-s hlink" href="https://my.thiran.app">Sign in</a><a class="btn btn-o btn-s" href="#demo">Book a demo</a><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
-        </header>
         <div class="hcopy">
           <h1 class="hkw">PDF markup software for construction drawings</h1>
           <div class="disp hbig">Mark up. Measure.<br><em>Do more on every drawing.</em></div>
@@ -650,8 +656,8 @@ img{height:auto}
 }
 @media (max-width:420px){#demo .demo{padding:28px 16px 60px}#demo .days{gap:4px}#demo .days button,#demo .days i{border-radius:10px;font-size:14px}}
 @media (prefers-reduced-motion:reduce){#demo *,#demo *:before,#demo *:after{animation:none!important;transition:none!important}#demo .days button,#demo .slot,#demo .stamp .when,#demo .done h4,#demo .done p,#demo .count,#demo .adds a,#demo .again,#demo .tick,#demo .form,#demo .done{opacity:1!important;transform:none!important}#demo .tick path,#demo h2 em path{stroke-dashoffset:0!important}}
-#demo select{color-scheme:light}#demo select option{background:#fff;color:#2A1D14}
-[data-mode="dark"] #demo select{color-scheme:dark}[data-mode="dark"] #demo select option{background:#1a1a1a;color:#f6ebdc}
+#demo select{color-scheme:light}#demo select option,#demo select optgroup{background:#fff;color:#2A1D14}
+[data-mode="dark"] #demo select{color-scheme:dark}[data-mode="dark"] #demo select option,[data-mode="dark"] #demo select optgroup{background:#1a1a1a;color:#f6ebdc}
 #demo .via{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 #demo .via button{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--card);transition:border-color .2s,box-shadow .25s var(--spring),transform .25s var(--spring)}
 #demo .via button:hover{border-color:var(--org)}
@@ -713,9 +719,15 @@ let h12=true, view, selDay=null, selSlot=null, role='', via='meet', slots=[], si
 const esc=v=>String(v).replace(/[<>&"]/g,'');
 
 // time zones
-const zones=[...new Set([tz,'Australia/Sydney','Australia/Melbourne','Australia/Brisbane','Australia/Adelaide','Australia/Perth','Pacific/Auckland','Asia/Singapore','Asia/Kolkata','Asia/Dubai','Europe/London'])];
 const zname=z=>{try{const n=new Intl.DateTimeFormat('en-AU',{timeZone:z,timeZoneName:'short'}).formatToParts(new Date()).find(p=>p.type==='timeZoneName').value;return z.split('/').pop().replace(/_/g,' ')+' ('+n+')'}catch(e){return z}};
-$('#bd-tz').innerHTML=zones.map(z=>`<option value="${z}">${zname(z)}</option>`).join('');
+// every time zone, grouped by region; the visitor's own zone first
+(()=>{const REG={Australia:'Australia',Pacific:'Pacific',Asia:'Asia',Indian:'Indian Ocean',Europe:'Europe',Africa:'Africa',Atlantic:'Atlantic',America:'Americas'};
+ let all=[];try{all=Intl.supportedValuesOf('timeZone')}catch(e){}
+ if(!all.length)all=['Australia/Sydney','Australia/Melbourne','Australia/Brisbane','Australia/Adelaide','Australia/Perth','Pacific/Auckland','Asia/Singapore','Asia/Kolkata','Asia/Dubai','Europe/London','Europe/Berlin','America/New_York','America/Los_Angeles'];
+ const g={};all.forEach(z=>{const r=REG[z.split('/')[0]];if(r)(g[r]=g[r]||[]).push(z)});
+ const opt=z=>`<option value="${z}">${zname(z)}</option>`;
+ $('#bd-tz').innerHTML=`<optgroup label="Your time zone">${opt(tz)}</optgroup>`+Object.values(REG).filter(r=>g[r]).map(r=>`<optgroup label="${r}">${g[r].filter(z=>z!==tz).map(opt).join('')}</optgroup>`).join('');
+})();
 $('#bd-tz').value=tz;
 
 const key=t=>t.toLocaleDateString('en-CA',{timeZone:tz});
@@ -1011,6 +1023,7 @@ ask(0);
  requestAnimationFrame(loop)})(performance.now());
 buildTools(1,false);price();
 let m0='light';try{m0=localStorage.getItem('thiran-mode')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}
+{const hb=document.getElementById('hbar'),f=()=>hb.classList.toggle('on',scrollY>8);addEventListener('scroll',f,{passive:true});f()}
 setM(m0);$('#mode').addEventListener('click',()=>setM(R.dataset.mode==='dark'?'light':'dark'));
 })();
 </script>

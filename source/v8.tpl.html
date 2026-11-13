@@ -238,6 +238,12 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 :root{--hbg:#f3e6d6}[data-mode="dark"]{--hbg:#16110d}
 .h2img{position:relative;width:100%;aspect-ratio:4196/1420;margin-top:calc(35px - 4.67cqw)}
 .h2top>.wrap{max-width:1080px}
+html{scroll-padding-top:84px}
+.hbar{position:fixed;top:0;left:0;right:0;z-index:60;transition:background-color .3s,box-shadow .3s}
+.hbar .wrap{max-width:1080px}.hbar .hd{padding:12px 0;transition:padding .3s}
+.hbar.on{background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 1px 0 var(--line),0 10px 30px -20px var(--shadow)}
+.hbar.on .hd{padding:9px 0}
+.hero2{padding-top:67px}
 .h2img>.photo{display:block;width:100%;height:100%}
 .h2tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--hbg) 0,rgba(0,0,0,0) 11%),linear-gradient(0deg,var(--bg) 0%,rgba(0,0,0,0) 6%)}
 @media(max-width:760px){#heroScr .toast{display:none}}
@@ -342,6 +348,10 @@ img{height:auto}
 <svg width="0" height="0" style="position:absolute"><filter id="fg"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></svg>
 
 <!-- HERO -->
+<div class="hbar" id="hbar"><div class="wrap"><header class="hd">
+          <a class="lock" href="#"><img class="mk" src="a/mark-m7-tight.png" data-d="png/light/brand/brand-mark-m1@1x.png" alt=""><span class="word">thiran</span></a>
+          <nav class="nav navc"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a><a href="/download">Download</a></nav><div class="hright"><a class="hide-s hlink" href="https://my.thiran.app">Sign in</a><a class="btn btn-o btn-s" href="#demo">Book a demo</a><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+        </header></div></div>
 <section class="hero2">
   <div class="h2img">
     <img class="photo" src="a/hero-lap4.jpg" alt="thiran open on a laptop at a construction site at sunset" width="4196" height="1420">
@@ -360,10 +370,6 @@ img{height:auto}
   </div>
   <div class="h2top">
     <div class="wrap">
-        <header class="hd">
-          <a class="lock" href="#"><img class="mk" src="a/mark-m7-tight.png" data-d="png/light/brand/brand-mark-m1@1x.png" alt=""><span class="word">thiran</span></a>
-          <nav class="nav navc"><a href="#job">Features</a><a href="#pricing">Pricing</a><a href="/guides">Guides</a><a href="/download">Download</a></nav><div class="hright"><a class="hide-s hlink" href="https://my.thiran.app">Sign in</a><a class="btn btn-o btn-s" href="#demo">Book a demo</a><button id="mode" class="modeb" aria-label="Switch to dark mode"><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
-        </header>
         <div class="hcopy">
           <h1 class="hkw">PDF markup software for construction drawings</h1>
           <div class="disp hbig">Mark up. Measure.<br><em>Do more on every drawing.</em></div>
@@ -638,6 +644,7 @@ ask(0);
  requestAnimationFrame(loop)})(performance.now());
 buildTools(1,false);price();
 let m0='light';try{m0=localStorage.getItem('thiran-mode')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}
+{const hb=document.getElementById('hbar'),f=()=>hb.classList.toggle('on',scrollY>8);addEventListener('scroll',f,{passive:true});f()}
 setM(m0);$('#mode').addEventListener('click',()=>setM(R.dataset.mode==='dark'?'light':'dark'));
 })();
 </script>

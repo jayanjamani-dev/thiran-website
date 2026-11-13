@@ -144,8 +144,8 @@
 }
 @media (max-width:420px){#demo .demo{padding:28px 16px 60px}#demo .days{gap:4px}#demo .days button,#demo .days i{border-radius:10px;font-size:14px}}
 @media (prefers-reduced-motion:reduce){#demo *,#demo *:before,#demo *:after{animation:none!important;transition:none!important}#demo .days button,#demo .slot,#demo .stamp .when,#demo .done h4,#demo .done p,#demo .count,#demo .adds a,#demo .again,#demo .tick,#demo .form,#demo .done{opacity:1!important;transform:none!important}#demo .tick path,#demo h2 em path{stroke-dashoffset:0!important}}
-#demo select{color-scheme:light}#demo select option{background:#fff;color:#2A1D14}
-[data-mode="dark"] #demo select{color-scheme:dark}[data-mode="dark"] #demo select option{background:#1a1a1a;color:#f6ebdc}
+#demo select{color-scheme:light}#demo select option,#demo select optgroup{background:#fff;color:#2A1D14}
+[data-mode="dark"] #demo select{color-scheme:dark}[data-mode="dark"] #demo select option,[data-mode="dark"] #demo select optgroup{background:#1a1a1a;color:#f6ebdc}
 #demo .via{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 #demo .via button{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--card);transition:border-color .2s,box-shadow .25s var(--spring),transform .25s var(--spring)}
 #demo .via button:hover{border-color:var(--org)}
@@ -207,9 +207,15 @@ let h12=true, view, selDay=null, selSlot=null, role='', via='meet', slots=[], si
 const esc=v=>String(v).replace(/[<>&"]/g,'');
 
 // time zones
-const zones=[...new Set([tz,'Australia/Sydney','Australia/Melbourne','Australia/Brisbane','Australia/Adelaide','Australia/Perth','Pacific/Auckland','Asia/Singapore','Asia/Kolkata','Asia/Dubai','Europe/London'])];
 const zname=z=>{try{const n=new Intl.DateTimeFormat('en-AU',{timeZone:z,timeZoneName:'short'}).formatToParts(new Date()).find(p=>p.type==='timeZoneName').value;return z.split('/').pop().replace(/_/g,' ')+' ('+n+')'}catch(e){return z}};
-$('#bd-tz').innerHTML=zones.map(z=>`<option value="${z}">${zname(z)}</option>`).join('');
+// every time zone, grouped by region; the visitor's own zone first
+(()=>{const REG={Australia:'Australia',Pacific:'Pacific',Asia:'Asia',Indian:'Indian Ocean',Europe:'Europe',Africa:'Africa',Atlantic:'Atlantic',America:'Americas'};
+ let all=[];try{all=Intl.supportedValuesOf('timeZone')}catch(e){}
+ if(!all.length)all=['Australia/Sydney','Australia/Melbourne','Australia/Brisbane','Australia/Adelaide','Australia/Perth','Pacific/Auckland','Asia/Singapore','Asia/Kolkata','Asia/Dubai','Europe/London','Europe/Berlin','America/New_York','America/Los_Angeles'];
+ const g={};all.forEach(z=>{const r=REG[z.split('/')[0]];if(r)(g[r]=g[r]||[]).push(z)});
+ const opt=z=>`<option value="${z}">${zname(z)}</option>`;
+ $('#bd-tz').innerHTML=`<optgroup label="Your time zone">${opt(tz)}</optgroup>`+Object.values(REG).filter(r=>g[r]).map(r=>`<optgroup label="${r}">${g[r].filter(z=>z!==tz).map(opt).join('')}</optgroup>`).join('');
+})();
 $('#bd-tz').value=tz;
 
 const key=t=>t.toLocaleDateString('en-CA',{timeZone:tz});

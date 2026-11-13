@@ -4,8 +4,8 @@
 
 const HOST_TZ = 'Australia/Sydney';
 const RULES = {
-  days: [1, 2, 3, 4, 5],        // Mon–Fri (Sydney)
-  start: 9 * 60, end: 17 * 60,  // 9:00–17:00 Sydney, in minutes
+  days: [0, 1, 2, 3, 4, 5, 6],  // every day, weekends too (Jay, 13 Nov)
+  windows: [[9 * 60, 17 * 60], [18 * 60, 21 * 60]], // 9am–5pm and 6–9pm Sydney (evening suits Europe), in minutes
   len: 20, gap: 10,             // 20-minute call, 10 minutes clear either side
   step: 30,                     // a start every 30 minutes
   notice: 12 * 60,              // earliest booking: 12 hours from now
@@ -41,7 +41,7 @@ function candidateSlots(now = new Date()) {
     const day = new Date(Date.UTC(t.y, t.m, t.d + i, 12));
     const y = day.getUTCFullYear(), m = day.getUTCMonth(), d = day.getUTCDate();
     if (!RULES.days.includes(day.getUTCDay())) continue;
-    for (let min = RULES.start; min + RULES.len <= RULES.end; min += RULES.step) {
+    for (const [ws, we] of RULES.windows) for (let min = ws; min + RULES.len <= we; min += RULES.step) {
       const s = hostTime(y, m, d, min);
       if (s.getTime() >= first && s.getTime() <= last) out.push(s);
     }
