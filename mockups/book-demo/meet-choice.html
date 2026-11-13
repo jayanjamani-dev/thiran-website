@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="assets/thiran-ui.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#e9e4dc;font-family:Inter,sans-serif;padding:28px;width:1240px;color:#2a1d14}
+h1{font:300 32px 'Thiran Open Sans';margin-bottom:4px}.sub{color:#5e5249;font-size:15px;margin-bottom:20px;max-width:1000px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.c{--card:#fff;--ink:#2A1D14;--mute:#6E6158;--line:#E6DDD2;--inv:#fff;--org:#D9631E;--sand:#F3E6D6;border-radius:20px;background:var(--card);color:var(--ink);padding:26px 30px;border:1px solid var(--line)}
+.c.d{--card:#1a1a1a;--ink:#f6ebdc;--mute:#b9a799;--line:#3a3530;--inv:#121212;--sand:#26201b}
+.cap{font:600 11px Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+label{display:block;font:500 13px Inter;margin-bottom:8px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.o{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.o b{display:block;font:600 14.5px Inter}.o small{display:block;font-size:12.5px;color:var(--mute);margin-top:2px;line-height:1.4}
+.o.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.r{width:18px;height:18px;flex:0 0 18px;border-radius:50%;border:1.5px solid var(--line);margin-top:1px}
+.o.on .r{border:5px solid var(--org)}
+.in{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--mute);margin-bottom:6px}
+.note{font-size:12.5px;color:var(--mute);margin-bottom:16px}
+.book{height:48px;border-radius:999px;background:var(--org);color:#fff;font:600 15px Inter;display:flex;align-items:center;justify-content:center}
+.fx{display:flex;gap:8px;font-size:13.5px;color:var(--mute);margin-bottom:14px}
+</style></head><body>
+<h1>How would you like to meet?</h1>
+<p class="sub">One new choice in the booking form, just above "Book my demo". Google Meet stays the default, and its link is made automatically. If the guest picks Teams, the invite still goes out with no Meet link, and the guest can paste their own Teams link or say they'll send one. The "20 min · Google Meet" line on the left becomes "Google Meet or Teams".</p>
+<div class="grid">
+ <div class="c"><div class="cap">Light · Google Meet picked (default)</div>
+  <label>How would you like to meet?</label>
+  <div class="opts"><div class="o on"><i class="r"></i><div><b>Google Meet</b><small>We send the link in your invite</small></div></div><div class="o"><i class="r"></i><div><b>Microsoft Teams</b><small>Your company's Teams link</small></div></div></div>
+  <div class="fx">✓ Invite with Meet link goes to your email</div>
+  <div class="book">Book my demo</div></div>
+ <div class="c d"><div class="cap">Dark · Microsoft Teams picked</div>
+  <label>How would you like to meet?</label>
+  <div class="opts"><div class="o"><i class="r"></i><div><b>Google Meet</b><small>We send the link in your invite</small></div></div><div class="o on"><i class="r"></i><div><b>Microsoft Teams</b><small>Your company's Teams link</small></div></div></div>
+  <div class="in">Paste your Teams meeting link (optional)</div>
+  <div class="note">No link yet? Leave it empty and send a Teams invite to we@tensi.ai.</div>
+  <div class="book">Book my demo</div></div>
+</div></body></html>
