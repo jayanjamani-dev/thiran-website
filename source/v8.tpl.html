@@ -373,7 +373,7 @@ img{height:auto}
         <div class="hcopy">
           <h1 class="hkw">PDF markup software for construction drawings</h1>
           <div class="disp hbig">Mark up. Measure.<br><em>Do more on every drawing.</em></div>
-          <p class="hsub">Annotate, redline, measure and compare PDF drawings in one tool. Runs on Mac, Windows and the web.</p>
+          <p class="hsub">A PDF annotator and editor made for drawings. Annotate, redline, measure and compare PDF drawings in one tool. Runs on Mac, Windows and the web.</p>
           <a class="btn btn-p" href="https://my.thiran.app">Start your 7-day free trial</a>
           <div style="font-size:13px;opacity:.8;margin-top:-6px">No credit card needed · Mac · Windows · Web</div>
         </div>
@@ -401,7 +401,7 @@ img{height:auto}
 <!-- EVERYTHING ON A DRAWING -->
 <section class="bgsec sec" id="everything" style="padding-top:20px">
   <div class="wrap" style="position:relative">
-    <div style="text-align:center;margin-bottom:40px"><div class="lab">PDF markup and takeoff</div><h2 class="disp h2" style="margin-top:8px">Everything you do on a drawing, <em>in one place.</em></h2></div>
+    <div style="text-align:center;margin-bottom:40px"><div class="lab">PDF markup and takeoff</div><h2 class="disp h2" style="margin-top:8px">Everything you do on a drawing, <em>in one place.</em></h2><p class="muted" style="margin:14px auto 0;max-width:64ch">Thiran PDF markup works like a PDF editor for construction drawings. Edit PDF drawings with markups that are saved inside the file, measure PDF plans to scale, compare two PDF files one revision against the next, and take off quantities for estimating.</p></div>
     <div class="every"><a class="ev" href="/guides/annotate-and-redline-a-pdf-drawing"><h3>Mark up and redline.</h3><p class="muted">Revision clouds, callouts, text, stamps and freehand pen, saved inside the PDF so anyone can open them.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/set-the-scale-on-a-pdf-drawing"><h3>Set the scale once.</h3><p class="muted">The scale is read from the drawing when it opens. Calibrate from a known distance when a sheet was printed at the wrong size.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/measure-areas-and-lengths-on-a-pdf"><h3>Measure to scale.</h3><p class="muted">Lengths, runs, areas and volumes, totalled as you go.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/compare-two-drawing-revisions"><h3>Compare revisions.</h3><p class="muted">Every change between two revisions, traced and listed. Keep the ones that matter and cloud them.</p><span class="evg">Read the guide →</span></a><a class="ev" href="/guides/count-symbols-and-export-quantities-to-excel"><h3>Count and export.</h3><p class="muted">Count symbols with a click, or find every copy at once, then send the quantities to Excel.</p><span class="evg">Read the guide →</span></a></div>
   </div>
 </section>
@@ -623,7 +623,8 @@ function price(){const d=Math.min(20,Math.max(0,n-5));const base=per==='y'?199:1
 $('#dm').onclick=()=>{n=Math.max(1,n-1);price()};$('#dp').onclick=()=>{n=Math.min(500,n+1);price()};$('#rng').oninput=e=>{n=+e.target.value;price()};
 $$('#seg button').forEach(b=>b.onclick=()=>{$$('#seg button').forEach(x=>x.classList.toggle('on',x===b));per=b.dataset.p;price()});
 /* faq */
-const FQ=[['Can I create schedules directly on a PDF?','Yes. Start from a built-in template for grilles, dampers, VCDs, AHUs, FCUs or exhaust fans, or save your own. Edit the table on the drawing like a spreadsheet.'],
+const FQ=[['Is Thiran a PDF editor?','Yes, for drawings. Thiran is a PDF annotator and markup tool: add clouds, text, stamps, photos and measurements to any PDF, and they are saved inside the file. It is made for construction drawings rather than forms.'],
+['Can I create schedules directly on a PDF?','Yes. Start from a built-in template for grilles, dampers, VCDs, AHUs, FCUs or exhaust fans, or save your own. Edit the table on the drawing like a spreadsheet.'],
 ['Can I reuse my own symbols and styles?','Yes. Save any markup to your Tool Library, organise tool sets by discipline, save your own defaults, and import or export them to share.'],
 ['What if my drawing uses a different scale?','Set a scale per page or per viewport. Scales are read from the view titles automatically, and you can calibrate at any time.'],
 ['Can I measure areas and volumes?','Yes. Area, perimeter and volume, with voids, Fill Area and Zones. Add a depth to turn an area into a volume.'],
