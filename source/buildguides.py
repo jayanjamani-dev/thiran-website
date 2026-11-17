@@ -22,13 +22,19 @@ META = {
    (['01-cloud'], 'The Cloud tool part-way round a door on sheet A-101.'),
    (['01-cloud-callout'], 'A Cloud with Callout: “Door moved 600 mm to clear the riser”.'),
    (['01-stamp-list', '01-stamp'], 'The Stamp list open, then For Construction placed on the title block.'),
-   (['01-register'], 'The Register listing the clouds, callouts and stamp from this guide.')]),
+   (['01-layers'], 'The Layers panel with two markup layers, Architect and Client comments, one of them hidden.'),
+   (['01-register'], 'The Register listing the clouds, callouts and stamp from this guide.'),
+   (['01-save-menu'], 'The File menu with Save and Save As….'),
+   (['01-flatten'], 'The markups flattened into A-101, with Undo in the message.'),
+   (['01-print'], 'Print… in the File menu, with the red clouds on A-101 behind it.')]),
  '02': dict(cat='Measure', em='a PDF drawing', thumb=('02-calibrate', '35% 45%'), shots=[
    (['02-status-scale'], 'The scale shown in the status bar on sheet A-101.'),
    (['02-set-scale'], 'The Set scale box with 1:100 picked.'),
    (['02-calibrate'], 'Calibrate between grid lines A and B, with 6000 mm typed.'),
    (['uc1-04-scale-box'], 'A viewport box round one view, ready for its own scale.'),
-   (['02-units'], 'The Measurements panel with the units and decimal places.')]),
+   (['02-prefs-units'], 'Preferences › General, with Units set to Metric (mm, m).'),
+   (['02-units'], 'The Measurements panel with the units and decimal places.'),
+   (['02-line-unit'], 'Properties for one length on A-101, with its unit picked.')]),
  '03': dict(cat='Measure', em='on a PDF', thumb=('03-void-depth', '40% 62%'), shots=[
    (['uc1-09-length'], 'A length measured across Lumen House A-101.'),
    (['03-run-length'], 'A run length along an external wall, with each part’s length shown.'),
@@ -39,14 +45,49 @@ META = {
    (['04-compare-box'], 'The Compare box with Lumen House Rev A and Rev B picked.'),
    (['04-traced'], 'Rev B with changes traced in blue and orange, and the What changed list.'),
    (['04-keep-dismiss'], 'The What changed list with some changes kept and some dismissed.'),
-   (['04-clouded'], 'The newer revision with the kept changes clouded.')]),
+   (['04-clouded'], 'The newer revision with the kept changes clouded.'),
+   (['04-overlay'], 'Lumen House Rev A over Rev B in two colours, with the match shown under the preview.'),
+   (['04-split'], 'Rev A and Rev B side by side in two panes.')]),
  '05': dict(cat='Takeoff', em='to Excel', thumb=('05-quantities', '42% 45%'), shots=[
    (['uc1-10-count'], 'Numbered count dots on the Lumen House lighting plan.'),
    (['uc1-13-find-results'], 'Find Similar has outlined every downlight and counted them.'),
    (['uc1-14-register'], 'The Register grouped by type, with totals.'),
    (['uc1-15-export-menu'], 'The Export menu on the Register.')],
    extra={'Keep a spreadsheet up to date by itself': (['05-live-link'], 'The Live spreadsheet link section.')}),
+ '06': dict(cat='Markup', em='on a Mac', thumb=('06-callout-note', '30% 40%'), shots=[
+   (['uc1-03-arrived-a101'], 'The Lumen House drawing set open in Thiran.'),
+   (['06-callout-note'], 'A callout and a sticky note on A-101, with the note’s author and date showing.'),
+   (['06-text-markup'], 'A highlight and a strike-out on the fictional Lumen House specification.'),
+   (['01-cloud-callout'], 'A Cloud with Callout round a changed door on A-101.'),
+   (['06-stamp-sign'], 'An Approved stamp and a signature by the title block.')]),
+ '07': dict(cat='Takeoff', em='from PDF drawings', thumb=('03-void-depth', '40% 62%'), shots=[
+   (['02-set-scale'], 'The Set scale box with 1:100 picked.'),
+   (['03-void-depth'], 'An area on A-101 with a void cut out and a depth for its volume.'),
+   (['03-run-length'], 'A run length along the external wall of A-101, with each part’s length shown.'),
+   (['uc1-13-find-results'], 'Find Similar has outlined every downlight on the lighting plan and counted them.'),
+   (['uc1-14-register'], 'The Register grouped by type, with totals.'),
+   (['07-rates'], 'Adding a Total column to the Register: text, number, money, measured, choice, date, tick box or formula.')]),
+ '08': dict(cat='Markup', em='a PDF drawing', thumb=('08-approval', '50% 40%'), shots=[
+   (['uc1-03-arrived-a101'], 'The Lumen House drawing set open in Thiran.'),
+   (['01-stamp-list', '01-stamp'], 'The Stamp list open, then a stamp placed on the title block.'),
+   (['08-approval'], 'The Approval stamp box with Approved as noted picked, and the stamp previewed beside it.'),
+   (['08-sign-document'], 'The Sign document box with a reason and a location filled in.')]),
+ '09': dict(cat='Files', em='from Google Drive', thumb=('01-cloud-callout', '47% 40%'), shots=[
+   (['01-cloud-callout'], 'A Cloud with Callout on A-101.')]),
+ '10': dict(cat='Review', em='review checklist', thumb=('10-overlay', '40% 45%'), shots=[
+   (['10-overlay'], 'The Lumen House ground floor plan and lighting plan overlaid in two colours.'),
+   (['01-register'], 'The Register, with each markup’s page, author, date and status.')]),
+ '11': dict(cat='Files', em='and save it', thumb=('11-thumbs', '20% 40%'), shots=[
+   (['11-sideways'], 'A Lumen House sheet lying on its side, as if scanned sideways.'),
+   (['11-thumbs'], 'The Thumbnails panel with a sideways sheet selected.'),
+   (['11-pages-menu'], 'The Pages menu with the three rotate commands.')]),
 }
+PAGE_SHOTS = [
+   (['page-hero'], 'Lumen House A-101 with clouds, a measured room and the Register docked at the bottom.'),
+   (['01-register'], 'A Cloud with Callout on A-101 and its row in the Register.'),
+   (['uc1-08-area-done'], 'A room area measured on A-101.'),
+   (['04-traced'], 'What changed between two Lumen House revisions: added in blue, removed in orange.'),
+   (['uc1-15-export-menu'], 'The Register’s Export menu.')]
 
 _img = {}
 def img(name):
@@ -79,7 +120,8 @@ def inline(s):
     s = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
     def link(m):
         t, u = m.group(1), m.group(2)
-        if u.startswith('./'): u = '/guides/' + u[2:]
+        if u.startswith('./guides/'): u = u[1:]
+        elif u.startswith('./'): u = '/guides/' + u[2:]
         return f'<a href="{u}">{t}</a>'
     return re.sub(r'\[([^\]]+)\]\(([^)]+)\)', link, s)
 
@@ -112,7 +154,19 @@ def blocks(text, shots, faq=False):
                 names, cap = shots.pop(0); out.append(figure(names, cap))
             continue
         lines = b.split('\n')
-        if all(re.match(r'- ', l) for l in lines):
+        if b.startswith('### '):
+            out.append(f'<h3>{inline(lines[0][4:])}</h3>')
+            if len(lines) > 1: out.append(blocks('\n'.join(lines[1:]), shots, faq))
+        elif all(l.startswith('|') for l in lines) and len(lines) > 2:
+            rows = [[c.strip() for c in l.strip().strip('|').split('|')] for l in lines if not re.match(r'^\|[\s|:-]+\|$', l)]
+            head = ''.join(f'<th>{inline(c)}</th>' for c in rows[0])
+            body = ''.join('<tr>' + ''.join(f'<td>{inline(c)}</td>' for c in r) + '</tr>' for r in rows[1:])
+            out.append(f'<div class="tw"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>')
+        elif all(l.startswith('- [ ] ') for l in lines):
+            out.append('<ul class="check">' + ''.join(f'<li>{inline(l[6:])}</li>' for l in lines) + '</ul>')
+        elif lines[0].startswith('**') and lines[0].endswith('**') and len(lines) == 1:
+            out.append(f'<h3>{inline(lines[0][2:-2])}</h3>')
+        elif all(re.match(r'- ', l) for l in lines):
             out.append('<ul>' + ''.join(f'<li>{inline(l[2:])}</li>' for l in lines) + '</ul>')
         elif all(re.match(r'\d+\. ', l) for l in lines):
             out.append('<ol>' + ''.join('<li>' + inline(re.sub(r'^\d+\. ', '', l)) + '</li>' for l in lines) + '</ol>')
@@ -175,7 +229,7 @@ def page(title, desc, path, og, ld, main, css, fonts, mk, active='guides'):
  <nav><a class="hs" href="/#job">Features</a><a class="hs" href="/#pricing">Pricing</a><a class="on" href="/guides">Guides</a><a class="hs" href="{APP}">Sign in</a><a class="ghost" href="/download">Download</a></nav>
 </div></header>
 {main}
-<footer><div class="in"><span>Thiran by Tensi.ai · © 2026 Tensi Pty Ltd</span><span class="fl"><a href="/#job">Features</a> · <a href="/guides">Guides</a> · <a href="/#pricing">Pricing</a> · <a href="/download">Download</a> · <a href="{APP}/legal/#privacy">Privacy</a> · <a href="{APP}/legal/#terms">Terms</a></span></div></footer>
+<footer><div class="in"><span>Thiran by Tensi.ai · © 2026 Tensi Pty Ltd</span><span class="fl"><a href="/#job">Features</a> · <a href="/guides">Guides</a> · <a href="/pdf-editor-for-construction-drawings">PDF editor for drawings</a> · <a href="/#pricing">Pricing</a> · <a href="/download">Download</a> · <a href="{APP}/legal/#privacy">Privacy</a> · <a href="{APP}/legal/#terms">Terms</a></span></div></footer>
 </body>
 </html>
 '''
@@ -189,19 +243,22 @@ CTA_BTN = f'<a class="pill" href="{APP}">Start your 7-day free trial</a>'
 FAVICON = sys.argv[2] if len(sys.argv) > 2 else '/favicon.png'
 css, fonts = write_css(); mk = mark()
 guides = []
-for path in sorted(glob.glob('guides/md/0*.md')):
+for path in sorted(glob.glob('guides/md/[0-9][0-9]-*.md')):
     num = os.path.basename(path)[:2]; g = parse(path); g['num'] = num; g.update(META[num]); guides.append(g)
 
 for g in guides:
     shots = list(g['shots']); extra = g.get('extra', {})
-    toc, secs, steps, nxt, cta_text = [], [], 0, '', ''
+    toc, secs, steps, nxt, cta_text, rel = [], [], 0, '', '', []
     for i, (h, txt) in enumerate(g['sections']):
         if h.startswith('Try Thiran free'):
             for b in re.split(r'\n\s*\n', txt.strip()):
                 b = b.strip()
                 if b.startswith('**Next guide:**'):
                     mm = re.search(r'\[(.+?)\]\(\./(.+?)\)', b); nxt = (mm.group(1), mm.group(2))
-                elif b and not b.startswith('**[') and not cta_text: cta_text = b
+                elif b.startswith('**Related guides:**'):
+                    rel = re.findall(r'\[(.+?)\]\(\./(.+?)\)', b)
+                elif b and not b.startswith('**[') and not cta_text:
+                    cta_text = '\n'.join(l for l in b.split('\n') if not l.startswith('**['))
             continue
         sid = slugify(re.sub(r'^\d+\.\s*', '', h))
         if h == 'What you need':
@@ -224,6 +281,7 @@ for g in guides:
     if g['h1'].endswith(g['em']): h1 = html.escape(g['h1'][:-len(g['em'])]) + f'<em>{html.escape(g["em"])}</em>'
     chips = ([f'<span>{steps} steps</span>'] if steps else []) + ['<span>Mac, Windows and web</span>', '<span>Shown on the fictional Lumen House drawings</span>']
     if nxt: nb = f'<a class="next" href="/guides/{nxt[1]}"><span>Next guide</span><b>{html.escape(nxt[0])} →</b></a>'
+    elif rel: nb = ''.join(f'<a class="next" href="/guides/{u}"><span>Related guide</span><b>{html.escape(t)} →</b></a>' for t, u in rel)
     else: nb = '<a class="next" href="/guides"><span>More guides</span><b>See all guides →</b></a>'
     main = f'''<main>
 <div class="crumb in"><a href="/guides">Guides</a> › <b>{html.escape((lambda s: s[0].upper() + s[1:])(g['h1'].replace('How to ', '')))}</b></div>
@@ -231,7 +289,7 @@ for g in guides:
  <div class="ey">Guide {g['num']} · {g['cat']}</div>
  <h1>{h1}</h1>
  <p class="lede">{inline(g['lede'])}</p>
- {''.join(f'<p class="lede2">{inline(p)}</p>' for p in g['intro'])}
+ {''.join(blocks(p, []) if p.startswith('|') else f'<p class="lede2">{inline(p)}</p>' for p in g['intro'])}
  <div class="meta">{''.join(chips)}</div>
 </div>
 <div class="gbody in">
@@ -257,19 +315,69 @@ const f=()=>{{let k=0;s.forEach((e,i)=>{{if(e.getBoundingClientRect().top<140)k=
            {'@type': 'ListItem', 'position': 3, 'name': g['h1'], 'item': SITE + path}]}]
     open(os.path.join(G, g['slug'] + '.html'), 'w').write(page(g['title'], g['desc'], path, og_image(f'guide-{g["num"]}'), ld, main, css, fonts, mk))
 
+# Standalone landing pages (guides/pages/*.md), styled like the guides. Same Markdown rules.
+PAGES = {
+ 'pdf-editor-for-construction-drawings': dict(ey='PDF editor', em='construction drawings', shots=PAGE_SHOTS),
+}
+landing = []
+for slug, meta in PAGES.items():
+    g = parse(f'guides/pages/{slug}.md'); shots = list(meta['shots'])
+    pre = re.split(r'^## ', re.sub(r'<!--.*?-->', '', open(f'guides/pages/{slug}.md').read(), flags=re.S), flags=re.M)[0]
+    hero = blocks('\n\n'.join(b for b in re.split(r'\n\s*\n', pre) if b.strip().startswith('**Screenshot:**')), shots)
+    toc, secs, cta_text, cta_h = [], [], '', ''
+    for h, txt in g['sections']:
+        if txt.strip().endswith('my.thiran.app · No card needed.') or h.startswith('Open a drawing'):
+            cta_h = h; cta_text = '\n'.join(l for l in txt.strip().split('\n') if not l.startswith('**[')); continue
+        sid = slugify(h)
+        secs.append(f'<section id="{sid}" class="step"><h2>{inline(h)}</h2>{blocks(txt, shots, faq=(h == "Common questions"))}</section>')
+        toc.append((sid, h))
+    assert not shots, (slug, shots)
+    h1 = html.escape(g['h1'])
+    if g['h1'].endswith(meta['em']): h1 = html.escape(g['h1'][:-len(meta['em'])]) + f'<em>{html.escape(meta["em"])}</em>'
+    main = f"""<main>
+<div class="ghead in">
+ <div class="ey">{meta['ey']}</div>
+ <h1>{h1}</h1>
+ <p class="lede">{inline(g['lede'])}</p>
+ <p class="lede2">Try it free for 7 days, no card needed.</p>
+ <div class="meta"><span>Windows, Mac and web</span><span>Shown on the fictional Lumen House drawings</span></div>
+</div>
+<div class="gbody in">
+ <aside class="toc"><p class="ey">On this page</p>{''.join(f'<a href="#{s}">{html.escape(t)}</a>' for s, t in toc)}<a class="pill" href="{APP}">Try free for 7 days</a></aside>
+ <article>
+{hero.replace(' loading="lazy"', '')}
+{chr(10).join(secs)}
+<div class="cta"><div><h2>{html.escape(cta_h)}</h2><p>{inline(cta_text)}</p></div>{CTA_BTN}</div>
+<a class="next" href="/guides"><span>Guides</span><b>See all step-by-step guides →</b></a>
+ </article>
+</div>
+</main>
+<script>
+(()=>{{const a=[...document.querySelectorAll('.toc a[href^="#"]')],s=a.map(x=>document.getElementById(x.getAttribute('href').slice(1)));
+const f=()=>{{let k=0;s.forEach((e,i)=>{{if(e.getBoundingClientRect().top<140)k=i}});a.forEach((x,i)=>x.classList.toggle('on',i===k))}};addEventListener('scroll',f,{{passive:true}});f()}})();
+</script>"""
+    path = '/' + slug
+    ld = [{'@context': 'https://schema.org', '@type': 'WebPage', 'name': g['h1'], 'description': g['desc'], 'url': SITE + path, 'inLanguage': 'en', 'publisher': ORG},
+          {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+           {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE + '/'},
+           {'@type': 'ListItem', 'position': 2, 'name': g['h1'], 'item': SITE + path}]}]
+    open(os.path.join(OUT, slug + '.html'), 'w').write(page(g['title'], g['desc'], path, og_image(slug), ld, main, css, fonts, mk))
+    landing.append({'slug': slug, 'h1': g['h1'], 'desc': g['desc']})
+
 # /guides index
 src, srcset, w, h = img('dark-04-clouded')
 cards = []
 for g in guides:
     t, pos = g['thumb']; ts, tss, tw, th = img(t)
     cards.append(f'''<a class="card" data-cat="{g['cat']}" href="/guides/{g['slug']}"><div class="th"><img src="{_img[t][1].split(' ')[0]}" width="{tw}" height="{th}" style="object-position:{pos}" alt="" loading="lazy" decoding="async"></div><div class="cb"><div class="ey">{g['num']} · {g['cat']}</div><h3>{html.escape(g['h1'])}</h3><p>{html.escape(g['desc'].replace(' Step-by-step guide.', '').replace(' Step by step.', ''))}</p><div class="go">Read guide →</div></div></a>''')
-cats = ['Markup', 'Measure', 'Revisions', 'Takeoff']
+cats = ['Markup', 'Measure', 'Revisions', 'Takeoff', 'Review', 'Files']
 idx_desc = 'Step-by-step guides for PDF drawings: mark up, redline, set the scale, measure, compare revisions and count symbols on construction drawings.'
 main = f'''<main>
 <div class="ihero in">
  <div class="ey">Guides</div>
  <h1>Step-by-step guides for <em>PDF drawings</em></h1>
  <p class="lede">Short how-tos for marking up, measuring and comparing construction drawings. Every step is shown on real Thiran screens.</p>
+ <p class="lede2">New to Thiran? See <a href="/pdf-editor-for-construction-drawings">the PDF editor for construction drawings</a>.</p>
  {CTA_BTN}
 </div>
 <div class="dark in"><img src="{src}" srcset="{srcset}" sizes="(max-width: 1280px) calc(100vw - 32px), 1184px" width="{w}" height="{h}" alt="Thiran in dark mode with the changes between two drawing revisions clouded" fetchpriority="high"></div>
@@ -291,6 +399,7 @@ ld = [{'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Thi
 open(os.path.join(G, 'index.html'), 'w').write(page('Guides to PDF markup and takeoff | Thiran', idx_desc, '/guides', og_image('guides'), ld, main, css, fonts, mk))
 
 # list for sitemap, llms.txt and the OG image maker
+json.dump(landing, open('.pages.json', 'w'))
 json.dump([{'num': g['num'], 'slug': g['slug'], 'h1': g['h1'], 'desc': g['desc'], 'cat': g['cat'], 'thumb': g['thumb'][0]} for g in guides],
           open('.guides.json', 'w'))
 print('guides:', len(guides))

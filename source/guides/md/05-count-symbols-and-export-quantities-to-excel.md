@@ -89,3 +89,6 @@ SCREENSHOTS TO CAPTURE (real app, main 0.17.10, fictional Lumen House set)
 4. NEED  05-live-link.png     Live spreadsheet link section
 CAPTURED 2 Nov (shots/web/): 05-quantities (64 downlights found), 05-live-link. STILL NEEDED: the exported .xlsx open in Numbers or Excel.
 -->
+<!--
+WEEK 1 BUILD (18 Nov): screens captured on the released app 0.17.13 (tag v0.17.13), fictional Lumen House set, via thiran-social/guides/capture-week1.mjs.
+-->

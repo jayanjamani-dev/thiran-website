@@ -7,12 +7,19 @@
 - [Home](https://thiran.app/): what Thiran does, features and pricing (USD; one licence covers one person on up to two devices).
 - [Download](https://thiran.app/download): the desktop app for Windows and Mac.
 - [Guides](https://thiran.app/guides): step-by-step how-tos.
+- [The PDF editor built for construction drawings](https://thiran.app/pdf-editor-for-construction-drawings): Mark up, measure, compare and take off construction drawings in one PDF editor for Windows, Mac and the web. Markups saved inside the PDF. Try it free for 7 days.
 - [Sign in or start a free trial](https://my.thiran.app)
 
 ## Guides
 
-- [How to annotate and redline a PDF drawing](https://thiran.app/guides/annotate-and-redline-a-pdf-drawing): Mark up a construction drawing in a few clicks: revision clouds, callouts, text and stamps, saved inside the PDF so anyone can open them. Step-by-step guide.
-- [How to set the scale on a PDF drawing](https://thiran.app/guides/set-the-scale-on-a-pdf-drawing): Set the scale on a PDF drawing so every measurement is right: pick it from a list, calibrate from a known distance, or give each detail its own scale.
+- [How to annotate and redline a PDF drawing](https://thiran.app/guides/annotate-and-redline-a-pdf-drawing): Mark up a construction drawing with revision clouds, callouts, text and stamps, save the redlines inside the PDF, send a copy that can't be changed, and print it.
+- [How to set the scale on a PDF drawing](https://thiran.app/guides/set-the-scale-on-a-pdf-drawing): Set the scale on a PDF drawing or floor plan so every measurement is right, then change the units: metric or imperial, one sheet, one line, and decimal places.
 - [How to measure areas and lengths on a PDF](https://thiran.app/guides/measure-areas-and-lengths-on-a-pdf): Measure lengths, wall runs and floor areas on a PDF drawing to scale. Take out voids, add a depth for volume, and see the totals as you go. Step by step.
-- [How to compare two drawing revisions](https://thiran.app/guides/compare-two-drawing-revisions): Compare two revisions of a PDF drawing and see every change: added in blue, removed in orange. Keep or dismiss each one, then cloud the changes that matter.
+- [How to compare two drawing revisions](https://thiran.app/guides/compare-two-drawing-revisions): Compare two PDF files for differences: trace every change between drawing revisions (added in blue, removed in orange), overlay two drawing revisions in two colours, or view them side by side.
 - [How to count symbols and export quantities to Excel](https://thiran.app/guides/count-symbols-and-export-quantities-to-excel): Count symbols on a PDF drawing with a click each, or find every copy at once, then export your quantities to an Excel spreadsheet or CSV. Step-by-step guide.
+- [How to annotate a PDF on a Mac](https://thiran.app/guides/annotate-a-pdf-on-a-mac): Annotate a PDF on a Mac: add text, notes, callouts, highlights, clouds, stamps and your signature, then save them inside the PDF. Works the same on Windows and the web.
+- [How to do a construction takeoff from PDF drawings](https://thiran.app/guides/construction-takeoff-from-pdf-drawings): Do a construction takeoff from PDF drawings: set the scale, measure areas and lengths, count items, add your prices and export the quantities to Excel. Step-by-step guide.
+- [How to stamp and sign a PDF drawing](https://thiran.app/guides/stamp-and-sign-a-pdf-drawing): Add an approval stamp, a custom stamp or your signature to a PDF drawing, sign it with a digital ID if you need to, and send it back. Step-by-step guide.
+- [How to open and edit a PDF from Google Drive](https://thiran.app/guides/open-and-edit-a-pdf-from-google-drive): Open a PDF drawing straight from Google Drive, mark it up, and save it back over the same file or as a new copy in a Drive folder. Works with OneDrive too.
+- [Construction drawing review checklist](https://thiran.app/guides/construction-drawing-review-checklist): A practical checklist for reviewing a construction or architectural drawing set: sheet index, scale, dimensions, cross-references, coordination and revisions, with tips for marking up as you go.
+- [How to rotate a PDF drawing and save it](https://thiran.app/guides/rotate-a-pdf-drawing-and-save-it): Turn sideways or upside-down pages in a PDF drawing so they open the right way round everywhere, then save or print. Plus how to turn only your view.

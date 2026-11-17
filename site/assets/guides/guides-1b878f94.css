@@ -103,3 +103,12 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(42,29,20,.12
  .dark img{border-radius:12px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* week 1: tables and checklists in guides */
+.tw{overflow-x:auto;margin:10px 0 20px}
+.tw table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.45;color:#3d3027}
+.tw th,.tw td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tw th{font-weight:600;color:var(--ink);background:var(--sand)}
+.step ul.check{padding-left:0}
+.step ul.check li{position:relative;padding-left:30px}
+.step ul.check li::before{content:"";position:absolute;left:2px;top:6px;width:16px;height:16px;border:1.5px solid var(--org2);border-radius:4px}
+.lede2 a{color:var(--org2);text-decoration:underline;text-underline-offset:3px}

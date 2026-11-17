@@ -1,15 +1,15 @@
 <!--
-DRAFT 1 · for gate 1 (Jay's OK) · 2 Nov 2026
+DRAFT 2 · folds in draft 09 · for gate 1 (Jay's OK) · 18 Nov 2026
 Web address: thiran.app/guides/annotate-and-redline-a-pdf-drawing
 Search title: How to annotate and redline a PDF drawing | Thiran
-Meta description: Mark up a construction drawing in a few clicks: revision clouds, callouts, text and stamps, saved inside the PDF so anyone can open them. Step-by-step guide.
-Target searches: annotate pdf, pdf annotator, redline drawings, pdf markup
-Source of steps: in-app Help (markup.ts, measure.ts) on the released app, 0.17.10
+Meta description: Mark up a construction drawing with revision clouds, callouts, text and stamps, save the redlines inside the PDF, send a copy that can't be changed, and print it.
+Target searches: annotate pdf, pdf annotator, redline drawings, pdf markup, how to redline a pdf, add redline to pdf, how to save redline pdf, how to print redline pdf
+Source of steps: in-app Help (markup.ts, measure.ts) on the released app, 0.17.10; added steps from in-app Help on main @ eee0f437 (markup.ts: markup-layers; start.ts: open-files, cloud-drives; documents.ts: flatten, export-print, batch)
 -->
 
 # How to annotate and redline a PDF drawing
 
-To redline a PDF drawing, open it in a markup tool, draw a revision cloud round each change, attach a note that says what changed and why, and save. The markups stay inside the PDF, so whoever you send it to sees them in their usual PDF reader.
+To redline a PDF drawing, open it in a markup tool, draw a revision cloud round each change, attach a note that says what changed and why, and save. The markups stay inside the PDF, so whoever you send it to sees them in their usual PDF reader. To print the redlines, print the PDF as usual: the markups print with it.
 
 This guide shows each step in Thiran, on the fictional Lumen House drawings.
 
@@ -51,10 +51,23 @@ Click the cloud, the leader line or the text box, and Properties shows a section
 - **Sticky note:** a small note icon. Point at it to read it, or open it to see the whole note.
 - **Pen and Highlighter:** freehand, as with a pen on paper.
 - **Stamp:** choose the arrow beside Stamp and pick one, such as Approved or For Construction. To make your own, choose New text stamp… (for example CHECKED with your name and the date) or New image stamp… for a logo or signature.
+- **Highlight, Underline and Strikeout:** for redlining a specification. Drag across the PDF's own words.
 
 **Screenshot:** the Stamp list open, with For Construction placed on the title block.
 
-## 5. Check every markup in the Register
+## 5. Keep each reviewer's redlines apart
+
+If several people are commenting, give each one a markup layer.
+
+1. Choose **Markup layers**. Add a layer and name it, such as "Client comments".
+2. Select markups and pick the layer under Properties › Markup › Layer.
+3. Use the eye beside a layer to hide its markups, or the lock to stop them being moved.
+
+Layers are saved in the PDF too, so other PDF readers can show and hide them.
+
+**Screenshot:** Layers panel with "Architect" and "Client comments" layers, one hidden
+
+## 6. Check every markup in the Register
 
 The Register is docked at the bottom of the screen. It lists every markup with its page, type, comment, author, date and status.
 
@@ -64,15 +77,40 @@ The Register is docked at the bottom of the screen. It lists every markup with i
 
 **Screenshot:** the Register with the clouds, callouts and stamp from this guide.
 
-## 6. Save and send
+## 7. Save the redlined PDF
 
-Save the PDF. Your markups are saved inside it, so the person you send it to sees them in their usual PDF reader.
+- **File › Save** (Ctrl+S on Windows, Cmd+S on Mac) writes your markups into the PDF. A dot on the tab means there are unsaved changes.
+- **File › Save As…** saves a new copy and leaves the original as it was.
+- Opened it from Google Drive or OneDrive? **Save** puts it back over the same file. If someone else saved that file since you opened it, nothing is overwritten: you're offered a copy instead.
+
+Your markups are saved as standard PDF markups, so the person you send it to sees them in their usual PDF reader.
+
+**Screenshot:** File menu open with Save and Save As… highlighted
+
+## 8. Send a copy that can't be changed
+
+Saved markups can still be moved or edited. To fix them in place before you issue a drawing, flatten them on a copy:
+
+1. Choose **Save As…** first, so you keep a copy with live markups.
+2. Choose **Flatten all markups**, or select some and choose **Flatten selected markups**.
+3. They become part of the drawing straight away. If that was a slip, choose Undo in the message that appears. **Unflatten markups** brings them back while the file is still open.
+4. Save.
+
+**Screenshot:** the flattened A-101 copy, with the Undo message showing
+
+## 9. Print the redlines
+
+Choose **File › Print…** (Ctrl+P on Windows, Cmd+P on Mac). The PDF prints with your markups on it.
+
+To print or flatten a whole stack of PDFs in one go, use **File › Batch process files…**, pick the files and choose the job.
+
+**Screenshot:** Print chosen from the File menu with A-101 and its red clouds in view
 
 ## Tips
 
-- **Keep trades apart with layers.** Put each trade's or reviewer's markups on their own layer, then hide or lock a layer with one click.
-- **Mark the text itself.** On specifications, use highlight, underline or strikethrough on the PDF's own words.
 - **Save your favourite styles.** A cloud you've set up just right can be saved as a tool in the Tool Library and reused on every job.
+- **Too big to email?** **Reduce file size…** makes the PDF smaller for email or upload.
+- **Need a picture instead?** **File › Export pages as images…** saves pages as PNG or JPEG. You choose the pages, the resolution and whether the markups are included.
 
 ## Common questions
 
@@ -82,6 +120,12 @@ Redlining means marking changes or comments on a drawing, usually in red: clouds
 **Will my markups show up in other PDF readers?**
 Yes. They're saved inside the PDF, so other PDF readers show them.
 
+**How do I print a redlined PDF?**
+Choose File › Print… in Thiran. The PDF prints with every markup on it.
+
+**Can I stop people changing my redlines?**
+Yes. Flatten them on a copy before you send it (step 8). They become part of the drawing and can't be moved or edited.
+
 **Can I mark up a scanned drawing?**
 Yes. Markups work on any PDF page, scanned or not.
 
@@ -89,7 +133,7 @@ Yes. Markups work on any PDF page, scanned or not.
 
 ## Try Thiran free for 7 days
 
-Every markup tool in this guide is in the free trial, on Mac, Windows and the web.
+Every markup tool in this guide is in the free trial, on Mac, Windows and the web. No card needed.
 **[Start your 7-day free trial]** → my.thiran.app
 
 **Next guide:** [How to set the scale on a PDF drawing](./set-the-scale-on-a-pdf-drawing)
@@ -103,4 +147,13 @@ SCREENSHOTS TO CAPTURE (real app, main 0.17.10, fictional Lumen House set, exten
 5. NEED  01-register.png     Register listing this guide's markups
 All at 1600 px wide WebP for the page; keep the 3840 px PNG originals.
 CAPTURED 2 Nov (shots/web/): 01-cloud, 01-cloud-callout, 01-stamp-list, 01-stamp, 01-register. Open shot: reuse thiran-uc1 03-arrived-a101. All done.
+NEW (18 Nov, from folded draft 09; take on main, fictional Lumen House set)
+6. NEED  01-layers.png       Layers panel with two markup layers, one hidden
+7. NEED  01-save-menu.png    File menu with Save / Save As…
+8. NEED  01-flatten.png      flattened copy with the Undo message
+9. NEED  01-print.png        File › Print… with red clouds in view
+CHECK: Save / Save As / Flatten / Print / Batch / Reduce file size / Export pages as images come from Help on main @ eee0f437, not 0.17.10. Confirm they are in the released app (0.17.13) before publishing.
+-->
+<!--
+WEEK 1 BUILD (18 Nov): screens captured on the released app 0.17.13 (tag v0.17.13), fictional Lumen House set, via thiran-social/guides/capture-week1.mjs.
 -->

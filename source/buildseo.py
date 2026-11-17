@@ -3,7 +3,8 @@ import os, sys, json
 OUT = sys.argv[1]; SITE = 'https://thiran.app'; DATE = '2026-11-03'
 here = os.path.dirname(os.path.abspath(__file__))
 guides = json.load(open(os.path.join(here, '.guides.json')))
-pages = ['/', '/download', '/guides'] + [f'/guides/{g["slug"]}' for g in guides]
+landing = json.load(open(os.path.join(here, '.pages.json')))
+pages = ['/', '/download'] + [f'/{x["slug"]}' for x in landing] + ['/guides'] + [f'/guides/{g["slug"]}' for g in guides]
 urls = ''.join(f'  <url><loc>{SITE}{"" if p == "/" else p}{"/" if p == "/" else ""}</loc><lastmod>{DATE}</lastmod></url>\n' for p in pages)
 open(os.path.join(OUT, 'sitemap.xml'), 'w').write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
@@ -17,6 +18,7 @@ open(os.path.join(OUT, 'llms.txt'), 'w').write(f'''# Thiran
 - [Home]({SITE}/): what Thiran does, features and pricing (USD; one licence covers one person on up to two devices).
 - [Download]({SITE}/download): the desktop app for Windows and Mac.
 - [Guides]({SITE}/guides): step-by-step how-tos.
+{chr(10).join(f'- [{x["h1"]}]({SITE}/{x["slug"]}): {x["desc"]}' for x in landing)}
 - [Sign in or start a free trial](https://my.thiran.app)
 
 ## Guides

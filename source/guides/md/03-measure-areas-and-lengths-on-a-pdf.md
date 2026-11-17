@@ -98,3 +98,6 @@ SCREENSHOTS TO CAPTURE (real app, main 0.17.10, fictional Lumen House set)
 4. NEED  03-quantities.png   Measurements › Quantities totals
 CAPTURED 2 Nov (shots/web/): 03-run-length, 03-quantities, 03-void-depth (Workshop 1: 32.61 m² with one void, depth 0.15 m = 4.89 m³). All done. Note: Depth is typed in metres here.
 -->
+<!--
+WEEK 1 BUILD (18 Nov): screens captured on the released app 0.17.13 (tag v0.17.13), fictional Lumen House set, via thiran-social/guides/capture-week1.mjs.
+-->

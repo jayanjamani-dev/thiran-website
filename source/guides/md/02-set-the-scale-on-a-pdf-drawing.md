@@ -1,17 +1,22 @@
 <!--
-DRAFT 1 · for gate 1 (Jay's OK) · 2 Nov 2026
+DRAFT 2 · folds in draft 06 · for gate 1 (Jay's OK) · 18 Nov 2026
 Web address: thiran.app/guides/set-the-scale-on-a-pdf-drawing
 Search title: How to set the scale on a PDF drawing | Thiran
-Meta description: Set the scale on a PDF drawing so every measurement is right: pick it from a list, calibrate from a known distance, or give each detail its own scale.
-Target searches: set scale pdf, change measurement units on a pdf drawing
-Source of steps: in-app Help (measure.ts: calibrate, viewport, measurements-panel) on the released app, 0.17.10
+Meta description: Set the scale on a PDF drawing or floor plan so every measurement is right, then change the units: metric or imperial, one sheet, one line, and decimal places.
+Target searches: set scale pdf, change measurement units on a pdf drawing, change pdf measure units, how to measure pdf floor plans
+Source of steps: in-app Help (measure.ts: calibrate, viewport, measurements-panel) on the released app, 0.17.10; units steps from in-app Help on main @ eee0f437 (start.ts: preferences; measure.ts: length, measurements-panel)
 -->
 
 # How to set the scale on a PDF drawing
 
-To set the scale on a PDF drawing, pick the drawing's scale (such as 1:100) from a list, or calibrate by clicking two points a known distance apart and typing that distance. After that, every length and area you measure is in real units.
+To set the scale on a PDF drawing or floor plan, pick the drawing's scale (such as 1:100) from a list, or calibrate by clicking two points a known distance apart and typing that distance. After that, every length and area you measure is in real units, and you can change those units at any time.
 
-In Thiran you often don't need to do anything: the scale written on the drawing is read when it opens. This guide shows how to check it, set it, and fix it when a sheet was printed at the wrong size.
+In Thiran you often don't need to do anything: the scale written on the drawing is read when it opens. This guide shows how to check it, set it, fix it when a sheet was printed at the wrong size, and change the measurement units.
+
+## What you need
+
+- A PDF drawing, such as a floor plan. One sheet or a whole set both work.
+- Thiran on Mac, Windows or the web. The 7-day free trial has every tool.
 
 ## 1. Check the scale first
 
@@ -67,13 +72,39 @@ Measure a length you already know, such as a grid spacing, before you start your
 
 ## Change the measurement units
 
-- **For one sheet:** in the Measurements panel, choose the units and the number of decimal places.
-- **For everything:** Preferences › Decimal places sets one number of decimals for every measurement and total. Preferences › Takeoff lengths totals lengths in m or cm.
-- **For one line:** select it, then pick its unit in Properties: mm, cm, m, in, ft, or feet and inches.
+Once the sheet is to scale, you can show measurements in whatever units you work in. There are three places to change them.
 
-Metric is the default. Imperial sheets show feet and inches.
+### Metric or imperial for everything
+
+1. Open **Edit › Preferences**.
+2. Under **General**, choose **Metric** (mm, m) or **Imperial** (in, ft).
+
+New lengths follow this choice: millimetres on a metric sheet, feet and inches on an imperial one. Metric is the default.
+
+**Screenshot:** Preferences › General with Metric and Imperial, Metric picked
+
+### For one sheet
+
+Use this when one sheet needs a different unit from the rest, or you want more or fewer decimal places. In the Measurements panel, choose the units and the number of decimal places for this page.
 
 **Screenshot:** the Measurements panel with the units and decimal places.
+
+### For one line
+
+Sometimes one dimension reads better in another unit, such as a ceiling height in metres on a floor plan measured in millimetres.
+
+1. Select the length.
+2. In **Properties**, pick its unit: mm, cm, m, in, ft, or feet and inches.
+3. Choose whether the unit is written after the number.
+
+That line keeps its unit. New lengths still follow your Preferences until you choose a unit for them too.
+
+**Screenshot:** Properties for one selected length on A-101, unit set to m
+
+### Decimal places and totals
+
+- **Preferences › Decimal places** sets one number of decimals for every measurement and total, instead of setting it sheet by sheet.
+- **Preferences › Takeoff lengths** totals lengths in m or cm.
 
 ## Common questions
 
@@ -83,6 +114,12 @@ Usually the sheet was printed at a different size from the one in the title bloc
 **Can one sheet have more than one scale?**
 Yes. Draw a viewport round each part that has its own scale (step 4).
 
+**My drawing is imperial. Does that work?**
+Yes. Choose Imperial in Preferences and lengths show in feet and inches.
+
+**Why are my numbers right but the unit wrong?**
+A number shown without a unit on a metric sheet is in millimetres. Select the line, pick a unit in Properties, and choose to have it written.
+
 **Do I have to set the scale again when a new revision comes in?**
 If the new revision has its scale written on it, it's read when it opens. Check the status bar as in step 1.
 
@@ -90,7 +127,7 @@ If the new revision has its scale written on it, it's read when it opens. Check 
 
 ## Try Thiran free for 7 days
 
-Set the scale once and measure in real units, on Mac, Windows and the web.
+Set the scale once and measure floor plans in the units you work in, on Mac, Windows and the web. No card needed.
 **[Start your 7-day free trial]** → my.thiran.app
 
 **Next guide:** [How to measure areas and lengths on a PDF](./measure-areas-and-lengths-on-a-pdf)
@@ -103,4 +140,11 @@ SCREENSHOTS TO CAPTURE (real app, main 0.17.10, fictional Lumen House set)
 4. HAVE  04-scale-box.png / 05-scale-set.png / 06-scale-done.png (thiran-uc1/shots)
 5. NEED  02-units.png         Measurements panel: units and decimals
 CAPTURED 2 Nov (shots/web/): 02-status-scale, 02-set-scale, 02-calibrate (6000 mm typed), 02-units. Viewport: thiran-uc1 04/05/06. All done.
+NEW (18 Nov, from folded draft 06; take on main, fictional Lumen House set)
+6. NEED  02-prefs-units.png   Preferences › General, Metric / Imperial
+7. NEED  02-line-unit.png     Properties for one length, unit = m
+CHECK: Help names "Edit › Preferences". Confirm that's where it sits in the Mac app too.
+-->
+<!--
+WEEK 1 BUILD (18 Nov): screens captured on the released app 0.17.13 (tag v0.17.13), fictional Lumen House set, via thiran-social/guides/capture-week1.mjs.
 -->

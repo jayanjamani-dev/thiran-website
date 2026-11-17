@@ -8,6 +8,7 @@ const f = p => 'file://' + path.join(SRC, p);
 const cards = [
   { name: 'home', ey: 'PDF markup and takeoff', title: 'PDF markup software for <em>construction drawings</em>', shot: 'guides/shots/01-cloud-callout.webp', pos: '47% 42%', zoom: 1.7 },
   { name: 'guides', ey: 'Guides', title: 'Step-by-step guides for <em>PDF drawings</em>', shot: 'guides/shots/dark-04-clouded.webp', pos: '30% 40%', zoom: 1.5 },
+  { name: 'pdf-editor-for-construction-drawings', ey: 'PDF editor', title: 'The PDF editor built for <em>construction drawings</em>', shot: 'guides/shots/01-register.webp', pos: '40% 40%', zoom: 1.5 },
   ...guides.map(g => ({ name: 'guide-' + g.num, ey: `Guide ${g.num} · ${g.cat}`, title: g.h1, shot: `guides/shots/${g.thumb}.webp`, pos: '45% 45%', zoom: 1.7 })),
 ];
 const html = c => `<!doctype html><html><head><style>
