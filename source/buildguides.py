@@ -377,7 +377,7 @@ main = f'''<main>
  <div class="ey">Guides</div>
  <h1>Step-by-step guides for <em>PDF drawings</em></h1>
  <p class="lede">Short how-tos for marking up, measuring and comparing construction drawings. Every step is shown on real Thiran screens.</p>
- <p class="lede2">New to Thiran? See <a href="/pdf-editor-for-construction-drawings">the PDF editor for construction drawings</a>.</p>
+ <p class="lede2" style="margin:14px auto 32px;text-align:center">New to Thiran? See <a href="/pdf-editor-for-construction-drawings">the PDF editor for construction drawings</a>.</p>
  {CTA_BTN}
 </div>
 <div class="dark in"><img src="{src}" srcset="{srcset}" sizes="(max-width: 1280px) calc(100vw - 32px), 1184px" width="{w}" height="{h}" alt="Thiran in dark mode with the changes between two drawing revisions clouded" fetchpriority="high"></div>
